@@ -33,13 +33,18 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../Week\ 2 \
 ../Week\ 1 \
 ../Week\ 1/B2 \
 ../Week\ 1/B3 \
 ../Week\ 1/B4 \
 ../Week\ 1/B5 \
 ../Week\ 1/B6 \
-../Week\ 1/B7
+../Week\ 1/B7 \
+../Week\ 2/B1 \
+../Week\ 2/B2 \
+../Week\ 2/B3 \
+../Week\ 2/B4
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -51,7 +56,11 @@ C_SRCS +=  \
 ../Week\ 1/B4/main.c \
 ../Week\ 1/B5/main.c \
 ../Week\ 1/B6/main.c \
-../Week\ 1/B7/try.c
+../Week\ 1/B7/try.c \
+../Week\ 2/B1/ioisr.c \
+../Week\ 2/B2/b2.c \
+../Week\ 2/B3/b3.c \
+../Week\ 2/B4/b4.c
 
 
 PREPROCESSING_SRCS += 
@@ -68,7 +77,11 @@ Week\ 1/B3/main.o \
 Week\ 1/B4/main.o \
 Week\ 1/B5/main.o \
 Week\ 1/B6/main.o \
-Week\ 1/B7/try.o
+Week\ 1/B7/try.o \
+Week\ 2/B1/ioisr.o \
+Week\ 2/B2/b2.o \
+Week\ 2/B3/b3.o \
+Week\ 2/B4/b4.o
 
 OBJS_AS_ARGS +=  \
 main.o \
@@ -78,7 +91,11 @@ main.o \
 "Week 1/B4/main.o" \
 "Week 1/B5/main.o" \
 "Week 1/B6/main.o" \
-"Week 1/B7/try.o"
+"Week 1/B7/try.o" \
+"Week 2/B1/ioisr.o" \
+"Week 2/B2/b2.o" \
+"Week 2/B3/b3.o" \
+"Week 2/B4/b4.o"
 
 C_DEPS +=  \
 main.d \
@@ -88,7 +105,11 @@ Week\ 1/B3/main.d \
 Week\ 1/B4/main.d \
 Week\ 1/B5/main.d \
 Week\ 1/B6/main.d \
-Week\ 1/B7/try.d
+Week\ 1/B7/try.d \
+Week\ 2/B1/ioisr.d \
+Week\ 2/B2/b2.d \
+Week\ 2/B3/b3.d \
+Week\ 2/B4/b4.d
 
 C_DEPS_AS_ARGS +=  \
 main.d \
@@ -98,7 +119,11 @@ main.d \
 "Week 1/B4/main.d" \
 "Week 1/B5/main.d" \
 "Week 1/B6/main.d" \
-"Week 1/B7/try.d"
+"Week 1/B7/try.d" \
+"Week 2/B1/ioisr.d" \
+"Week 2/B2/b2.d" \
+"Week 2/B3/b3.d" \
+"Week 2/B4/b4.d"
 
 OUTPUT_FILE_PATH +=MicroContr.elf
 
@@ -164,6 +189,34 @@ Week\ 1/B6/main.o: ../Week\ 1/B6/main.c
 	
 
 Week\ 1/B7/try.o: ../Week\ 1/B7/try.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Week\ 2/B1/ioisr.o: ../Week\ 2/B1/ioisr.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Week\ 2/B2/b2.o: ../Week\ 2/B2/b2.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Week\ 2/B3/b3.o: ../Week\ 2/B3/b3.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Week\ 2/B4/b4.o: ../Week\ 2/B4/b4.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
