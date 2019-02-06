@@ -4,6 +4,7 @@
 //
 //#define BIT(x) (1 << (x))
 //
+//
 //void wait(int ms)
 //{
 	//while(ms > 0){
@@ -12,26 +13,28 @@
 	//}
 //}
 //
-//int main(void){
-	//
+//int main (void)
+//{
 	//DDRC = 0x00;
 	//DDRD = 0xFF;
 	//
-	//PORTD &= ~BIT(7); // 0000 0000 & 0111 1111 = 0000 0000 
+	//int waitingtime;
 	//
-	//while (1) {
+	//while(1){
+		//PORTD = 0x01;
 		//
 		//if (PINC & 1){
-			//PORTD = BIT(7);
-			//wait(50);
+			//waitingtime = 250;
+		//} else {
+			//waitingtime = 1000;
 		//}
 		//
+		//wait(waitingtime);
 		//PORTD = 0;
-		//wait(50);
-		//
+		//wait(waitingtime);
 	//}
 	//
 	//return 0;
+	//
 //}
-//
 //

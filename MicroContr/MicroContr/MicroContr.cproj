@@ -162,11 +162,27 @@
     <Compile Include="Week 1\B3\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 1\B4\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 1\B5\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 1\B6\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 1\B7\try.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week 1" />
     <Folder Include="Week 1\B2" />
     <Folder Include="Week 1\B3" />
+    <Folder Include="Week 1\B4" />
+    <Folder Include="Week 1\B5" />
+    <Folder Include="Week 1\B6" />
+    <Folder Include="Week 1\B7" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
