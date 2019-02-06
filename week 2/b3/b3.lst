@@ -1,0 +1,948 @@
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 1
+
+
+   1               		.file	"b3.c"
+   2               		.arch atmega128
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.section	.debug_abbrev,"",@progbits
+  11               	.Ldebug_abbrev0:
+  12               		.section	.debug_info,"",@progbits
+  13               	.Ldebug_info0:
+  14               		.section	.debug_line,"",@progbits
+  15               	.Ldebug_line0:
+  16               		.text
+  17               	.Ltext0:
+  18               	.global	display
+  19               		.type	display, @function
+  20               	display:
+  21               	.LFB6:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 E091 0000 		lds r30,digit
+  27 0004 F091 0000 		lds r31,(digit)+1
+  28 0008 E031      		cpi r30,16
+  29 000a F105      		cpc r31,__zero_reg__
+  30 000c 00F4      		brsh .L2
+  31               	.LM3:
+  32 000e E050      		subi r30,lo8(-(NUMBERS))
+  33 0010 F040      		sbci r31,hi8(-(NUMBERS))
+  34 0012 8081      		ld r24,Z
+  35 0014 00C0      		rjmp .L6
+  36               	.L2:
+  37               	.LM4:
+  38 0016 89E7      		ldi r24,lo8(121)
+  39               	.L6:
+  40 0018 82BB      		out 50-0x20,r24
+  41 001a 0895      		ret
+  42               	/* epilogue: frame size=0 */
+  43               	/* epilogue: noreturn */
+  44               	/* epilogue end (size=0) */
+  45               	/* function display size 14 (14) */
+  46               	.LFE6:
+  47               		.size	display, .-display
+  48               	.global	__vector_5
+  49               		.type	__vector_5, @function
+  50               	__vector_5:
+  51               	.LFB7:
+  52               	.LM5:
+  53               	/* prologue: frame size=0 */
+  54 001c 1F92      		push __zero_reg__
+  55 001e 0F92      		push __tmp_reg__
+  56 0020 0FB6      		in __tmp_reg__,__SREG__
+  57 0022 0F92      		push __tmp_reg__
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 2
+
+
+  58 0024 1124      		clr __zero_reg__
+  59 0026 8F93      		push r24
+  60 0028 EF93      		push r30
+  61 002a FF93      		push r31
+  62               	/* prologue end (size=8) */
+  63               	.LM6:
+  64 002c E091 0000 		lds r30,digit
+  65 0030 F091 0000 		lds r31,(digit)+1
+  66 0034 3196      		adiw r30,1
+  67 0036 F093 0000 		sts (digit)+1,r31
+  68 003a E093 0000 		sts digit,r30
+  69               	.LBB4:
+  70               	.LBB5:
+  71               	.LM7:
+  72 003e E031      		cpi r30,16
+  73 0040 F105      		cpc r31,__zero_reg__
+  74 0042 00F4      		brsh .L8
+  75               	.LM8:
+  76 0044 E050      		subi r30,lo8(-(NUMBERS))
+  77 0046 F040      		sbci r31,hi8(-(NUMBERS))
+  78 0048 8081      		ld r24,Z
+  79 004a 00C0      		rjmp .L12
+  80               	.L8:
+  81               	.LM9:
+  82 004c 89E7      		ldi r24,lo8(121)
+  83               	.L12:
+  84 004e 82BB      		out 50-0x20,r24
+  85               	.LBE5:
+  86               	.LBE4:
+  87               	/* epilogue: frame size=0 */
+  88 0050 FF91      		pop r31
+  89 0052 EF91      		pop r30
+  90 0054 8F91      		pop r24
+  91 0056 0F90      		pop __tmp_reg__
+  92 0058 0FBE      		out __SREG__,__tmp_reg__
+  93 005a 0F90      		pop __tmp_reg__
+  94 005c 1F90      		pop __zero_reg__
+  95 005e 1895      		reti
+  96               	/* epilogue end (size=8) */
+  97               	/* function __vector_5 size 34 (18) */
+  98               	.LFE7:
+  99               		.size	__vector_5, .-__vector_5
+ 100               	.global	main
+ 101               		.type	main, @function
+ 102               	main:
+ 103               	.LFB9:
+ 104               	.LM10:
+ 105               	/* prologue: frame size=0 */
+ 106               	/* prologue end (size=0) */
+ 107               	.LM11:
+ 108 0060 8FEF      		ldi r24,lo8(-1)
+ 109 0062 81BB      		out 49-0x20,r24
+ 110               	.LM12:
+ 111 0064 12B8      		out 34-0x20,__zero_reg__
+ 112               	.LM13:
+ 113 0066 8AB7      		in r24,90-0x20
+ 114 0068 8F60      		ori r24,lo8(15)
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 3
+
+
+ 115 006a 8ABF      		out 90-0x20,r24
+ 116               	.LM14:
+ 117 006c 89B7      		in r24,89-0x20
+ 118 006e 8063      		ori r24,lo8(48)
+ 119 0070 89BF      		out 89-0x20,r24
+ 120               	.LM15:
+ 121 0072 1092 0000 		sts (digit)+1,__zero_reg__
+ 122 0076 1092 0000 		sts digit,__zero_reg__
+ 123               	.LBB8:
+ 124               	.LBB9:
+ 125               	.LM16:
+ 126 007a 8FE3      		ldi r24,lo8(63)
+ 127 007c 82BB      		out 50-0x20,r24
+ 128               	.LBE9:
+ 129               	.LBE8:
+ 130               	.LM17:
+ 131               	/* #APP */
+ 132 007e 7894      		sei
+ 133               	/* #NOAPP */
+ 134               	.L14:
+ 135 0080 00C0      		rjmp .L14
+ 136               	/* epilogue: frame size=0 */
+ 137               	/* epilogue: noreturn */
+ 138               	/* epilogue end (size=0) */
+ 139               	/* function main size 18 (18) */
+ 140               	.LFE9:
+ 141               		.size	main, .-main
+ 142               	.global	__vector_6
+ 143               		.type	__vector_6, @function
+ 144               	__vector_6:
+ 145               	.LFB8:
+ 146               	.LM18:
+ 147               	/* prologue: frame size=0 */
+ 148 0082 1F92      		push __zero_reg__
+ 149 0084 0F92      		push __tmp_reg__
+ 150 0086 0FB6      		in __tmp_reg__,__SREG__
+ 151 0088 0F92      		push __tmp_reg__
+ 152 008a 1124      		clr __zero_reg__
+ 153 008c 8F93      		push r24
+ 154 008e EF93      		push r30
+ 155 0090 FF93      		push r31
+ 156               	/* prologue end (size=8) */
+ 157               	.LM19:
+ 158 0092 E091 0000 		lds r30,digit
+ 159 0096 F091 0000 		lds r31,(digit)+1
+ 160 009a 3197      		sbiw r30,1
+ 161 009c F093 0000 		sts (digit)+1,r31
+ 162 00a0 E093 0000 		sts digit,r30
+ 163               	.LBB12:
+ 164               	.LBB13:
+ 165               	.LM20:
+ 166 00a4 E031      		cpi r30,16
+ 167 00a6 F105      		cpc r31,__zero_reg__
+ 168 00a8 00F4      		brsh .L17
+ 169               	.LM21:
+ 170 00aa E050      		subi r30,lo8(-(NUMBERS))
+ 171 00ac F040      		sbci r31,hi8(-(NUMBERS))
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 4
+
+
+ 172 00ae 8081      		ld r24,Z
+ 173 00b0 00C0      		rjmp .L21
+ 174               	.L17:
+ 175               	.LM22:
+ 176 00b2 89E7      		ldi r24,lo8(121)
+ 177               	.L21:
+ 178 00b4 82BB      		out 50-0x20,r24
+ 179               	.LBE13:
+ 180               	.LBE12:
+ 181               	/* epilogue: frame size=0 */
+ 182 00b6 FF91      		pop r31
+ 183 00b8 EF91      		pop r30
+ 184 00ba 8F91      		pop r24
+ 185 00bc 0F90      		pop __tmp_reg__
+ 186 00be 0FBE      		out __SREG__,__tmp_reg__
+ 187 00c0 0F90      		pop __tmp_reg__
+ 188 00c2 1F90      		pop __zero_reg__
+ 189 00c4 1895      		reti
+ 190               	/* epilogue end (size=8) */
+ 191               	/* function __vector_6 size 34 (18) */
+ 192               	.LFE8:
+ 193               		.size	__vector_6, .-__vector_6
+ 194               	.global	digit
+ 195               	.global	digit
+ 196               		.section .bss
+ 197               		.type	digit, @object
+ 198               		.size	digit, 2
+ 199               	digit:
+ 200 0000 0000      		.skip 2,0
+ 201               	.global	NUMBERS
+ 202               		.data
+ 203               		.type	NUMBERS, @object
+ 204               		.size	NUMBERS, 16
+ 205               	NUMBERS:
+ 206 0000 3F        		.byte	63
+ 207 0001 06        		.byte	6
+ 208 0002 5B        		.byte	91
+ 209 0003 4F        		.byte	79
+ 210 0004 66        		.byte	102
+ 211 0005 6D        		.byte	109
+ 212 0006 7D        		.byte	125
+ 213 0007 07        		.byte	7
+ 214 0008 7F        		.byte	127
+ 215 0009 6F        		.byte	111
+ 216 000a 77        		.byte	119
+ 217 000b 7C        		.byte	124
+ 218 000c 39        		.byte	57
+ 219 000d 5E        		.byte	94
+ 220 000e 79        		.byte	121
+ 221 000f 71        		.byte	113
+ 222               		.section	.debug_frame,"",@progbits
+ 223               	.Lframe0:
+ 224 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 225               	.LSCIE0:
+ 226 0004 FFFF FFFF 		.long	0xffffffff
+ 227 0008 01        		.byte	0x1
+ 228 0009 00        		.string	""
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 5
+
+
+ 229 000a 01        		.uleb128 0x1
+ 230 000b 7F        		.sleb128 -1
+ 231 000c 24        		.byte	0x24
+ 232 000d 0C        		.byte	0xc
+ 233 000e 20        		.uleb128 0x20
+ 234 000f 00        		.uleb128 0x0
+ 235               		.p2align	2
+ 236               	.LECIE0:
+ 237               	.LSFDE0:
+ 238 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 239               	.LASFDE0:
+ 240 0014 0000 0000 		.long	.Lframe0
+ 241 0018 0000 0000 		.long	.LFB6
+ 242 001c 1C00 0000 		.long	.LFE6-.LFB6
+ 243               		.p2align	2
+ 244               	.LEFDE0:
+ 245               	.LSFDE2:
+ 246 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 247               	.LASFDE2:
+ 248 0024 0000 0000 		.long	.Lframe0
+ 249 0028 0000 0000 		.long	.LFB7
+ 250 002c 4400 0000 		.long	.LFE7-.LFB7
+ 251               		.p2align	2
+ 252               	.LEFDE2:
+ 253               	.LSFDE4:
+ 254 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+ 255               	.LASFDE4:
+ 256 0034 0000 0000 		.long	.Lframe0
+ 257 0038 0000 0000 		.long	.LFB9
+ 258 003c 2200 0000 		.long	.LFE9-.LFB9
+ 259               		.p2align	2
+ 260               	.LEFDE4:
+ 261               	.LSFDE6:
+ 262 0040 0C00 0000 		.long	.LEFDE6-.LASFDE6
+ 263               	.LASFDE6:
+ 264 0044 0000 0000 		.long	.Lframe0
+ 265 0048 0000 0000 		.long	.LFB8
+ 266 004c 4400 0000 		.long	.LFE8-.LFB8
+ 267               		.p2align	2
+ 268               	.LEFDE6:
+ 269               		.text
+ 270               	.Letext0:
+ 271               		.section	.debug_line
+ 272 0000 2001 0000 		.long	.LELT0-.LSLT0
+ 273               	.LSLT0:
+ 274 0004 0200      		.word	0x2
+ 275 0006 5800 0000 		.long	.LELTP0-.LASLTP0
+ 276               	.LASLTP0:
+ 277 000a 01        		.byte	0x1
+ 278 000b 01        		.byte	0x1
+ 279 000c F6        		.byte	0xf6
+ 280 000d F5        		.byte	0xf5
+ 281 000e 0A        		.byte	0xa
+ 282 000f 00        		.byte	0x0
+ 283 0010 01        		.byte	0x1
+ 284 0011 01        		.byte	0x1
+ 285 0012 01        		.byte	0x1
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 6
+
+
+ 286 0013 01        		.byte	0x1
+ 287 0014 00        		.byte	0x0
+ 288 0015 00        		.byte	0x0
+ 289 0016 00        		.byte	0x0
+ 290 0017 01        		.byte	0x1
+ 291 0018 633A 2F77 		.ascii	"c:/winavr-20070525/bin/../avr/include"
+ 291      696E 6176 
+ 291      722D 3230 
+ 291      3037 3035 
+ 291      3235 2F62 
+ 292 003d 00        		.byte	0
+ 293 003e 00        		.byte	0x0
+ 294 003f 7374 6469 		.string	"stdint.h"
+ 294      6E74 2E68 
+ 294      00
+ 295 0048 01        		.uleb128 0x1
+ 296 0049 00        		.uleb128 0x0
+ 297 004a 00        		.uleb128 0x0
+ 298 004b 696E 7474 		.string	"inttypes.h"
+ 298      7970 6573 
+ 298      2E68 00
+ 299 0056 01        		.uleb128 0x1
+ 300 0057 00        		.uleb128 0x0
+ 301 0058 00        		.uleb128 0x0
+ 302 0059 6233 2E63 		.string	"b3.c"
+ 302      00
+ 303 005e 00        		.uleb128 0x0
+ 304 005f 00        		.uleb128 0x0
+ 305 0060 00        		.uleb128 0x0
+ 306 0061 00        		.byte	0x0
+ 307               	.LELTP0:
+ 308 0062 00        		.byte	0x0
+ 309 0063 05        		.uleb128 0x5
+ 310 0064 02        		.byte	0x2
+ 311 0065 0000 0000 		.long	.LM1
+ 312 0069 04        		.byte	0x4
+ 313 006a 03        		.uleb128 0x3
+ 314 006b 2C        		.byte	0x2c
+ 315 006c 00        		.byte	0x0
+ 316 006d 05        		.uleb128 0x5
+ 317 006e 02        		.byte	0x2
+ 318 006f 0000 0000 		.long	.LM2
+ 319 0073 15        		.byte	0x15
+ 320 0074 00        		.byte	0x0
+ 321 0075 05        		.uleb128 0x5
+ 322 0076 02        		.byte	0x2
+ 323 0077 0000 0000 		.long	.LM3
+ 324 007b 15        		.byte	0x15
+ 325 007c 00        		.byte	0x0
+ 326 007d 05        		.uleb128 0x5
+ 327 007e 02        		.byte	0x2
+ 328 007f 0000 0000 		.long	.LM4
+ 329 0083 16        		.byte	0x16
+ 330 0084 00        		.byte	0x0
+ 331 0085 05        		.uleb128 0x5
+ 332 0086 02        		.byte	0x2
+ 333 0087 0000 0000 		.long	.LM5
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 7
+
+
+ 334 008b 18        		.byte	0x18
+ 335 008c 00        		.byte	0x0
+ 336 008d 05        		.uleb128 0x5
+ 337 008e 02        		.byte	0x2
+ 338 008f 0000 0000 		.long	.LM6
+ 339 0093 15        		.byte	0x15
+ 340 0094 00        		.byte	0x0
+ 341 0095 05        		.uleb128 0x5
+ 342 0096 02        		.byte	0x2
+ 343 0097 0000 0000 		.long	.LM7
+ 344 009b 0C        		.byte	0xc
+ 345 009c 00        		.byte	0x0
+ 346 009d 05        		.uleb128 0x5
+ 347 009e 02        		.byte	0x2
+ 348 009f 0000 0000 		.long	.LM8
+ 349 00a3 15        		.byte	0x15
+ 350 00a4 00        		.byte	0x0
+ 351 00a5 05        		.uleb128 0x5
+ 352 00a6 02        		.byte	0x2
+ 353 00a7 0000 0000 		.long	.LM9
+ 354 00ab 16        		.byte	0x16
+ 355 00ac 00        		.byte	0x0
+ 356 00ad 05        		.uleb128 0x5
+ 357 00ae 02        		.byte	0x2
+ 358 00af 0000 0000 		.long	.LM10
+ 359 00b3 22        		.byte	0x22
+ 360 00b4 00        		.byte	0x0
+ 361 00b5 05        		.uleb128 0x5
+ 362 00b6 02        		.byte	0x2
+ 363 00b7 0000 0000 		.long	.LM11
+ 364 00bb 16        		.byte	0x16
+ 365 00bc 00        		.byte	0x0
+ 366 00bd 05        		.uleb128 0x5
+ 367 00be 02        		.byte	0x2
+ 368 00bf 0000 0000 		.long	.LM12
+ 369 00c3 15        		.byte	0x15
+ 370 00c4 00        		.byte	0x0
+ 371 00c5 05        		.uleb128 0x5
+ 372 00c6 02        		.byte	0x2
+ 373 00c7 0000 0000 		.long	.LM13
+ 374 00cb 16        		.byte	0x16
+ 375 00cc 00        		.byte	0x0
+ 376 00cd 05        		.uleb128 0x5
+ 377 00ce 02        		.byte	0x2
+ 378 00cf 0000 0000 		.long	.LM14
+ 379 00d3 15        		.byte	0x15
+ 380 00d4 00        		.byte	0x0
+ 381 00d5 05        		.uleb128 0x5
+ 382 00d6 02        		.byte	0x2
+ 383 00d7 0000 0000 		.long	.LM15
+ 384 00db 16        		.byte	0x16
+ 385 00dc 00        		.byte	0x0
+ 386 00dd 05        		.uleb128 0x5
+ 387 00de 02        		.byte	0x2
+ 388 00df 0000 0000 		.long	.LM16
+ 389 00e3 03        		.byte	0x3
+ 390 00e4 68        		.sleb128 -24
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 8
+
+
+ 391 00e5 01        		.byte	0x1
+ 392 00e6 00        		.byte	0x0
+ 393 00e7 05        		.uleb128 0x5
+ 394 00e8 02        		.byte	0x2
+ 395 00e9 0000 0000 		.long	.LM17
+ 396 00ed 2F        		.byte	0x2f
+ 397 00ee 00        		.byte	0x0
+ 398 00ef 05        		.uleb128 0x5
+ 399 00f0 02        		.byte	0x2
+ 400 00f1 0000 0000 		.long	.LM18
+ 401 00f5 03        		.byte	0x3
+ 402 00f6 70        		.sleb128 -16
+ 403 00f7 01        		.byte	0x1
+ 404 00f8 00        		.byte	0x0
+ 405 00f9 05        		.uleb128 0x5
+ 406 00fa 02        		.byte	0x2
+ 407 00fb 0000 0000 		.long	.LM19
+ 408 00ff 15        		.byte	0x15
+ 409 0100 00        		.byte	0x0
+ 410 0101 05        		.uleb128 0x5
+ 411 0102 02        		.byte	0x2
+ 412 0103 0000 0000 		.long	.LM20
+ 413 0107 03        		.byte	0x3
+ 414 0108 73        		.sleb128 -13
+ 415 0109 01        		.byte	0x1
+ 416 010a 00        		.byte	0x0
+ 417 010b 05        		.uleb128 0x5
+ 418 010c 02        		.byte	0x2
+ 419 010d 0000 0000 		.long	.LM21
+ 420 0111 15        		.byte	0x15
+ 421 0112 00        		.byte	0x0
+ 422 0113 05        		.uleb128 0x5
+ 423 0114 02        		.byte	0x2
+ 424 0115 0000 0000 		.long	.LM22
+ 425 0119 16        		.byte	0x16
+ 426 011a 00        		.byte	0x0
+ 427 011b 05        		.uleb128 0x5
+ 428 011c 02        		.byte	0x2
+ 429 011d 0000 0000 		.long	.Letext0
+ 430 0121 00        		.byte	0x0
+ 431 0122 01        		.uleb128 0x1
+ 432 0123 01        		.byte	0x1
+ 433               	.LELT0:
+ 434 0124 1900 0000 		.section	.debug_info
+ 434      0200 1300 
+ 434      0000 0101 
+ 434      FB0E 0D00 
+ 434      0101 0101 
+ 435 0000 2F01 0000 		.long	0x12f
+ 436 0004 0200      		.word	0x2
+ 437 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 438 000a 04        		.byte	0x4
+ 439 000b 01        		.uleb128 0x1
+ 440 000c 0000 0000 		.long	.Ldebug_line0
+ 441 0010 0000 0000 		.long	.Letext0
+ 442 0014 0000 0000 		.long	.Ltext0
+ 443 0018 0000 0000 		.long	.LASF12
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 9
+
+
+ 444 001c 01        		.byte	0x1
+ 445 001d 0000 0000 		.long	.LASF13
+ 446 0021 0000 0000 		.long	.LASF14
+ 447 0025 02        		.uleb128 0x2
+ 448 0026 0000 0000 		.long	.LASF0
+ 449 002a 01        		.byte	0x1
+ 450 002b 06        		.byte	0x6
+ 451 002c 02        		.uleb128 0x2
+ 452 002d 0000 0000 		.long	.LASF1
+ 453 0031 01        		.byte	0x1
+ 454 0032 08        		.byte	0x8
+ 455 0033 03        		.uleb128 0x3
+ 456 0034 696E 7400 		.string	"int"
+ 457 0038 02        		.byte	0x2
+ 458 0039 05        		.byte	0x5
+ 459 003a 02        		.uleb128 0x2
+ 460 003b 0000 0000 		.long	.LASF2
+ 461 003f 02        		.byte	0x2
+ 462 0040 07        		.byte	0x7
+ 463 0041 02        		.uleb128 0x2
+ 464 0042 0000 0000 		.long	.LASF3
+ 465 0046 04        		.byte	0x4
+ 466 0047 05        		.byte	0x5
+ 467 0048 02        		.uleb128 0x2
+ 468 0049 0000 0000 		.long	.LASF4
+ 469 004d 04        		.byte	0x4
+ 470 004e 07        		.byte	0x7
+ 471 004f 02        		.uleb128 0x2
+ 472 0050 0000 0000 		.long	.LASF5
+ 473 0054 08        		.byte	0x8
+ 474 0055 05        		.byte	0x5
+ 475 0056 02        		.uleb128 0x2
+ 476 0057 0000 0000 		.long	.LASF6
+ 477 005b 08        		.byte	0x8
+ 478 005c 07        		.byte	0x7
+ 479 005d 04        		.uleb128 0x4
+ 480 005e 01        		.byte	0x1
+ 481 005f 0000 0000 		.long	.LASF15
+ 482 0063 03        		.byte	0x3
+ 483 0064 19        		.byte	0x19
+ 484 0065 01        		.byte	0x1
+ 485 0066 05        		.uleb128 0x5
+ 486 0067 5D00 0000 		.long	0x5d
+ 487 006b 0000 0000 		.long	.LFB6
+ 488 006f 0000 0000 		.long	.LFE6
+ 489 0073 02        		.byte	0x2
+ 490 0074 90        		.byte	0x90
+ 491 0075 20        		.uleb128 0x20
+ 492 0076 06        		.uleb128 0x6
+ 493 0077 9E00 0000 		.long	0x9e
+ 494 007b 01        		.byte	0x1
+ 495 007c 0000 0000 		.long	.LASF7
+ 496 0080 03        		.byte	0x3
+ 497 0081 21        		.byte	0x21
+ 498 0082 01        		.byte	0x1
+ 499 0083 0000 0000 		.long	.LFB7
+ 500 0087 0000 0000 		.long	.LFE7
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 10
+
+
+ 501 008b 02        		.byte	0x2
+ 502 008c 90        		.byte	0x90
+ 503 008d 20        		.uleb128 0x20
+ 504 008e 07        		.uleb128 0x7
+ 505 008f 5D00 0000 		.long	0x5d
+ 506 0093 0000 0000 		.long	.LBB4
+ 507 0097 0000 0000 		.long	.LBE4
+ 508 009b 03        		.byte	0x3
+ 509 009c 23        		.byte	0x23
+ 510 009d 00        		.byte	0x0
+ 511 009e 08        		.uleb128 0x8
+ 512 009f CA00 0000 		.long	0xca
+ 513 00a3 01        		.byte	0x1
+ 514 00a4 0000 0000 		.long	.LASF8
+ 515 00a8 03        		.byte	0x3
+ 516 00a9 2B        		.byte	0x2b
+ 517 00aa 01        		.byte	0x1
+ 518 00ab 3300 0000 		.long	0x33
+ 519 00af 0000 0000 		.long	.LFB9
+ 520 00b3 0000 0000 		.long	.LFE9
+ 521 00b7 02        		.byte	0x2
+ 522 00b8 90        		.byte	0x90
+ 523 00b9 20        		.uleb128 0x20
+ 524 00ba 07        		.uleb128 0x7
+ 525 00bb 5D00 0000 		.long	0x5d
+ 526 00bf 0000 0000 		.long	.LBB8
+ 527 00c3 0000 0000 		.long	.LBE8
+ 528 00c7 03        		.byte	0x3
+ 529 00c8 34        		.byte	0x34
+ 530 00c9 00        		.byte	0x0
+ 531 00ca 06        		.uleb128 0x6
+ 532 00cb F200 0000 		.long	0xf2
+ 533 00cf 01        		.byte	0x1
+ 534 00d0 0000 0000 		.long	.LASF9
+ 535 00d4 03        		.byte	0x3
+ 536 00d5 26        		.byte	0x26
+ 537 00d6 01        		.byte	0x1
+ 538 00d7 0000 0000 		.long	.LFB8
+ 539 00db 0000 0000 		.long	.LFE8
+ 540 00df 02        		.byte	0x2
+ 541 00e0 90        		.byte	0x90
+ 542 00e1 20        		.uleb128 0x20
+ 543 00e2 07        		.uleb128 0x7
+ 544 00e3 5D00 0000 		.long	0x5d
+ 545 00e7 0000 0000 		.long	.LBB12
+ 546 00eb 0000 0000 		.long	.LBE12
+ 547 00ef 03        		.byte	0x3
+ 548 00f0 28        		.byte	0x28
+ 549 00f1 00        		.byte	0x0
+ 550 00f2 09        		.uleb128 0x9
+ 551 00f3 0000 0000 		.long	.LASF10
+ 552 00f7 03        		.byte	0x3
+ 553 00f8 05        		.byte	0x5
+ 554 00f9 3300 0000 		.long	0x33
+ 555 00fd 01        		.byte	0x1
+ 556 00fe 05        		.byte	0x5
+ 557 00ff 03        		.byte	0x3
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 11
+
+
+ 558 0100 0000 0000 		.long	digit
+ 559 0104 0A        		.uleb128 0xa
+ 560 0105 1401 0000 		.long	0x114
+ 561 0109 2C00 0000 		.long	0x2c
+ 562 010d 0B        		.uleb128 0xb
+ 563 010e 1401 0000 		.long	0x114
+ 564 0112 0F        		.byte	0xf
+ 565 0113 00        		.byte	0x0
+ 566 0114 02        		.uleb128 0x2
+ 567 0115 0000 0000 		.long	.LASF2
+ 568 0119 02        		.byte	0x2
+ 569 011a 07        		.byte	0x7
+ 570 011b 09        		.uleb128 0x9
+ 571 011c 0000 0000 		.long	.LASF11
+ 572 0120 03        		.byte	0x3
+ 573 0121 06        		.byte	0x6
+ 574 0122 2D01 0000 		.long	0x12d
+ 575 0126 01        		.byte	0x1
+ 576 0127 05        		.byte	0x5
+ 577 0128 03        		.byte	0x3
+ 578 0129 0000 0000 		.long	NUMBERS
+ 579 012d 0C        		.uleb128 0xc
+ 580 012e 0401 0000 		.long	0x104
+ 581 0132 00        		.byte	0x0
+ 582               		.section	.debug_abbrev
+ 583 0000 01        		.uleb128 0x1
+ 584 0001 11        		.uleb128 0x11
+ 585 0002 01        		.byte	0x1
+ 586 0003 10        		.uleb128 0x10
+ 587 0004 06        		.uleb128 0x6
+ 588 0005 12        		.uleb128 0x12
+ 589 0006 01        		.uleb128 0x1
+ 590 0007 11        		.uleb128 0x11
+ 591 0008 01        		.uleb128 0x1
+ 592 0009 25        		.uleb128 0x25
+ 593 000a 0E        		.uleb128 0xe
+ 594 000b 13        		.uleb128 0x13
+ 595 000c 0B        		.uleb128 0xb
+ 596 000d 03        		.uleb128 0x3
+ 597 000e 0E        		.uleb128 0xe
+ 598 000f 1B        		.uleb128 0x1b
+ 599 0010 0E        		.uleb128 0xe
+ 600 0011 00        		.byte	0x0
+ 601 0012 00        		.byte	0x0
+ 602 0013 02        		.uleb128 0x2
+ 603 0014 24        		.uleb128 0x24
+ 604 0015 00        		.byte	0x0
+ 605 0016 03        		.uleb128 0x3
+ 606 0017 0E        		.uleb128 0xe
+ 607 0018 0B        		.uleb128 0xb
+ 608 0019 0B        		.uleb128 0xb
+ 609 001a 3E        		.uleb128 0x3e
+ 610 001b 0B        		.uleb128 0xb
+ 611 001c 00        		.byte	0x0
+ 612 001d 00        		.byte	0x0
+ 613 001e 03        		.uleb128 0x3
+ 614 001f 24        		.uleb128 0x24
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 12
+
+
+ 615 0020 00        		.byte	0x0
+ 616 0021 03        		.uleb128 0x3
+ 617 0022 08        		.uleb128 0x8
+ 618 0023 0B        		.uleb128 0xb
+ 619 0024 0B        		.uleb128 0xb
+ 620 0025 3E        		.uleb128 0x3e
+ 621 0026 0B        		.uleb128 0xb
+ 622 0027 00        		.byte	0x0
+ 623 0028 00        		.byte	0x0
+ 624 0029 04        		.uleb128 0x4
+ 625 002a 2E        		.uleb128 0x2e
+ 626 002b 00        		.byte	0x0
+ 627 002c 3F        		.uleb128 0x3f
+ 628 002d 0C        		.uleb128 0xc
+ 629 002e 03        		.uleb128 0x3
+ 630 002f 0E        		.uleb128 0xe
+ 631 0030 3A        		.uleb128 0x3a
+ 632 0031 0B        		.uleb128 0xb
+ 633 0032 3B        		.uleb128 0x3b
+ 634 0033 0B        		.uleb128 0xb
+ 635 0034 20        		.uleb128 0x20
+ 636 0035 0B        		.uleb128 0xb
+ 637 0036 00        		.byte	0x0
+ 638 0037 00        		.byte	0x0
+ 639 0038 05        		.uleb128 0x5
+ 640 0039 2E        		.uleb128 0x2e
+ 641 003a 00        		.byte	0x0
+ 642 003b 31        		.uleb128 0x31
+ 643 003c 13        		.uleb128 0x13
+ 644 003d 11        		.uleb128 0x11
+ 645 003e 01        		.uleb128 0x1
+ 646 003f 12        		.uleb128 0x12
+ 647 0040 01        		.uleb128 0x1
+ 648 0041 40        		.uleb128 0x40
+ 649 0042 0A        		.uleb128 0xa
+ 650 0043 00        		.byte	0x0
+ 651 0044 00        		.byte	0x0
+ 652 0045 06        		.uleb128 0x6
+ 653 0046 2E        		.uleb128 0x2e
+ 654 0047 01        		.byte	0x1
+ 655 0048 01        		.uleb128 0x1
+ 656 0049 13        		.uleb128 0x13
+ 657 004a 3F        		.uleb128 0x3f
+ 658 004b 0C        		.uleb128 0xc
+ 659 004c 03        		.uleb128 0x3
+ 660 004d 0E        		.uleb128 0xe
+ 661 004e 3A        		.uleb128 0x3a
+ 662 004f 0B        		.uleb128 0xb
+ 663 0050 3B        		.uleb128 0x3b
+ 664 0051 0B        		.uleb128 0xb
+ 665 0052 27        		.uleb128 0x27
+ 666 0053 0C        		.uleb128 0xc
+ 667 0054 11        		.uleb128 0x11
+ 668 0055 01        		.uleb128 0x1
+ 669 0056 12        		.uleb128 0x12
+ 670 0057 01        		.uleb128 0x1
+ 671 0058 40        		.uleb128 0x40
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 13
+
+
+ 672 0059 0A        		.uleb128 0xa
+ 673 005a 00        		.byte	0x0
+ 674 005b 00        		.byte	0x0
+ 675 005c 07        		.uleb128 0x7
+ 676 005d 1D        		.uleb128 0x1d
+ 677 005e 00        		.byte	0x0
+ 678 005f 31        		.uleb128 0x31
+ 679 0060 13        		.uleb128 0x13
+ 680 0061 11        		.uleb128 0x11
+ 681 0062 01        		.uleb128 0x1
+ 682 0063 12        		.uleb128 0x12
+ 683 0064 01        		.uleb128 0x1
+ 684 0065 58        		.uleb128 0x58
+ 685 0066 0B        		.uleb128 0xb
+ 686 0067 59        		.uleb128 0x59
+ 687 0068 0B        		.uleb128 0xb
+ 688 0069 00        		.byte	0x0
+ 689 006a 00        		.byte	0x0
+ 690 006b 08        		.uleb128 0x8
+ 691 006c 2E        		.uleb128 0x2e
+ 692 006d 01        		.byte	0x1
+ 693 006e 01        		.uleb128 0x1
+ 694 006f 13        		.uleb128 0x13
+ 695 0070 3F        		.uleb128 0x3f
+ 696 0071 0C        		.uleb128 0xc
+ 697 0072 03        		.uleb128 0x3
+ 698 0073 0E        		.uleb128 0xe
+ 699 0074 3A        		.uleb128 0x3a
+ 700 0075 0B        		.uleb128 0xb
+ 701 0076 3B        		.uleb128 0x3b
+ 702 0077 0B        		.uleb128 0xb
+ 703 0078 27        		.uleb128 0x27
+ 704 0079 0C        		.uleb128 0xc
+ 705 007a 49        		.uleb128 0x49
+ 706 007b 13        		.uleb128 0x13
+ 707 007c 11        		.uleb128 0x11
+ 708 007d 01        		.uleb128 0x1
+ 709 007e 12        		.uleb128 0x12
+ 710 007f 01        		.uleb128 0x1
+ 711 0080 40        		.uleb128 0x40
+ 712 0081 0A        		.uleb128 0xa
+ 713 0082 00        		.byte	0x0
+ 714 0083 00        		.byte	0x0
+ 715 0084 09        		.uleb128 0x9
+ 716 0085 34        		.uleb128 0x34
+ 717 0086 00        		.byte	0x0
+ 718 0087 03        		.uleb128 0x3
+ 719 0088 0E        		.uleb128 0xe
+ 720 0089 3A        		.uleb128 0x3a
+ 721 008a 0B        		.uleb128 0xb
+ 722 008b 3B        		.uleb128 0x3b
+ 723 008c 0B        		.uleb128 0xb
+ 724 008d 49        		.uleb128 0x49
+ 725 008e 13        		.uleb128 0x13
+ 726 008f 3F        		.uleb128 0x3f
+ 727 0090 0C        		.uleb128 0xc
+ 728 0091 02        		.uleb128 0x2
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 14
+
+
+ 729 0092 0A        		.uleb128 0xa
+ 730 0093 00        		.byte	0x0
+ 731 0094 00        		.byte	0x0
+ 732 0095 0A        		.uleb128 0xa
+ 733 0096 01        		.uleb128 0x1
+ 734 0097 01        		.byte	0x1
+ 735 0098 01        		.uleb128 0x1
+ 736 0099 13        		.uleb128 0x13
+ 737 009a 49        		.uleb128 0x49
+ 738 009b 13        		.uleb128 0x13
+ 739 009c 00        		.byte	0x0
+ 740 009d 00        		.byte	0x0
+ 741 009e 0B        		.uleb128 0xb
+ 742 009f 21        		.uleb128 0x21
+ 743 00a0 00        		.byte	0x0
+ 744 00a1 49        		.uleb128 0x49
+ 745 00a2 13        		.uleb128 0x13
+ 746 00a3 2F        		.uleb128 0x2f
+ 747 00a4 0B        		.uleb128 0xb
+ 748 00a5 00        		.byte	0x0
+ 749 00a6 00        		.byte	0x0
+ 750 00a7 0C        		.uleb128 0xc
+ 751 00a8 26        		.uleb128 0x26
+ 752 00a9 00        		.byte	0x0
+ 753 00aa 49        		.uleb128 0x49
+ 754 00ab 13        		.uleb128 0x13
+ 755 00ac 00        		.byte	0x0
+ 756 00ad 00        		.byte	0x0
+ 757 00ae 00        		.byte	0x0
+ 758               		.section	.debug_pubnames,"",@progbits
+ 759 0000 5700 0000 		.long	0x57
+ 760 0004 0200      		.word	0x2
+ 761 0006 0000 0000 		.long	.Ldebug_info0
+ 762 000a 3301 0000 		.long	0x133
+ 763 000e 6600 0000 		.long	0x66
+ 764 0012 6469 7370 		.string	"display"
+ 764      6C61 7900 
+ 765 001a 7600 0000 		.long	0x76
+ 766 001e 5F5F 7665 		.string	"__vector_5"
+ 766      6374 6F72 
+ 766      5F35 00
+ 767 0029 9E00 0000 		.long	0x9e
+ 768 002d 6D61 696E 		.string	"main"
+ 768      00
+ 769 0032 CA00 0000 		.long	0xca
+ 770 0036 5F5F 7665 		.string	"__vector_6"
+ 770      6374 6F72 
+ 770      5F36 00
+ 771 0041 F200 0000 		.long	0xf2
+ 772 0045 6469 6769 		.string	"digit"
+ 772      7400 
+ 773 004b 1B01 0000 		.long	0x11b
+ 774 004f 4E55 4D42 		.string	"NUMBERS"
+ 774      4552 5300 
+ 775 0057 0000 0000 		.long	0x0
+ 776               		.section	.debug_aranges,"",@progbits
+ 777 0000 1C00 0000 		.long	0x1c
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 15
+
+
+ 778 0004 0200      		.word	0x2
+ 779 0006 0000 0000 		.long	.Ldebug_info0
+ 780 000a 04        		.byte	0x4
+ 781 000b 00        		.byte	0x0
+ 782 000c 0000      		.word	0x0
+ 783 000e 0000      		.word	0x0
+ 784 0010 0000 0000 		.long	.Ltext0
+ 785 0014 C600 0000 		.long	.Letext0-.Ltext0
+ 786 0018 0000 0000 		.long	0x0
+ 787 001c 0000 0000 		.long	0x0
+ 788               		.section	.debug_str,"MS",@progbits,1
+ 789               	.LASF13:
+ 790 0000 6233 2E63 		.string	"b3.c"
+ 790      00
+ 791               	.LASF1:
+ 792 0005 756E 7369 		.string	"unsigned char"
+ 792      676E 6564 
+ 792      2063 6861 
+ 792      7200 
+ 793               	.LASF4:
+ 794 0013 6C6F 6E67 		.string	"long unsigned int"
+ 794      2075 6E73 
+ 794      6967 6E65 
+ 794      6420 696E 
+ 794      7400 
+ 795               	.LASF8:
+ 796 0025 6D61 696E 		.string	"main"
+ 796      00
+ 797               	.LASF2:
+ 798 002a 756E 7369 		.string	"unsigned int"
+ 798      676E 6564 
+ 798      2069 6E74 
+ 798      00
+ 799               	.LASF10:
+ 800 0037 6469 6769 		.string	"digit"
+ 800      7400 
+ 801               	.LASF6:
+ 802 003d 6C6F 6E67 		.string	"long long unsigned int"
+ 802      206C 6F6E 
+ 802      6720 756E 
+ 802      7369 676E 
+ 802      6564 2069 
+ 803               	.LASF11:
+ 804 0054 4E55 4D42 		.string	"NUMBERS"
+ 804      4552 5300 
+ 805               	.LASF5:
+ 806 005c 6C6F 6E67 		.string	"long long int"
+ 806      206C 6F6E 
+ 806      6720 696E 
+ 806      7400 
+ 807               	.LASF12:
+ 808 006a 474E 5520 		.string	"GNU C 4.1.2 (WinAVR 20070525)"
+ 808      4320 342E 
+ 808      312E 3220 
+ 808      2857 696E 
+ 808      4156 5220 
+ 809               	.LASF7:
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 16
+
+
+ 810 0088 5F5F 7665 		.string	"__vector_5"
+ 810      6374 6F72 
+ 810      5F35 00
+ 811               	.LASF9:
+ 812 0093 5F5F 7665 		.string	"__vector_6"
+ 812      6374 6F72 
+ 812      5F36 00
+ 813               	.LASF3:
+ 814 009e 6C6F 6E67 		.string	"long int"
+ 814      2069 6E74 
+ 814      00
+ 815               	.LASF15:
+ 816 00a7 6469 7370 		.string	"display"
+ 816      6C61 7900 
+ 817               	.LASF0:
+ 818 00af 7369 676E 		.string	"signed char"
+ 818      6564 2063 
+ 818      6861 7200 
+ 819               	.LASF14:
+ 820 00bb 433A 5C55 		.string	"C:\\Users\\jeroe\\Desktop\\map\\school\\MicroControllers\\week 2\\b3"
+ 820      7365 7273 
+ 820      5C6A 6572 
+ 820      6F65 5C44 
+ 820      6573 6B74 
+ 821               	/* File "b3.c": code  100 = 0x0064 (  68), prologues  16, epilogues  16 */
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 b3.c
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:3      *ABS*:0000003f __SREG__
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:4      *ABS*:0000003e __SP_H__
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:5      *ABS*:0000003d __SP_L__
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:20     .text:00000000 display
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:199    .bss:00000000 digit
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:205    .data:00000000 NUMBERS
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:50     .text:0000001c __vector_5
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:102    .text:00000060 main
+C:\Users\jeroe\AppData\Local\Temp/ccqVmX29.s:144    .text:00000082 __vector_6
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

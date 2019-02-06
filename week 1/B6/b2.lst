@@ -1,0 +1,1171 @@
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.section	.debug_abbrev,"",@progbits
+   9               	.Ldebug_abbrev0:
+  10               		.section	.debug_info,"",@progbits
+  11               	.Ldebug_info0:
+  12               		.section	.debug_line,"",@progbits
+  13               	.Ldebug_line0:
+  14               		.text
+  15               	.Ltext0:
+  16               	.global	wait
+  17               		.type	wait, @function
+  18               	wait:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LBB26:
+  25               	.LBB27:
+  26               	.LBB28:
+  27               	.LBB29:
+  28               	.LM2:
+  29 0000 20ED      		ldi r18,lo8(2000)
+  30 0002 37E0      		ldi r19,hi8(2000)
+  31 0004 00C0      		rjmp .L2
+  32               	.LVL1:
+  33               	.L3:
+  34 0006 F901      		movw r30,r18
+  35               	/* #APP */
+  36               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  37 0008 3197      		1: sbiw r30,1
+  38 000a 01F4      		brne 1b
+  39               	 ;  0 "" 2
+  40               	/* #NOAPP */
+  41               	.LBE29:
+  42               	.LBE28:
+  43               	.LBE27:
+  44               	.LBE26:
+  45               	.LM3:
+  46 000c 0197      		sbiw r24,1
+  47               	.L2:
+  48               	.LM4:
+  49 000e 1816      		cp __zero_reg__,r24
+  50 0010 1906      		cpc __zero_reg__,r25
+  51 0012 04F0      		brlt .L3
+  52               	/* epilogue start */
+  53               	.LM5:
+  54 0014 0895      		ret
+  55               	.LFE6:
+  56               		.size	wait, .-wait
+  57               	.global	main
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 2
+
+
+  58               		.type	main, @function
+  59               	main:
+  60               	.LFB7:
+  61               	.LM6:
+  62               	/* prologue: function */
+  63               	/* frame size = 0 */
+  64               	.LM7:
+  65 0016 14BA      		out 52-32,__zero_reg__
+  66               	.LM8:
+  67 0018 8FEF      		ldi r24,lo8(-1)
+  68 001a 81BB      		out 49-32,r24
+  69               	.LM9:
+  70 001c 61E0      		ldi r22,lo8(1)
+  71               	.LBB30:
+  72               	.LBB31:
+  73               	.LBB32:
+  74               	.LBB33:
+  75               	.LBB34:
+  76               	.LBB35:
+  77               	.LM10:
+  78 001e 40ED      		ldi r20,lo8(2000)
+  79 0020 57E0      		ldi r21,hi8(2000)
+  80               	.LVL2:
+  81               	.L10:
+  82               	.LBE35:
+  83               	.LBE34:
+  84               	.LBE33:
+  85               	.LBE32:
+  86               	.LBE31:
+  87               	.LBE30:
+  88               	.LM11:
+  89 0022 62BB      		out 50-32,r22
+  90               	.LM12:
+  91 0024 9899      		sbic 51-32,0
+  92 0026 00C0      		rjmp .L6
+  93 0028 24E6      		ldi r18,lo8(100)
+  94 002a 30E0      		ldi r19,hi8(100)
+  95 002c 00C0      		rjmp .L7
+  96               	.L6:
+  97 002e 29E1      		ldi r18,lo8(25)
+  98 0030 30E0      		ldi r19,hi8(25)
+  99               	.L7:
+ 100 0032 C901      		movw r24,r18
+ 101               	.LVL3:
+ 102               	.L8:
+ 103               	.LBB41:
+ 104               	.LBB40:
+ 105               	.LBB39:
+ 106               	.LBB38:
+ 107               	.LBB37:
+ 108               	.LBB36:
+ 109               	.LM13:
+ 110 0034 FA01      		movw r30,r20
+ 111               	/* #APP */
+ 112               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 113 0036 3197      		1: sbiw r30,1
+ 114 0038 01F4      		brne 1b
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 3
+
+
+ 115               	 ;  0 "" 2
+ 116               	/* #NOAPP */
+ 117               	.LBE36:
+ 118               	.LBE37:
+ 119               	.LBE38:
+ 120               	.LBE39:
+ 121               	.LM14:
+ 122 003a 0197      		sbiw r24,1
+ 123               	.LM15:
+ 124 003c 1816      		cp __zero_reg__,r24
+ 125 003e 1906      		cpc __zero_reg__,r25
+ 126 0040 04F0      		brlt .L8
+ 127               	.LBE40:
+ 128               	.LBE41:
+ 129               	.LM16:
+ 130 0042 12BA      		out 50-32,__zero_reg__
+ 131               	.LVL4:
+ 132               	.L9:
+ 133               	.LBB42:
+ 134               	.LBB43:
+ 135               	.LBB44:
+ 136               	.LBB45:
+ 137               	.LBB46:
+ 138               	.LBB47:
+ 139               	.LM17:
+ 140 0044 CA01      		movw r24,r20
+ 141               	.LVL5:
+ 142               	/* #APP */
+ 143               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 144 0046 0197      		1: sbiw r24,1
+ 145 0048 01F4      		brne 1b
+ 146               	 ;  0 "" 2
+ 147               	/* #NOAPP */
+ 148               	.LBE47:
+ 149               	.LBE46:
+ 150               	.LBE45:
+ 151               	.LBE44:
+ 152               	.LM18:
+ 153 004a 2150      		subi r18,lo8(-(-1))
+ 154 004c 3040      		sbci r19,hi8(-(-1))
+ 155               	.LM19:
+ 156 004e 1216      		cp __zero_reg__,r18
+ 157 0050 1306      		cpc __zero_reg__,r19
+ 158 0052 04F4      		brge .L10
+ 159 0054 00C0      		rjmp .L9
+ 160               	.LBE43:
+ 161               	.LBE42:
+ 162               	.LFE7:
+ 163               		.size	main, .-main
+ 164               		.section	.debug_frame,"",@progbits
+ 165               	.Lframe0:
+ 166 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 167               	.LSCIE0:
+ 168 0004 FFFF FFFF 		.long	0xffffffff
+ 169 0008 01        		.byte	0x1
+ 170 0009 00        		.string	""
+ 171 000a 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 4
+
+
+ 172 000b 7F        		.sleb128 -1
+ 173 000c 24        		.byte	0x24
+ 174 000d 0C        		.byte	0xc
+ 175 000e 20        		.uleb128 0x20
+ 176 000f 00        		.uleb128 0x0
+ 177               		.p2align	2
+ 178               	.LECIE0:
+ 179               	.LSFDE0:
+ 180 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 181               	.LASFDE0:
+ 182 0014 0000 0000 		.long	.Lframe0
+ 183 0018 0000 0000 		.long	.LFB6
+ 184 001c 1600 0000 		.long	.LFE6-.LFB6
+ 185               		.p2align	2
+ 186               	.LEFDE0:
+ 187               	.LSFDE2:
+ 188 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 189               	.LASFDE2:
+ 190 0024 0000 0000 		.long	.Lframe0
+ 191 0028 0000 0000 		.long	.LFB7
+ 192 002c 4000 0000 		.long	.LFE7-.LFB7
+ 193               		.p2align	2
+ 194               	.LEFDE2:
+ 195               		.text
+ 196               	.Letext0:
+ 197               		.section	.debug_loc,"",@progbits
+ 198               	.Ldebug_loc0:
+ 199               	.LLST2:
+ 200 0000 2200 0000 		.long	.LVL2-.Ltext0
+ 201 0004 3400 0000 		.long	.LVL3-.Ltext0
+ 202 0008 0600      		.word	0x6
+ 203 000a 62        		.byte	0x62
+ 204 000b 93        		.byte	0x93
+ 205 000c 01        		.uleb128 0x1
+ 206 000d 63        		.byte	0x63
+ 207 000e 93        		.byte	0x93
+ 208 000f 01        		.uleb128 0x1
+ 209 0010 3400 0000 		.long	.LVL3-.Ltext0
+ 210 0014 4600 0000 		.long	.LVL5-.Ltext0
+ 211 0018 0600      		.word	0x6
+ 212 001a 68        		.byte	0x68
+ 213 001b 93        		.byte	0x93
+ 214 001c 01        		.uleb128 0x1
+ 215 001d 69        		.byte	0x69
+ 216 001e 93        		.byte	0x93
+ 217 001f 01        		.uleb128 0x1
+ 218 0020 4600 0000 		.long	.LVL5-.Ltext0
+ 219 0024 5600 0000 		.long	.LFE7-.Ltext0
+ 220 0028 0600      		.word	0x6
+ 221 002a 62        		.byte	0x62
+ 222 002b 93        		.byte	0x93
+ 223 002c 01        		.uleb128 0x1
+ 224 002d 63        		.byte	0x63
+ 225 002e 93        		.byte	0x93
+ 226 002f 01        		.uleb128 0x1
+ 227 0030 0000 0000 		.long	0x0
+ 228 0034 0000 0000 		.long	0x0
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 5
+
+
+ 229               	.LLST3:
+ 230 0038 2200 0000 		.long	.LVL2-.Ltext0
+ 231 003c 3400 0000 		.long	.LVL3-.Ltext0
+ 232 0040 0600      		.word	0x6
+ 233 0042 68        		.byte	0x68
+ 234 0043 93        		.byte	0x93
+ 235 0044 01        		.uleb128 0x1
+ 236 0045 69        		.byte	0x69
+ 237 0046 93        		.byte	0x93
+ 238 0047 01        		.uleb128 0x1
+ 239 0048 4400 0000 		.long	.LVL4-.Ltext0
+ 240 004c 5600 0000 		.long	.LFE7-.Ltext0
+ 241 0050 0600      		.word	0x6
+ 242 0052 68        		.byte	0x68
+ 243 0053 93        		.byte	0x93
+ 244 0054 01        		.uleb128 0x1
+ 245 0055 69        		.byte	0x69
+ 246 0056 93        		.byte	0x93
+ 247 0057 01        		.uleb128 0x1
+ 248 0058 0000 0000 		.long	0x0
+ 249 005c 0000 0000 		.long	0x0
+ 250               		.section	.debug_info
+ 251 0000 DB01 0000 		.long	0x1db
+ 252 0004 0200      		.word	0x2
+ 253 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 254 000a 04        		.byte	0x4
+ 255 000b 01        		.uleb128 0x1
+ 256 000c 0000 0000 		.long	.LASF14
+ 257 0010 01        		.byte	0x1
+ 258 0011 0000 0000 		.long	.LASF15
+ 259 0015 0000 0000 		.long	.LASF16
+ 260 0019 0000 0000 		.long	.Ltext0
+ 261 001d 0000 0000 		.long	.Letext0
+ 262 0021 0000 0000 		.long	.Ldebug_line0
+ 263 0025 02        		.uleb128 0x2
+ 264 0026 01        		.byte	0x1
+ 265 0027 06        		.byte	0x6
+ 266 0028 0000 0000 		.long	.LASF0
+ 267 002c 02        		.uleb128 0x2
+ 268 002d 01        		.byte	0x1
+ 269 002e 08        		.byte	0x8
+ 270 002f 0000 0000 		.long	.LASF1
+ 271 0033 03        		.uleb128 0x3
+ 272 0034 02        		.byte	0x2
+ 273 0035 05        		.byte	0x5
+ 274 0036 696E 7400 		.string	"int"
+ 275 003a 04        		.uleb128 0x4
+ 276 003b 0000 0000 		.long	.LASF17
+ 277 003f 04        		.byte	0x4
+ 278 0040 7C        		.byte	0x7c
+ 279 0041 4500 0000 		.long	0x45
+ 280 0045 02        		.uleb128 0x2
+ 281 0046 02        		.byte	0x2
+ 282 0047 07        		.byte	0x7
+ 283 0048 0000 0000 		.long	.LASF2
+ 284 004c 02        		.uleb128 0x2
+ 285 004d 04        		.byte	0x4
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 6
+
+
+ 286 004e 05        		.byte	0x5
+ 287 004f 0000 0000 		.long	.LASF3
+ 288 0053 02        		.uleb128 0x2
+ 289 0054 04        		.byte	0x4
+ 290 0055 07        		.byte	0x7
+ 291 0056 0000 0000 		.long	.LASF4
+ 292 005a 02        		.uleb128 0x2
+ 293 005b 08        		.byte	0x8
+ 294 005c 05        		.byte	0x5
+ 295 005d 0000 0000 		.long	.LASF5
+ 296 0061 02        		.uleb128 0x2
+ 297 0062 08        		.byte	0x8
+ 298 0063 07        		.byte	0x7
+ 299 0064 0000 0000 		.long	.LASF6
+ 300 0068 05        		.uleb128 0x5
+ 301 0069 0000 0000 		.long	.LASF7
+ 302 006d 02        		.byte	0x2
+ 303 006e 68        		.byte	0x68
+ 304 006f 01        		.byte	0x1
+ 305 0070 03        		.byte	0x3
+ 306 0071 8100 0000 		.long	0x81
+ 307 0075 06        		.uleb128 0x6
+ 308 0076 0000 0000 		.long	.LASF9
+ 309 007a 02        		.byte	0x2
+ 310 007b 67        		.byte	0x67
+ 311 007c 3A00 0000 		.long	0x3a
+ 312 0080 00        		.byte	0x0
+ 313 0081 05        		.uleb128 0x5
+ 314 0082 0000 0000 		.long	.LASF8
+ 315 0086 03        		.byte	0x3
+ 316 0087 6F        		.byte	0x6f
+ 317 0088 01        		.byte	0x1
+ 318 0089 03        		.byte	0x3
+ 319 008a B200 0000 		.long	0xb2
+ 320 008e 06        		.uleb128 0x6
+ 321 008f 0000 0000 		.long	.LASF10
+ 322 0093 03        		.byte	0x3
+ 323 0094 6E        		.byte	0x6e
+ 324 0095 B200 0000 		.long	0xb2
+ 325 0099 07        		.uleb128 0x7
+ 326 009a 0000 0000 		.long	.LASF11
+ 327 009e 03        		.byte	0x3
+ 328 009f 70        		.byte	0x70
+ 329 00a0 3A00 0000 		.long	0x3a
+ 330 00a4 07        		.uleb128 0x7
+ 331 00a5 0000 0000 		.long	.LASF12
+ 332 00a9 03        		.byte	0x3
+ 333 00aa 71        		.byte	0x71
+ 334 00ab B200 0000 		.long	0xb2
+ 335 00af 08        		.uleb128 0x8
+ 336 00b0 08        		.uleb128 0x8
+ 337 00b1 00        		.byte	0x0
+ 338 00b2 02        		.uleb128 0x2
+ 339 00b3 04        		.byte	0x4
+ 340 00b4 04        		.byte	0x4
+ 341 00b5 0000 0000 		.long	.LASF13
+ 342 00b9 09        		.uleb128 0x9
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 7
+
+
+ 343 00ba 01        		.byte	0x1
+ 344 00bb 0000 0000 		.long	.LASF18
+ 345 00bf 01        		.byte	0x1
+ 346 00c0 09        		.byte	0x9
+ 347 00c1 01        		.byte	0x1
+ 348 00c2 01        		.byte	0x1
+ 349 00c3 D800 0000 		.long	0xd8
+ 350 00c7 0A        		.uleb128 0xa
+ 351 00c8 6D73 00   		.string	"ms"
+ 352 00cb 01        		.byte	0x1
+ 353 00cc 08        		.byte	0x8
+ 354 00cd 3300 0000 		.long	0x33
+ 355 00d1 0B        		.uleb128 0xb
+ 356 00d2 0B        		.uleb128 0xb
+ 357 00d3 08        		.uleb128 0x8
+ 358 00d4 08        		.uleb128 0x8
+ 359 00d5 00        		.byte	0x0
+ 360 00d6 00        		.byte	0x0
+ 361 00d7 00        		.byte	0x0
+ 362 00d8 0C        		.uleb128 0xc
+ 363 00d9 B900 0000 		.long	0xb9
+ 364 00dd 0000 0000 		.long	.LFB6
+ 365 00e1 0000 0000 		.long	.LFE6
+ 366 00e5 02        		.byte	0x2
+ 367 00e6 90        		.byte	0x90
+ 368 00e7 20        		.uleb128 0x20
+ 369 00e8 2F01 0000 		.long	0x12f
+ 370 00ec 0D        		.uleb128 0xd
+ 371 00ed C700 0000 		.long	0xc7
+ 372 00f1 06        		.byte	0x6
+ 373 00f2 68        		.byte	0x68
+ 374 00f3 93        		.byte	0x93
+ 375 00f4 01        		.uleb128 0x1
+ 376 00f5 69        		.byte	0x69
+ 377 00f6 93        		.byte	0x93
+ 378 00f7 01        		.uleb128 0x1
+ 379 00f8 0E        		.uleb128 0xe
+ 380 00f9 8100 0000 		.long	0x81
+ 381 00fd 0000 0000 		.long	.LBB26
+ 382 0101 0000 0000 		.long	.LBE26
+ 383 0105 01        		.byte	0x1
+ 384 0106 0B        		.byte	0xb
+ 385 0107 0F        		.uleb128 0xf
+ 386 0108 0000 0000 		.long	.LBB27
+ 387 010c 0000 0000 		.long	.LBE27
+ 388 0110 0E        		.uleb128 0xe
+ 389 0111 6800 0000 		.long	0x68
+ 390 0115 0000 0000 		.long	.LBB28
+ 391 0119 0000 0000 		.long	.LBE28
+ 392 011d 03        		.byte	0x3
+ 393 011e 82        		.byte	0x82
+ 394 011f 0D        		.uleb128 0xd
+ 395 0120 7500 0000 		.long	0x75
+ 396 0124 06        		.byte	0x6
+ 397 0125 6E        		.byte	0x6e
+ 398 0126 93        		.byte	0x93
+ 399 0127 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 8
+
+
+ 400 0128 6F        		.byte	0x6f
+ 401 0129 93        		.byte	0x93
+ 402 012a 01        		.uleb128 0x1
+ 403 012b 00        		.byte	0x0
+ 404 012c 00        		.byte	0x0
+ 405 012d 00        		.byte	0x0
+ 406 012e 00        		.byte	0x0
+ 407 012f 10        		.uleb128 0x10
+ 408 0130 01        		.byte	0x1
+ 409 0131 0000 0000 		.long	.LASF19
+ 410 0135 01        		.byte	0x1
+ 411 0136 11        		.byte	0x11
+ 412 0137 01        		.byte	0x1
+ 413 0138 3300 0000 		.long	0x33
+ 414 013c 0000 0000 		.long	.LFB7
+ 415 0140 0000 0000 		.long	.LFE7
+ 416 0144 02        		.byte	0x2
+ 417 0145 90        		.byte	0x90
+ 418 0146 20        		.uleb128 0x20
+ 419 0147 11        		.uleb128 0x11
+ 420 0148 0000 0000 		.long	.LASF20
+ 421 014c 01        		.byte	0x1
+ 422 014d 15        		.byte	0x15
+ 423 014e 3300 0000 		.long	0x33
+ 424 0152 0000 0000 		.long	.LLST2
+ 425 0156 12        		.uleb128 0x12
+ 426 0157 B900 0000 		.long	0xb9
+ 427 015b 0000 0000 		.long	.Ldebug_ranges0+0x0
+ 428 015f 01        		.byte	0x1
+ 429 0160 20        		.byte	0x20
+ 430 0161 9501 0000 		.long	0x195
+ 431 0165 13        		.uleb128 0x13
+ 432 0166 EC00 0000 		.long	0xec
+ 433 016a 14        		.uleb128 0x14
+ 434 016b 8100 0000 		.long	0x81
+ 435 016f 0000 0000 		.long	.Ldebug_ranges0+0x18
+ 436 0173 01        		.byte	0x1
+ 437 0174 0B        		.byte	0xb
+ 438 0175 15        		.uleb128 0x15
+ 439 0176 0000 0000 		.long	.Ldebug_ranges0+0x30
+ 440 017a 14        		.uleb128 0x14
+ 441 017b 6800 0000 		.long	0x68
+ 442 017f 0000 0000 		.long	.Ldebug_ranges0+0x48
+ 443 0183 03        		.byte	0x3
+ 444 0184 82        		.byte	0x82
+ 445 0185 0D        		.uleb128 0xd
+ 446 0186 7500 0000 		.long	0x75
+ 447 018a 06        		.byte	0x6
+ 448 018b 6E        		.byte	0x6e
+ 449 018c 93        		.byte	0x93
+ 450 018d 01        		.uleb128 0x1
+ 451 018e 6F        		.byte	0x6f
+ 452 018f 93        		.byte	0x93
+ 453 0190 01        		.uleb128 0x1
+ 454 0191 00        		.byte	0x0
+ 455 0192 00        		.byte	0x0
+ 456 0193 00        		.byte	0x0
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 9
+
+
+ 457 0194 00        		.byte	0x0
+ 458 0195 0E        		.uleb128 0xe
+ 459 0196 B900 0000 		.long	0xb9
+ 460 019a 0000 0000 		.long	.LBB42
+ 461 019e 0000 0000 		.long	.LBE42
+ 462 01a2 01        		.byte	0x1
+ 463 01a3 22        		.byte	0x22
+ 464 01a4 13        		.uleb128 0x13
+ 465 01a5 EC00 0000 		.long	0xec
+ 466 01a9 0E        		.uleb128 0xe
+ 467 01aa 8100 0000 		.long	0x81
+ 468 01ae 0000 0000 		.long	.LBB44
+ 469 01b2 0000 0000 		.long	.LBE44
+ 470 01b6 01        		.byte	0x1
+ 471 01b7 0B        		.byte	0xb
+ 472 01b8 0F        		.uleb128 0xf
+ 473 01b9 0000 0000 		.long	.LBB45
+ 474 01bd 0000 0000 		.long	.LBE45
+ 475 01c1 0E        		.uleb128 0xe
+ 476 01c2 6800 0000 		.long	0x68
+ 477 01c6 0000 0000 		.long	.LBB46
+ 478 01ca 0000 0000 		.long	.LBE46
+ 479 01ce 03        		.byte	0x3
+ 480 01cf 82        		.byte	0x82
+ 481 01d0 16        		.uleb128 0x16
+ 482 01d1 7500 0000 		.long	0x75
+ 483 01d5 0000 0000 		.long	.LLST3
+ 484 01d9 00        		.byte	0x0
+ 485 01da 00        		.byte	0x0
+ 486 01db 00        		.byte	0x0
+ 487 01dc 00        		.byte	0x0
+ 488 01dd 00        		.byte	0x0
+ 489 01de 00        		.byte	0x0
+ 490               		.section	.debug_abbrev
+ 491 0000 01        		.uleb128 0x1
+ 492 0001 11        		.uleb128 0x11
+ 493 0002 01        		.byte	0x1
+ 494 0003 25        		.uleb128 0x25
+ 495 0004 0E        		.uleb128 0xe
+ 496 0005 13        		.uleb128 0x13
+ 497 0006 0B        		.uleb128 0xb
+ 498 0007 03        		.uleb128 0x3
+ 499 0008 0E        		.uleb128 0xe
+ 500 0009 1B        		.uleb128 0x1b
+ 501 000a 0E        		.uleb128 0xe
+ 502 000b 11        		.uleb128 0x11
+ 503 000c 01        		.uleb128 0x1
+ 504 000d 12        		.uleb128 0x12
+ 505 000e 01        		.uleb128 0x1
+ 506 000f 10        		.uleb128 0x10
+ 507 0010 06        		.uleb128 0x6
+ 508 0011 00        		.byte	0x0
+ 509 0012 00        		.byte	0x0
+ 510 0013 02        		.uleb128 0x2
+ 511 0014 24        		.uleb128 0x24
+ 512 0015 00        		.byte	0x0
+ 513 0016 0B        		.uleb128 0xb
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 10
+
+
+ 514 0017 0B        		.uleb128 0xb
+ 515 0018 3E        		.uleb128 0x3e
+ 516 0019 0B        		.uleb128 0xb
+ 517 001a 03        		.uleb128 0x3
+ 518 001b 0E        		.uleb128 0xe
+ 519 001c 00        		.byte	0x0
+ 520 001d 00        		.byte	0x0
+ 521 001e 03        		.uleb128 0x3
+ 522 001f 24        		.uleb128 0x24
+ 523 0020 00        		.byte	0x0
+ 524 0021 0B        		.uleb128 0xb
+ 525 0022 0B        		.uleb128 0xb
+ 526 0023 3E        		.uleb128 0x3e
+ 527 0024 0B        		.uleb128 0xb
+ 528 0025 03        		.uleb128 0x3
+ 529 0026 08        		.uleb128 0x8
+ 530 0027 00        		.byte	0x0
+ 531 0028 00        		.byte	0x0
+ 532 0029 04        		.uleb128 0x4
+ 533 002a 16        		.uleb128 0x16
+ 534 002b 00        		.byte	0x0
+ 535 002c 03        		.uleb128 0x3
+ 536 002d 0E        		.uleb128 0xe
+ 537 002e 3A        		.uleb128 0x3a
+ 538 002f 0B        		.uleb128 0xb
+ 539 0030 3B        		.uleb128 0x3b
+ 540 0031 0B        		.uleb128 0xb
+ 541 0032 49        		.uleb128 0x49
+ 542 0033 13        		.uleb128 0x13
+ 543 0034 00        		.byte	0x0
+ 544 0035 00        		.byte	0x0
+ 545 0036 05        		.uleb128 0x5
+ 546 0037 2E        		.uleb128 0x2e
+ 547 0038 01        		.byte	0x1
+ 548 0039 03        		.uleb128 0x3
+ 549 003a 0E        		.uleb128 0xe
+ 550 003b 3A        		.uleb128 0x3a
+ 551 003c 0B        		.uleb128 0xb
+ 552 003d 3B        		.uleb128 0x3b
+ 553 003e 0B        		.uleb128 0xb
+ 554 003f 27        		.uleb128 0x27
+ 555 0040 0C        		.uleb128 0xc
+ 556 0041 20        		.uleb128 0x20
+ 557 0042 0B        		.uleb128 0xb
+ 558 0043 01        		.uleb128 0x1
+ 559 0044 13        		.uleb128 0x13
+ 560 0045 00        		.byte	0x0
+ 561 0046 00        		.byte	0x0
+ 562 0047 06        		.uleb128 0x6
+ 563 0048 05        		.uleb128 0x5
+ 564 0049 00        		.byte	0x0
+ 565 004a 03        		.uleb128 0x3
+ 566 004b 0E        		.uleb128 0xe
+ 567 004c 3A        		.uleb128 0x3a
+ 568 004d 0B        		.uleb128 0xb
+ 569 004e 3B        		.uleb128 0x3b
+ 570 004f 0B        		.uleb128 0xb
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 11
+
+
+ 571 0050 49        		.uleb128 0x49
+ 572 0051 13        		.uleb128 0x13
+ 573 0052 00        		.byte	0x0
+ 574 0053 00        		.byte	0x0
+ 575 0054 07        		.uleb128 0x7
+ 576 0055 34        		.uleb128 0x34
+ 577 0056 00        		.byte	0x0
+ 578 0057 03        		.uleb128 0x3
+ 579 0058 0E        		.uleb128 0xe
+ 580 0059 3A        		.uleb128 0x3a
+ 581 005a 0B        		.uleb128 0xb
+ 582 005b 3B        		.uleb128 0x3b
+ 583 005c 0B        		.uleb128 0xb
+ 584 005d 49        		.uleb128 0x49
+ 585 005e 13        		.uleb128 0x13
+ 586 005f 00        		.byte	0x0
+ 587 0060 00        		.byte	0x0
+ 588 0061 08        		.uleb128 0x8
+ 589 0062 0B        		.uleb128 0xb
+ 590 0063 00        		.byte	0x0
+ 591 0064 00        		.byte	0x0
+ 592 0065 00        		.byte	0x0
+ 593 0066 09        		.uleb128 0x9
+ 594 0067 2E        		.uleb128 0x2e
+ 595 0068 01        		.byte	0x1
+ 596 0069 3F        		.uleb128 0x3f
+ 597 006a 0C        		.uleb128 0xc
+ 598 006b 03        		.uleb128 0x3
+ 599 006c 0E        		.uleb128 0xe
+ 600 006d 3A        		.uleb128 0x3a
+ 601 006e 0B        		.uleb128 0xb
+ 602 006f 3B        		.uleb128 0x3b
+ 603 0070 0B        		.uleb128 0xb
+ 604 0071 27        		.uleb128 0x27
+ 605 0072 0C        		.uleb128 0xc
+ 606 0073 20        		.uleb128 0x20
+ 607 0074 0B        		.uleb128 0xb
+ 608 0075 01        		.uleb128 0x1
+ 609 0076 13        		.uleb128 0x13
+ 610 0077 00        		.byte	0x0
+ 611 0078 00        		.byte	0x0
+ 612 0079 0A        		.uleb128 0xa
+ 613 007a 05        		.uleb128 0x5
+ 614 007b 00        		.byte	0x0
+ 615 007c 03        		.uleb128 0x3
+ 616 007d 08        		.uleb128 0x8
+ 617 007e 3A        		.uleb128 0x3a
+ 618 007f 0B        		.uleb128 0xb
+ 619 0080 3B        		.uleb128 0x3b
+ 620 0081 0B        		.uleb128 0xb
+ 621 0082 49        		.uleb128 0x49
+ 622 0083 13        		.uleb128 0x13
+ 623 0084 00        		.byte	0x0
+ 624 0085 00        		.byte	0x0
+ 625 0086 0B        		.uleb128 0xb
+ 626 0087 0B        		.uleb128 0xb
+ 627 0088 01        		.byte	0x1
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 12
+
+
+ 628 0089 00        		.byte	0x0
+ 629 008a 00        		.byte	0x0
+ 630 008b 0C        		.uleb128 0xc
+ 631 008c 2E        		.uleb128 0x2e
+ 632 008d 01        		.byte	0x1
+ 633 008e 31        		.uleb128 0x31
+ 634 008f 13        		.uleb128 0x13
+ 635 0090 11        		.uleb128 0x11
+ 636 0091 01        		.uleb128 0x1
+ 637 0092 12        		.uleb128 0x12
+ 638 0093 01        		.uleb128 0x1
+ 639 0094 40        		.uleb128 0x40
+ 640 0095 0A        		.uleb128 0xa
+ 641 0096 01        		.uleb128 0x1
+ 642 0097 13        		.uleb128 0x13
+ 643 0098 00        		.byte	0x0
+ 644 0099 00        		.byte	0x0
+ 645 009a 0D        		.uleb128 0xd
+ 646 009b 05        		.uleb128 0x5
+ 647 009c 00        		.byte	0x0
+ 648 009d 31        		.uleb128 0x31
+ 649 009e 13        		.uleb128 0x13
+ 650 009f 02        		.uleb128 0x2
+ 651 00a0 0A        		.uleb128 0xa
+ 652 00a1 00        		.byte	0x0
+ 653 00a2 00        		.byte	0x0
+ 654 00a3 0E        		.uleb128 0xe
+ 655 00a4 1D        		.uleb128 0x1d
+ 656 00a5 01        		.byte	0x1
+ 657 00a6 31        		.uleb128 0x31
+ 658 00a7 13        		.uleb128 0x13
+ 659 00a8 11        		.uleb128 0x11
+ 660 00a9 01        		.uleb128 0x1
+ 661 00aa 12        		.uleb128 0x12
+ 662 00ab 01        		.uleb128 0x1
+ 663 00ac 58        		.uleb128 0x58
+ 664 00ad 0B        		.uleb128 0xb
+ 665 00ae 59        		.uleb128 0x59
+ 666 00af 0B        		.uleb128 0xb
+ 667 00b0 00        		.byte	0x0
+ 668 00b1 00        		.byte	0x0
+ 669 00b2 0F        		.uleb128 0xf
+ 670 00b3 0B        		.uleb128 0xb
+ 671 00b4 01        		.byte	0x1
+ 672 00b5 11        		.uleb128 0x11
+ 673 00b6 01        		.uleb128 0x1
+ 674 00b7 12        		.uleb128 0x12
+ 675 00b8 01        		.uleb128 0x1
+ 676 00b9 00        		.byte	0x0
+ 677 00ba 00        		.byte	0x0
+ 678 00bb 10        		.uleb128 0x10
+ 679 00bc 2E        		.uleb128 0x2e
+ 680 00bd 01        		.byte	0x1
+ 681 00be 3F        		.uleb128 0x3f
+ 682 00bf 0C        		.uleb128 0xc
+ 683 00c0 03        		.uleb128 0x3
+ 684 00c1 0E        		.uleb128 0xe
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 13
+
+
+ 685 00c2 3A        		.uleb128 0x3a
+ 686 00c3 0B        		.uleb128 0xb
+ 687 00c4 3B        		.uleb128 0x3b
+ 688 00c5 0B        		.uleb128 0xb
+ 689 00c6 27        		.uleb128 0x27
+ 690 00c7 0C        		.uleb128 0xc
+ 691 00c8 49        		.uleb128 0x49
+ 692 00c9 13        		.uleb128 0x13
+ 693 00ca 11        		.uleb128 0x11
+ 694 00cb 01        		.uleb128 0x1
+ 695 00cc 12        		.uleb128 0x12
+ 696 00cd 01        		.uleb128 0x1
+ 697 00ce 40        		.uleb128 0x40
+ 698 00cf 0A        		.uleb128 0xa
+ 699 00d0 00        		.byte	0x0
+ 700 00d1 00        		.byte	0x0
+ 701 00d2 11        		.uleb128 0x11
+ 702 00d3 34        		.uleb128 0x34
+ 703 00d4 00        		.byte	0x0
+ 704 00d5 03        		.uleb128 0x3
+ 705 00d6 0E        		.uleb128 0xe
+ 706 00d7 3A        		.uleb128 0x3a
+ 707 00d8 0B        		.uleb128 0xb
+ 708 00d9 3B        		.uleb128 0x3b
+ 709 00da 0B        		.uleb128 0xb
+ 710 00db 49        		.uleb128 0x49
+ 711 00dc 13        		.uleb128 0x13
+ 712 00dd 02        		.uleb128 0x2
+ 713 00de 06        		.uleb128 0x6
+ 714 00df 00        		.byte	0x0
+ 715 00e0 00        		.byte	0x0
+ 716 00e1 12        		.uleb128 0x12
+ 717 00e2 1D        		.uleb128 0x1d
+ 718 00e3 01        		.byte	0x1
+ 719 00e4 31        		.uleb128 0x31
+ 720 00e5 13        		.uleb128 0x13
+ 721 00e6 55        		.uleb128 0x55
+ 722 00e7 06        		.uleb128 0x6
+ 723 00e8 58        		.uleb128 0x58
+ 724 00e9 0B        		.uleb128 0xb
+ 725 00ea 59        		.uleb128 0x59
+ 726 00eb 0B        		.uleb128 0xb
+ 727 00ec 01        		.uleb128 0x1
+ 728 00ed 13        		.uleb128 0x13
+ 729 00ee 00        		.byte	0x0
+ 730 00ef 00        		.byte	0x0
+ 731 00f0 13        		.uleb128 0x13
+ 732 00f1 05        		.uleb128 0x5
+ 733 00f2 00        		.byte	0x0
+ 734 00f3 31        		.uleb128 0x31
+ 735 00f4 13        		.uleb128 0x13
+ 736 00f5 00        		.byte	0x0
+ 737 00f6 00        		.byte	0x0
+ 738 00f7 14        		.uleb128 0x14
+ 739 00f8 1D        		.uleb128 0x1d
+ 740 00f9 01        		.byte	0x1
+ 741 00fa 31        		.uleb128 0x31
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 14
+
+
+ 742 00fb 13        		.uleb128 0x13
+ 743 00fc 55        		.uleb128 0x55
+ 744 00fd 06        		.uleb128 0x6
+ 745 00fe 58        		.uleb128 0x58
+ 746 00ff 0B        		.uleb128 0xb
+ 747 0100 59        		.uleb128 0x59
+ 748 0101 0B        		.uleb128 0xb
+ 749 0102 00        		.byte	0x0
+ 750 0103 00        		.byte	0x0
+ 751 0104 15        		.uleb128 0x15
+ 752 0105 0B        		.uleb128 0xb
+ 753 0106 01        		.byte	0x1
+ 754 0107 55        		.uleb128 0x55
+ 755 0108 06        		.uleb128 0x6
+ 756 0109 00        		.byte	0x0
+ 757 010a 00        		.byte	0x0
+ 758 010b 16        		.uleb128 0x16
+ 759 010c 05        		.uleb128 0x5
+ 760 010d 00        		.byte	0x0
+ 761 010e 31        		.uleb128 0x31
+ 762 010f 13        		.uleb128 0x13
+ 763 0110 02        		.uleb128 0x2
+ 764 0111 06        		.uleb128 0x6
+ 765 0112 00        		.byte	0x0
+ 766 0113 00        		.byte	0x0
+ 767 0114 00        		.byte	0x0
+ 768               		.section	.debug_pubnames,"",@progbits
+ 769 0000 2000 0000 		.long	0x20
+ 770 0004 0200      		.word	0x2
+ 771 0006 0000 0000 		.long	.Ldebug_info0
+ 772 000a DF01 0000 		.long	0x1df
+ 773 000e D800 0000 		.long	0xd8
+ 774 0012 7761 6974 		.string	"wait"
+ 774      00
+ 775 0017 2F01 0000 		.long	0x12f
+ 776 001b 6D61 696E 		.string	"main"
+ 776      00
+ 777 0020 0000 0000 		.long	0x0
+ 778               		.section	.debug_aranges,"",@progbits
+ 779 0000 1C00 0000 		.long	0x1c
+ 780 0004 0200      		.word	0x2
+ 781 0006 0000 0000 		.long	.Ldebug_info0
+ 782 000a 04        		.byte	0x4
+ 783 000b 00        		.byte	0x0
+ 784 000c 0000      		.word	0x0
+ 785 000e 0000      		.word	0x0
+ 786 0010 0000 0000 		.long	.Ltext0
+ 787 0014 5600 0000 		.long	.Letext0-.Ltext0
+ 788 0018 0000 0000 		.long	0x0
+ 789 001c 0000 0000 		.long	0x0
+ 790               		.section	.debug_ranges,"",@progbits
+ 791               	.Ldebug_ranges0:
+ 792 0000 1E00 0000 		.long	.LBB30-.Ltext0
+ 793 0004 2200 0000 		.long	.LBE30-.Ltext0
+ 794 0008 3400 0000 		.long	.LBB41-.Ltext0
+ 795 000c 4200 0000 		.long	.LBE41-.Ltext0
+ 796 0010 0000 0000 		.long	0x0
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 15
+
+
+ 797 0014 0000 0000 		.long	0x0
+ 798 0018 1E00 0000 		.long	.LBB32-.Ltext0
+ 799 001c 2200 0000 		.long	.LBE32-.Ltext0
+ 800 0020 3400 0000 		.long	.LBB39-.Ltext0
+ 801 0024 3A00 0000 		.long	.LBE39-.Ltext0
+ 802 0028 0000 0000 		.long	0x0
+ 803 002c 0000 0000 		.long	0x0
+ 804 0030 1E00 0000 		.long	.LBB33-.Ltext0
+ 805 0034 2200 0000 		.long	.LBE33-.Ltext0
+ 806 0038 3400 0000 		.long	.LBB38-.Ltext0
+ 807 003c 3A00 0000 		.long	.LBE38-.Ltext0
+ 808 0040 0000 0000 		.long	0x0
+ 809 0044 0000 0000 		.long	0x0
+ 810 0048 1E00 0000 		.long	.LBB34-.Ltext0
+ 811 004c 2200 0000 		.long	.LBE34-.Ltext0
+ 812 0050 3400 0000 		.long	.LBB37-.Ltext0
+ 813 0054 3A00 0000 		.long	.LBE37-.Ltext0
+ 814 0058 0000 0000 		.long	0x0
+ 815 005c 0000 0000 		.long	0x0
+ 816               		.section	.debug_line
+ 817 0000 6F01 0000 		.long	.LELT0-.LSLT0
+ 818               	.LSLT0:
+ 819 0004 0200      		.word	0x2
+ 820 0006 AB00 0000 		.long	.LELTP0-.LASLTP0
+ 821               	.LASLTP0:
+ 822 000a 01        		.byte	0x1
+ 823 000b 01        		.byte	0x1
+ 824 000c F6        		.byte	0xf6
+ 825 000d F5        		.byte	0xf5
+ 826 000e 0A        		.byte	0xa
+ 827 000f 00        		.byte	0x0
+ 828 0010 01        		.byte	0x1
+ 829 0011 01        		.byte	0x1
+ 830 0012 01        		.byte	0x1
+ 831 0013 01        		.byte	0x1
+ 832 0014 00        		.byte	0x0
+ 833 0015 00        		.byte	0x0
+ 834 0016 00        		.byte	0x0
+ 835 0017 01        		.byte	0x1
+ 836 0018 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include"
+ 836      696E 6176 
+ 836      722D 3230 
+ 836      3130 3031 
+ 836      3130 2F6C 
+ 837 0044 00        		.byte	0
+ 838 0045 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include/util"
+ 838      696E 6176 
+ 838      722D 3230 
+ 838      3130 3031 
+ 838      3130 2F6C 
+ 839 0076 00        		.byte	0
+ 840 0077 00        		.byte	0x0
+ 841 0078 6D61 696E 		.string	"main.c"
+ 841      2E63 00
+ 842 007f 00        		.uleb128 0x0
+ 843 0080 00        		.uleb128 0x0
+ 844 0081 00        		.uleb128 0x0
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 16
+
+
+ 845 0082 7574 696C 		.string	"util/delay_basic.h"
+ 845      2F64 656C 
+ 845      6179 5F62 
+ 845      6173 6963 
+ 845      2E68 00
+ 846 0095 01        		.uleb128 0x1
+ 847 0096 00        		.uleb128 0x0
+ 848 0097 00        		.uleb128 0x0
+ 849 0098 7574 696C 		.string	"util/delay.h"
+ 849      2F64 656C 
+ 849      6179 2E68 
+ 849      00
+ 850 00a5 01        		.uleb128 0x1
+ 851 00a6 00        		.uleb128 0x0
+ 852 00a7 00        		.uleb128 0x0
+ 853 00a8 7374 6469 		.string	"stdint.h"
+ 853      6E74 2E68 
+ 853      00
+ 854 00b1 01        		.uleb128 0x1
+ 855 00b2 00        		.uleb128 0x0
+ 856 00b3 00        		.uleb128 0x0
+ 857 00b4 00        		.byte	0x0
+ 858               	.LELTP0:
+ 859 00b5 00        		.byte	0x0
+ 860 00b6 05        		.uleb128 0x5
+ 861 00b7 02        		.byte	0x2
+ 862 00b8 0000 0000 		.long	.LM1
+ 863 00bc 1C        		.byte	0x1c
+ 864 00bd 00        		.byte	0x0
+ 865 00be 05        		.uleb128 0x5
+ 866 00bf 02        		.byte	0x2
+ 867 00c0 0000 0000 		.long	.LM2
+ 868 00c4 04        		.byte	0x4
+ 869 00c5 02        		.uleb128 0x2
+ 870 00c6 74        		.byte	0x74
+ 871 00c7 00        		.byte	0x0
+ 872 00c8 05        		.uleb128 0x5
+ 873 00c9 02        		.byte	0x2
+ 874 00ca 0000 0000 		.long	.LM3
+ 875 00ce 04        		.byte	0x4
+ 876 00cf 01        		.uleb128 0x1
+ 877 00d0 03        		.byte	0x3
+ 878 00d1 A37F      		.sleb128 -93
+ 879 00d3 01        		.byte	0x1
+ 880 00d4 00        		.byte	0x0
+ 881 00d5 05        		.uleb128 0x5
+ 882 00d6 02        		.byte	0x2
+ 883 00d7 0000 0000 		.long	.LM4
+ 884 00db 12        		.byte	0x12
+ 885 00dc 00        		.byte	0x0
+ 886 00dd 05        		.uleb128 0x5
+ 887 00de 02        		.byte	0x2
+ 888 00df 0000 0000 		.long	.LM5
+ 889 00e3 18        		.byte	0x18
+ 890 00e4 00        		.byte	0x0
+ 891 00e5 05        		.uleb128 0x5
+ 892 00e6 02        		.byte	0x2
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 17
+
+
+ 893 00e7 0000 0000 		.long	.LM6
+ 894 00eb 17        		.byte	0x17
+ 895 00ec 00        		.byte	0x0
+ 896 00ed 05        		.uleb128 0x5
+ 897 00ee 02        		.byte	0x2
+ 898 00ef 0000 0000 		.long	.LM7
+ 899 00f3 15        		.byte	0x15
+ 900 00f4 00        		.byte	0x0
+ 901 00f5 05        		.uleb128 0x5
+ 902 00f6 02        		.byte	0x2
+ 903 00f7 0000 0000 		.long	.LM8
+ 904 00fb 15        		.byte	0x15
+ 905 00fc 00        		.byte	0x0
+ 906 00fd 05        		.uleb128 0x5
+ 907 00fe 02        		.byte	0x2
+ 908 00ff 0000 0000 		.long	.LM9
+ 909 0103 19        		.byte	0x19
+ 910 0104 00        		.byte	0x0
+ 911 0105 05        		.uleb128 0x5
+ 912 0106 02        		.byte	0x2
+ 913 0107 0000 0000 		.long	.LM10
+ 914 010b 04        		.byte	0x4
+ 915 010c 02        		.uleb128 0x2
+ 916 010d 65        		.byte	0x65
+ 917 010e 00        		.byte	0x0
+ 918 010f 05        		.uleb128 0x5
+ 919 0110 02        		.byte	0x2
+ 920 0111 0000 0000 		.long	.LM11
+ 921 0115 04        		.byte	0x4
+ 922 0116 01        		.uleb128 0x1
+ 923 0117 03        		.byte	0x3
+ 924 0118 AF7F      		.sleb128 -81
+ 925 011a 01        		.byte	0x1
+ 926 011b 00        		.byte	0x0
+ 927 011c 05        		.uleb128 0x5
+ 928 011d 02        		.byte	0x2
+ 929 011e 0000 0000 		.long	.LM12
+ 930 0122 16        		.byte	0x16
+ 931 0123 00        		.byte	0x0
+ 932 0124 05        		.uleb128 0x5
+ 933 0125 02        		.byte	0x2
+ 934 0126 0000 0000 		.long	.LM13
+ 935 012a 04        		.byte	0x4
+ 936 012b 02        		.uleb128 0x2
+ 937 012c 63        		.byte	0x63
+ 938 012d 00        		.byte	0x0
+ 939 012e 05        		.uleb128 0x5
+ 940 012f 02        		.byte	0x2
+ 941 0130 0000 0000 		.long	.LM14
+ 942 0134 04        		.byte	0x4
+ 943 0135 01        		.uleb128 0x1
+ 944 0136 03        		.byte	0x3
+ 945 0137 A37F      		.sleb128 -93
+ 946 0139 01        		.byte	0x1
+ 947 013a 00        		.byte	0x0
+ 948 013b 05        		.uleb128 0x5
+ 949 013c 02        		.byte	0x2
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 18
+
+
+ 950 013d 0000 0000 		.long	.LM15
+ 951 0141 12        		.byte	0x12
+ 952 0142 00        		.byte	0x0
+ 953 0143 05        		.uleb128 0x5
+ 954 0144 02        		.byte	0x2
+ 955 0145 0000 0000 		.long	.LM16
+ 956 0149 2B        		.byte	0x2b
+ 957 014a 00        		.byte	0x0
+ 958 014b 05        		.uleb128 0x5
+ 959 014c 02        		.byte	0x2
+ 960 014d 0000 0000 		.long	.LM17
+ 961 0151 04        		.byte	0x4
+ 962 0152 02        		.uleb128 0x2
+ 963 0153 5C        		.byte	0x5c
+ 964 0154 00        		.byte	0x0
+ 965 0155 05        		.uleb128 0x5
+ 966 0156 02        		.byte	0x2
+ 967 0157 0000 0000 		.long	.LM18
+ 968 015b 04        		.byte	0x4
+ 969 015c 01        		.uleb128 0x1
+ 970 015d 03        		.byte	0x3
+ 971 015e A37F      		.sleb128 -93
+ 972 0160 01        		.byte	0x1
+ 973 0161 00        		.byte	0x0
+ 974 0162 05        		.uleb128 0x5
+ 975 0163 02        		.byte	0x2
+ 976 0164 0000 0000 		.long	.LM19
+ 977 0168 12        		.byte	0x12
+ 978 0169 00        		.byte	0x0
+ 979 016a 05        		.uleb128 0x5
+ 980 016b 02        		.byte	0x2
+ 981 016c 0000 0000 		.long	.Letext0
+ 982 0170 00        		.byte	0x0
+ 983 0171 01        		.uleb128 0x1
+ 984 0172 01        		.byte	0x1
+ 985               	.LELT0:
+ 986 0173 1600 0000 		.section	.debug_str,"MS",@progbits,1
+ 986      0200 1000 
+ 986      0000 0101 
+ 986      FB0E 0A00 
+ 986      0101 0101 
+ 987               	.LASF1:
+ 988 0000 756E 7369 		.string	"unsigned char"
+ 988      676E 6564 
+ 988      2063 6861 
+ 988      7200 
+ 989               	.LASF20:
+ 990 000e 7761 6974 		.string	"waitingtime"
+ 990      696E 6774 
+ 990      696D 6500 
+ 991               	.LASF7:
+ 992 001a 5F64 656C 		.string	"_delay_loop_2"
+ 992      6179 5F6C 
+ 992      6F6F 705F 
+ 992      3200 
+ 993               	.LASF4:
+ 994 0028 6C6F 6E67 		.string	"long unsigned int"
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 19
+
+
+ 994      2075 6E73 
+ 994      6967 6E65 
+ 994      6420 696E 
+ 994      7400 
+ 995               	.LASF8:
+ 996 003a 5F64 656C 		.string	"_delay_ms"
+ 996      6179 5F6D 
+ 996      7300 
+ 997               	.LASF14:
+ 998 0044 474E 5520 		.string	"GNU C 4.3.3"
+ 998      4320 342E 
+ 998      332E 3300 
+ 999               	.LASF13:
+ 1000 0050 646F 7562 		.string	"double"
+ 1000      6C65 00
+ 1001               	.LASF12:
+ 1002 0057 5F5F 746D 		.string	"__tmp"
+ 1002      7000 
+ 1003               	.LASF19:
+ 1004 005d 6D61 696E 		.string	"main"
+ 1004      00
+ 1005               	.LASF18:
+ 1006 0062 7761 6974 		.string	"wait"
+ 1006      00
+ 1007               	.LASF2:
+ 1008 0067 756E 7369 		.string	"unsigned int"
+ 1008      676E 6564 
+ 1008      2069 6E74 
+ 1008      00
+ 1009               	.LASF6:
+ 1010 0074 6C6F 6E67 		.string	"long long unsigned int"
+ 1010      206C 6F6E 
+ 1010      6720 756E 
+ 1010      7369 676E 
+ 1010      6564 2069 
+ 1011               	.LASF16:
+ 1012 008b 433A 5C55 		.string	"C:\\Users\\Bilel\\Documents\\GitHub\\MicroControllers\\week 1\\B6"
+ 1012      7365 7273 
+ 1012      5C42 696C 
+ 1012      656C 5C44 
+ 1012      6F63 756D 
+ 1013               	.LASF5:
+ 1014 00c6 6C6F 6E67 		.string	"long long int"
+ 1014      206C 6F6E 
+ 1014      6720 696E 
+ 1014      7400 
+ 1015               	.LASF15:
+ 1016 00d4 6D61 696E 		.string	"main.c"
+ 1016      2E63 00
+ 1017               	.LASF9:
+ 1018 00db 5F5F 636F 		.string	"__count"
+ 1018      756E 7400 
+ 1019               	.LASF17:
+ 1020 00e3 7569 6E74 		.string	"uint16_t"
+ 1020      3136 5F74 
+ 1020      00
+ 1021               	.LASF11:
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 20
+
+
+ 1022 00ec 5F5F 7469 		.string	"__ticks"
+ 1022      636B 7300 
+ 1023               	.LASF3:
+ 1024 00f4 6C6F 6E67 		.string	"long int"
+ 1024      2069 6E74 
+ 1024      00
+ 1025               	.LASF0:
+ 1026 00fd 7369 676E 		.string	"signed char"
+ 1026      6564 2063 
+ 1026      6861 7200 
+ 1027               	.LASF10:
+ 1028 0109 5F5F 6D73 		.string	"__ms"
+ 1028      00
+GAS LISTING C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:2      *ABS*:0000003f __SREG__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:5      *ABS*:00000034 __CCP__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:18     .text:00000000 wait
+C:\Users\Bilel\AppData\Local\Temp/cc5QLLIO.s:59     .text:00000016 main
+
+NO UNDEFINED SYMBOLS

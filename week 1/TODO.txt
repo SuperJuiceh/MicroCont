@@ -1,0 +1,17 @@
+(DONE) Jeroen Wie? Graan even aandacht voor het voorblad. Belangrijk omdat je dit ook bij je CV kunt toevoegen.
+
+(DONE) Hebben jullie ook een repository?
+
+(DONE/BEHALVE BEWIJS)B2: Werkt dit? Ik mis reflectie met 'bewijs'
+
+(DONE) B3: Kan niet werken, Hebben jullie getest?
+
+(DONE)b4: niet met schuif operator. kan veel efficiënter. 
+
+(DONE)B5: Wat doet jullie code? Waarom de struct? En werkt de code correct met de OR operator in de whileloop? Andere patronen zijn dan niet mogelijk (bijv om-en-om).
+
+(DONE) B6: Geen output naar leds. Hoe heb jullie getest? Zo kan het niet werken, toch?
+
+(DONE) Geen keuze opdrachten gemaakt
+
+Aanvullen en 'proof' toevoegen in vorm van foto/video. Jullie zijn wel goed begonnen.
