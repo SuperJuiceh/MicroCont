@@ -156,10 +156,14 @@
     <Compile Include="Week 1\B1\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 1\B2\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week 1" />
     <Folder Include="Week 1\B1" />
+    <Folder Include="Week 1\B2" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

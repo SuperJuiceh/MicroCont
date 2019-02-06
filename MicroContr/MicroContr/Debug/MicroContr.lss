@@ -158,23 +158,23 @@ int main (void)
 	
 	while (1)
 	{
-		PORTD = 0b1000000;
-  c4:	d0 e4       	ldi	r29, 0x40	; 64
+		PORTD = 0b10000000;
+  c4:	d0 e8       	ldi	r29, 0x80	; 128
 		wait(500);
-		PORTD = 0b0100000;
-  c6:	c0 e2       	ldi	r28, 0x20	; 32
+		PORTD = 0b01000000;
+  c6:	c0 e4       	ldi	r28, 0x40	; 64
 {
 	DDRD = 0b11111111;
 	
 	while (1)
 	{
-		PORTD = 0b1000000;
+		PORTD = 0b10000000;
   c8:	d2 bb       	out	0x12, r29	; 18
 		wait(500);
   ca:	84 ef       	ldi	r24, 0xF4	; 244
   cc:	91 e0       	ldi	r25, 0x01	; 1
   ce:	e7 df       	rcall	.-50     	; 0x9e <wait>
-		PORTD = 0b0100000;
+		PORTD = 0b01000000;
   d0:	c2 bb       	out	0x12, r28	; 18
 		wait(500);
   d2:	84 ef       	ldi	r24, 0xF4	; 244

@@ -16,6 +16,12 @@ Discarded input sections
  .text          0x00000000        0x0 Week 1/B1/main.o
  .data          0x00000000        0x0 Week 1/B1/main.o
  .bss           0x00000000        0x0 Week 1/B1/main.o
+ .text          0x00000000        0x0 Week 1/B2/main.o
+ .data          0x00000000        0x0 Week 1/B2/main.o
+ .bss           0x00000000        0x0 Week 1/B2/main.o
+ .debug_line    0x00000000        0x0 Week 1/B2/main.o
+ .debug_str     0x00000000      0x10c Week 1/B2/main.o
+ .comment       0x00000000       0x31 Week 1/B2/main.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
@@ -51,6 +57,7 @@ Address of section .data set to 0x800100
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
 LOAD main.o
 LOAD Week 1/B1/main.o
+LOAD Week 1/B2/main.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a
 END GROUP

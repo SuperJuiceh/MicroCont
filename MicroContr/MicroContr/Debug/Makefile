@@ -34,13 +34,15 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../Week\ 1 \
-../Week\ 1/B1
+../Week\ 1/B1 \
+../Week\ 1/B2
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../main.c \
-../Week\ 1/B1/main.c
+../Week\ 1/B1/main.c \
+../Week\ 1/B2/main.c
 
 
 PREPROCESSING_SRCS += 
@@ -51,19 +53,23 @@ ASM_SRCS +=
 
 OBJS +=  \
 main.o \
-Week\ 1/B1/main.o
+Week\ 1/B1/main.o \
+Week\ 1/B2/main.o
 
 OBJS_AS_ARGS +=  \
 main.o \
-"Week 1/B1/main.o"
+"Week 1/B1/main.o" \
+"Week 1/B2/main.o"
 
 C_DEPS +=  \
 main.d \
-Week\ 1/B1/main.d
+Week\ 1/B1/main.d \
+Week\ 1/B2/main.d
 
 C_DEPS_AS_ARGS +=  \
 main.d \
-"Week 1/B1/main.d"
+"Week 1/B1/main.d" \
+"Week 1/B2/main.d"
 
 OUTPUT_FILE_PATH +=MicroContr.elf
 
@@ -87,6 +93,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 Week\ 1/B1/main.o: ../Week\ 1/B1/main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Week\ 1/B2/main.o: ../Week\ 1/B2/main.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
