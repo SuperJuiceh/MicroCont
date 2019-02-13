@@ -1,0 +1,933 @@
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 1
+
+
+   1               		.file	"main.c"
+   2               		.arch atmega128
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.section	.debug_abbrev,"",@progbits
+  11               	.Ldebug_abbrev0:
+  12               		.section	.debug_info,"",@progbits
+  13               	.Ldebug_info0:
+  14               		.section	.debug_line,"",@progbits
+  15               	.Ldebug_line0:
+  16               		.text
+  17               	.Ltext0:
+  18               	.global	main
+  19               		.type	main, @function
+  20               	main:
+  21               	.LFB9:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 1092 0000 		sts (currentNumber)+1,__zero_reg__
+  27 0004 1092 0000 		sts currentNumber,__zero_reg__
+  28               	.LM3:
+  29 0008 8FEF      		ldi r24,lo8(-1)
+  30 000a 84BB      		out 52-0x20,r24
+  31               	.LM4:
+  32 000c 12B8      		out 34-0x20,__zero_reg__
+  33               	.LM5:
+  34 000e 8AB7      		in r24,90-0x20
+  35 0010 8A60      		ori r24,lo8(10)
+  36 0012 8ABF      		out 90-0x20,r24
+  37               	.LM6:
+  38 0014 89B7      		in r24,89-0x20
+  39 0016 8063      		ori r24,lo8(48)
+  40 0018 89BF      		out 89-0x20,r24
+  41               	.LM7:
+  42               	/* #APP */
+  43 001a 7894      		sei
+  44               	.LM8:
+  45               	/* #NOAPP */
+  46 001c 0E94 0000 		call init
+  47               	.L2:
+  48 0020 00C0      		rjmp .L2
+  49               	/* epilogue: frame size=0 */
+  50               	/* epilogue: noreturn */
+  51               	/* epilogue end (size=0) */
+  52               	/* function main size 18 (18) */
+  53               	.LFE9:
+  54               		.size	main, .-main
+  55               		.data
+  56               	.LC0:
+  57 0000 2564 00   		.string	"%d"
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 2
+
+
+  58               		.text
+  59               	.global	__vector_6
+  60               		.type	__vector_6, @function
+  61               	__vector_6:
+  62               	.LFB8:
+  63               	.LM9:
+  64               	/* prologue: frame size=15 */
+  65 0022 1F92      		push __zero_reg__
+  66 0024 0F92      		push __tmp_reg__
+  67 0026 0FB6      		in __tmp_reg__,__SREG__
+  68 0028 0F92      		push __tmp_reg__
+  69 002a 1124      		clr __zero_reg__
+  70 002c 0F93      		push r16
+  71 002e 1F93      		push r17
+  72 0030 2F93      		push r18
+  73 0032 3F93      		push r19
+  74 0034 4F93      		push r20
+  75 0036 5F93      		push r21
+  76 0038 6F93      		push r22
+  77 003a 7F93      		push r23
+  78 003c 8F93      		push r24
+  79 003e 9F93      		push r25
+  80 0040 AF93      		push r26
+  81 0042 BF93      		push r27
+  82 0044 EF93      		push r30
+  83 0046 FF93      		push r31
+  84 0048 CF93      		push r28
+  85 004a DF93      		push r29
+  86 004c CDB7      		in r28,__SP_L__
+  87 004e DEB7      		in r29,__SP_H__
+  88 0050 2F97      		sbiw r28,15
+  89 0052 DEBF      		out __SP_H__,r29
+  90 0054 CDBF      		out __SP_L__,r28
+  91               	/* prologue end (size=26) */
+  92               	.LM10:
+  93 0056 0E94 0000 		call clearDisplay
+  94               	.LM11:
+  95 005a 8091 0000 		lds r24,currentNumber
+  96 005e 9091 0000 		lds r25,(currentNumber)+1
+  97 0062 0196      		adiw r24,1
+  98 0064 9093 0000 		sts (currentNumber)+1,r25
+  99 0068 8093 0000 		sts currentNumber,r24
+ 100               	.LM12:
+ 101 006c 9F93      		push r25
+ 102 006e 8F93      		push r24
+ 103 0070 80E0      		ldi r24,lo8(.LC0)
+ 104 0072 90E0      		ldi r25,hi8(.LC0)
+ 105 0074 9F93      		push r25
+ 106 0076 8F93      		push r24
+ 107 0078 8E01      		movw r16,r28
+ 108 007a 0F5F      		subi r16,lo8(-(1))
+ 109 007c 1F4F      		sbci r17,hi8(-(1))
+ 110 007e 1F93      		push r17
+ 111 0080 0F93      		push r16
+ 112 0082 0E94 0000 		call sprintf
+ 113               	.LM13:
+ 114 0086 40E0      		ldi r20,lo8(0)
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 3
+
+
+ 115 0088 50E0      		ldi r21,hi8(0)
+ 116 008a 61E0      		ldi r22,lo8(1)
+ 117 008c 70E0      		ldi r23,hi8(1)
+ 118 008e C801      		movw r24,r16
+ 119 0090 0E94 0000 		call display_text
+ 120               	.LM14:
+ 121 0094 84E6      		ldi r24,lo8(100)
+ 122 0096 90E0      		ldi r25,hi8(100)
+ 123 0098 0E94 0000 		call wait
+ 124 009c 8DB7      		in r24,__SP_L__
+ 125 009e 9EB7      		in r25,__SP_H__
+ 126 00a0 0696      		adiw r24,6
+ 127 00a2 0FB6      		in __tmp_reg__,__SREG__
+ 128 00a4 F894      		cli
+ 129 00a6 9EBF      		out __SP_H__,r25
+ 130 00a8 0FBE      		out __SREG__,__tmp_reg__
+ 131 00aa 8DBF      		out __SP_L__,r24
+ 132               	/* epilogue: frame size=15 */
+ 133 00ac 2F96      		adiw r28,15
+ 134 00ae F894      		cli
+ 135 00b0 DEBF      		out __SP_H__,r29
+ 136 00b2 CDBF      		out __SP_L__,r28
+ 137 00b4 DF91      		pop r29
+ 138 00b6 CF91      		pop r28
+ 139 00b8 FF91      		pop r31
+ 140 00ba EF91      		pop r30
+ 141 00bc BF91      		pop r27
+ 142 00be AF91      		pop r26
+ 143 00c0 9F91      		pop r25
+ 144 00c2 8F91      		pop r24
+ 145 00c4 7F91      		pop r23
+ 146 00c6 6F91      		pop r22
+ 147 00c8 5F91      		pop r21
+ 148 00ca 4F91      		pop r20
+ 149 00cc 3F91      		pop r19
+ 150 00ce 2F91      		pop r18
+ 151 00d0 1F91      		pop r17
+ 152 00d2 0F91      		pop r16
+ 153 00d4 0F90      		pop __tmp_reg__
+ 154 00d6 0FBE      		out __SREG__,__tmp_reg__
+ 155 00d8 0F90      		pop __tmp_reg__
+ 156 00da 1F90      		pop __zero_reg__
+ 157 00dc 1895      		reti
+ 158               	/* epilogue end (size=25) */
+ 159               	/* function __vector_6 size 94 (43) */
+ 160               	.LFE8:
+ 161               		.size	__vector_6, .-__vector_6
+ 162               	.global	__vector_5
+ 163               		.type	__vector_5, @function
+ 164               	__vector_5:
+ 165               	.LFB7:
+ 166               	.LM15:
+ 167               	/* prologue: frame size=15 */
+ 168 00de 1F92      		push __zero_reg__
+ 169 00e0 0F92      		push __tmp_reg__
+ 170 00e2 0FB6      		in __tmp_reg__,__SREG__
+ 171 00e4 0F92      		push __tmp_reg__
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 4
+
+
+ 172 00e6 1124      		clr __zero_reg__
+ 173 00e8 0F93      		push r16
+ 174 00ea 1F93      		push r17
+ 175 00ec 2F93      		push r18
+ 176 00ee 3F93      		push r19
+ 177 00f0 4F93      		push r20
+ 178 00f2 5F93      		push r21
+ 179 00f4 6F93      		push r22
+ 180 00f6 7F93      		push r23
+ 181 00f8 8F93      		push r24
+ 182 00fa 9F93      		push r25
+ 183 00fc AF93      		push r26
+ 184 00fe BF93      		push r27
+ 185 0100 EF93      		push r30
+ 186 0102 FF93      		push r31
+ 187 0104 CF93      		push r28
+ 188 0106 DF93      		push r29
+ 189 0108 CDB7      		in r28,__SP_L__
+ 190 010a DEB7      		in r29,__SP_H__
+ 191 010c 2F97      		sbiw r28,15
+ 192 010e DEBF      		out __SP_H__,r29
+ 193 0110 CDBF      		out __SP_L__,r28
+ 194               	/* prologue end (size=26) */
+ 195               	.LM16:
+ 196 0112 0E94 0000 		call clearDisplay
+ 197               	.LM17:
+ 198 0116 8091 0000 		lds r24,currentNumber
+ 199 011a 9091 0000 		lds r25,(currentNumber)+1
+ 200 011e 0197      		sbiw r24,1
+ 201 0120 9093 0000 		sts (currentNumber)+1,r25
+ 202 0124 8093 0000 		sts currentNumber,r24
+ 203               	.LM18:
+ 204 0128 9F93      		push r25
+ 205 012a 8F93      		push r24
+ 206 012c 80E0      		ldi r24,lo8(.LC0)
+ 207 012e 90E0      		ldi r25,hi8(.LC0)
+ 208 0130 9F93      		push r25
+ 209 0132 8F93      		push r24
+ 210 0134 8E01      		movw r16,r28
+ 211 0136 0F5F      		subi r16,lo8(-(1))
+ 212 0138 1F4F      		sbci r17,hi8(-(1))
+ 213 013a 1F93      		push r17
+ 214 013c 0F93      		push r16
+ 215 013e 0E94 0000 		call sprintf
+ 216               	.LM19:
+ 217 0142 40E0      		ldi r20,lo8(0)
+ 218 0144 50E0      		ldi r21,hi8(0)
+ 219 0146 61E0      		ldi r22,lo8(1)
+ 220 0148 70E0      		ldi r23,hi8(1)
+ 221 014a C801      		movw r24,r16
+ 222 014c 0E94 0000 		call display_text
+ 223               	.LM20:
+ 224 0150 84E6      		ldi r24,lo8(100)
+ 225 0152 90E0      		ldi r25,hi8(100)
+ 226 0154 0E94 0000 		call wait
+ 227 0158 8DB7      		in r24,__SP_L__
+ 228 015a 9EB7      		in r25,__SP_H__
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 5
+
+
+ 229 015c 0696      		adiw r24,6
+ 230 015e 0FB6      		in __tmp_reg__,__SREG__
+ 231 0160 F894      		cli
+ 232 0162 9EBF      		out __SP_H__,r25
+ 233 0164 0FBE      		out __SREG__,__tmp_reg__
+ 234 0166 8DBF      		out __SP_L__,r24
+ 235               	/* epilogue: frame size=15 */
+ 236 0168 2F96      		adiw r28,15
+ 237 016a F894      		cli
+ 238 016c DEBF      		out __SP_H__,r29
+ 239 016e CDBF      		out __SP_L__,r28
+ 240 0170 DF91      		pop r29
+ 241 0172 CF91      		pop r28
+ 242 0174 FF91      		pop r31
+ 243 0176 EF91      		pop r30
+ 244 0178 BF91      		pop r27
+ 245 017a AF91      		pop r26
+ 246 017c 9F91      		pop r25
+ 247 017e 8F91      		pop r24
+ 248 0180 7F91      		pop r23
+ 249 0182 6F91      		pop r22
+ 250 0184 5F91      		pop r21
+ 251 0186 4F91      		pop r20
+ 252 0188 3F91      		pop r19
+ 253 018a 2F91      		pop r18
+ 254 018c 1F91      		pop r17
+ 255 018e 0F91      		pop r16
+ 256 0190 0F90      		pop __tmp_reg__
+ 257 0192 0FBE      		out __SREG__,__tmp_reg__
+ 258 0194 0F90      		pop __tmp_reg__
+ 259 0196 1F90      		pop __zero_reg__
+ 260 0198 1895      		reti
+ 261               	/* epilogue end (size=25) */
+ 262               	/* function __vector_5 size 94 (43) */
+ 263               	.LFE7:
+ 264               		.size	__vector_5, .-__vector_5
+ 265               	.global	currentNumber
+ 266               	.global	currentNumber
+ 267               		.section .bss
+ 268               		.type	currentNumber, @object
+ 269               		.size	currentNumber, 2
+ 270               	currentNumber:
+ 271 0000 0000      		.skip 2,0
+ 272               		.section	.debug_frame,"",@progbits
+ 273               	.Lframe0:
+ 274 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 275               	.LSCIE0:
+ 276 0004 FFFF FFFF 		.long	0xffffffff
+ 277 0008 01        		.byte	0x1
+ 278 0009 00        		.string	""
+ 279 000a 01        		.uleb128 0x1
+ 280 000b 7F        		.sleb128 -1
+ 281 000c 24        		.byte	0x24
+ 282 000d 0C        		.byte	0xc
+ 283 000e 20        		.uleb128 0x20
+ 284 000f 00        		.uleb128 0x0
+ 285               		.p2align	2
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 6
+
+
+ 286               	.LECIE0:
+ 287               	.LSFDE0:
+ 288 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 289               	.LASFDE0:
+ 290 0014 0000 0000 		.long	.Lframe0
+ 291 0018 0000 0000 		.long	.LFB9
+ 292 001c 2200 0000 		.long	.LFE9-.LFB9
+ 293               		.p2align	2
+ 294               	.LEFDE0:
+ 295               	.LSFDE2:
+ 296 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 297               	.LASFDE2:
+ 298 0024 0000 0000 		.long	.Lframe0
+ 299 0028 0000 0000 		.long	.LFB8
+ 300 002c BC00 0000 		.long	.LFE8-.LFB8
+ 301               		.p2align	2
+ 302               	.LEFDE2:
+ 303               	.LSFDE4:
+ 304 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+ 305               	.LASFDE4:
+ 306 0034 0000 0000 		.long	.Lframe0
+ 307 0038 0000 0000 		.long	.LFB7
+ 308 003c BC00 0000 		.long	.LFE7-.LFB7
+ 309               		.p2align	2
+ 310               	.LEFDE4:
+ 311               		.text
+ 312               	.Letext0:
+ 313               		.section	.debug_line
+ 314 0000 5C01 0000 		.long	.LELT0-.LSLT0
+ 315               	.LSLT0:
+ 316 0004 0200      		.word	0x2
+ 317 0006 A600 0000 		.long	.LELTP0-.LASLTP0
+ 318               	.LASLTP0:
+ 319 000a 01        		.byte	0x1
+ 320 000b 01        		.byte	0x1
+ 321 000c F6        		.byte	0xf6
+ 322 000d F5        		.byte	0xf5
+ 323 000e 0A        		.byte	0xa
+ 324 000f 00        		.byte	0x0
+ 325 0010 01        		.byte	0x1
+ 326 0011 01        		.byte	0x1
+ 327 0012 01        		.byte	0x1
+ 328 0013 01        		.byte	0x1
+ 329 0014 00        		.byte	0x0
+ 330 0015 00        		.byte	0x0
+ 331 0016 00        		.byte	0x0
+ 332 0017 01        		.byte	0x1
+ 333 0018 633A 2F77 		.ascii	"c:/winavr-20070525/bin/../avr/include"
+ 333      696E 6176 
+ 333      722D 3230 
+ 333      3037 3035 
+ 333      3235 2F62 
+ 334 003d 00        		.byte	0
+ 335 003e 633A 5C77 		.ascii	"c:\\winavr-20070525\\bin\\../lib/gcc/avr/4.1.2/include"
+ 335      696E 6176 
+ 335      722D 3230 
+ 335      3037 3035 
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 7
+
+
+ 335      3235 5C62 
+ 336 0071 00        		.byte	0
+ 337 0072 00        		.byte	0x0
+ 338 0073 7374 6469 		.string	"stdint.h"
+ 338      6E74 2E68 
+ 338      00
+ 339 007c 01        		.uleb128 0x1
+ 340 007d 00        		.uleb128 0x0
+ 341 007e 00        		.uleb128 0x0
+ 342 007f 696E 7474 		.string	"inttypes.h"
+ 342      7970 6573 
+ 342      2E68 00
+ 343 008a 01        		.uleb128 0x1
+ 344 008b 00        		.uleb128 0x0
+ 345 008c 00        		.uleb128 0x0
+ 346 008d 7374 6464 		.string	"stddef.h"
+ 346      6566 2E68 
+ 346      00
+ 347 0096 02        		.uleb128 0x2
+ 348 0097 00        		.uleb128 0x0
+ 349 0098 00        		.uleb128 0x0
+ 350 0099 7374 646C 		.string	"stdlib.h"
+ 350      6962 2E68 
+ 350      00
+ 351 00a2 01        		.uleb128 0x1
+ 352 00a3 00        		.uleb128 0x0
+ 353 00a4 00        		.uleb128 0x0
+ 354 00a5 6D61 696E 		.string	"main.c"
+ 354      2E63 00
+ 355 00ac 00        		.uleb128 0x0
+ 356 00ad 00        		.uleb128 0x0
+ 357 00ae 00        		.uleb128 0x0
+ 358 00af 00        		.byte	0x0
+ 359               	.LELTP0:
+ 360 00b0 00        		.byte	0x0
+ 361 00b1 05        		.uleb128 0x5
+ 362 00b2 02        		.byte	0x2
+ 363 00b3 0000 0000 		.long	.LM1
+ 364 00b7 04        		.byte	0x4
+ 365 00b8 05        		.uleb128 0x5
+ 366 00b9 33        		.byte	0x33
+ 367 00ba 00        		.byte	0x0
+ 368 00bb 05        		.uleb128 0x5
+ 369 00bc 02        		.byte	0x2
+ 370 00bd 0000 0000 		.long	.LM2
+ 371 00c1 15        		.byte	0x15
+ 372 00c2 00        		.byte	0x0
+ 373 00c3 05        		.uleb128 0x5
+ 374 00c4 02        		.byte	0x2
+ 375 00c5 0000 0000 		.long	.LM3
+ 376 00c9 15        		.byte	0x15
+ 377 00ca 00        		.byte	0x0
+ 378 00cb 05        		.uleb128 0x5
+ 379 00cc 02        		.byte	0x2
+ 380 00cd 0000 0000 		.long	.LM4
+ 381 00d1 15        		.byte	0x15
+ 382 00d2 00        		.byte	0x0
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 8
+
+
+ 383 00d3 05        		.uleb128 0x5
+ 384 00d4 02        		.byte	0x2
+ 385 00d5 0000 0000 		.long	.LM5
+ 386 00d9 16        		.byte	0x16
+ 387 00da 00        		.byte	0x0
+ 388 00db 05        		.uleb128 0x5
+ 389 00dc 02        		.byte	0x2
+ 390 00dd 0000 0000 		.long	.LM6
+ 391 00e1 15        		.byte	0x15
+ 392 00e2 00        		.byte	0x0
+ 393 00e3 05        		.uleb128 0x5
+ 394 00e4 02        		.byte	0x2
+ 395 00e5 0000 0000 		.long	.LM7
+ 396 00e9 15        		.byte	0x15
+ 397 00ea 00        		.byte	0x0
+ 398 00eb 05        		.uleb128 0x5
+ 399 00ec 02        		.byte	0x2
+ 400 00ed 0000 0000 		.long	.LM8
+ 401 00f1 16        		.byte	0x16
+ 402 00f2 00        		.byte	0x0
+ 403 00f3 05        		.uleb128 0x5
+ 404 00f4 02        		.byte	0x2
+ 405 00f5 0000 0000 		.long	.LM9
+ 406 00f9 03        		.byte	0x3
+ 407 00fa 6C        		.sleb128 -20
+ 408 00fb 01        		.byte	0x1
+ 409 00fc 00        		.byte	0x0
+ 410 00fd 05        		.uleb128 0x5
+ 411 00fe 02        		.byte	0x2
+ 412 00ff 0000 0000 		.long	.LM10
+ 413 0103 15        		.byte	0x15
+ 414 0104 00        		.byte	0x0
+ 415 0105 05        		.uleb128 0x5
+ 416 0106 02        		.byte	0x2
+ 417 0107 0000 0000 		.long	.LM11
+ 418 010b 15        		.byte	0x15
+ 419 010c 00        		.byte	0x0
+ 420 010d 05        		.uleb128 0x5
+ 421 010e 02        		.byte	0x2
+ 422 010f 0000 0000 		.long	.LM12
+ 423 0113 16        		.byte	0x16
+ 424 0114 00        		.byte	0x0
+ 425 0115 05        		.uleb128 0x5
+ 426 0116 02        		.byte	0x2
+ 427 0117 0000 0000 		.long	.LM13
+ 428 011b 16        		.byte	0x16
+ 429 011c 00        		.byte	0x0
+ 430 011d 05        		.uleb128 0x5
+ 431 011e 02        		.byte	0x2
+ 432 011f 0000 0000 		.long	.LM14
+ 433 0123 15        		.byte	0x15
+ 434 0124 00        		.byte	0x0
+ 435 0125 05        		.uleb128 0x5
+ 436 0126 02        		.byte	0x2
+ 437 0127 0000 0000 		.long	.LM15
+ 438 012b 03        		.byte	0x3
+ 439 012c 6E        		.sleb128 -18
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 9
+
+
+ 440 012d 01        		.byte	0x1
+ 441 012e 00        		.byte	0x0
+ 442 012f 05        		.uleb128 0x5
+ 443 0130 02        		.byte	0x2
+ 444 0131 0000 0000 		.long	.LM16
+ 445 0135 15        		.byte	0x15
+ 446 0136 00        		.byte	0x0
+ 447 0137 05        		.uleb128 0x5
+ 448 0138 02        		.byte	0x2
+ 449 0139 0000 0000 		.long	.LM17
+ 450 013d 15        		.byte	0x15
+ 451 013e 00        		.byte	0x0
+ 452 013f 05        		.uleb128 0x5
+ 453 0140 02        		.byte	0x2
+ 454 0141 0000 0000 		.long	.LM18
+ 455 0145 16        		.byte	0x16
+ 456 0146 00        		.byte	0x0
+ 457 0147 05        		.uleb128 0x5
+ 458 0148 02        		.byte	0x2
+ 459 0149 0000 0000 		.long	.LM19
+ 460 014d 16        		.byte	0x16
+ 461 014e 00        		.byte	0x0
+ 462 014f 05        		.uleb128 0x5
+ 463 0150 02        		.byte	0x2
+ 464 0151 0000 0000 		.long	.LM20
+ 465 0155 15        		.byte	0x15
+ 466 0156 00        		.byte	0x0
+ 467 0157 05        		.uleb128 0x5
+ 468 0158 02        		.byte	0x2
+ 469 0159 0000 0000 		.long	.Letext0
+ 470 015d 00        		.byte	0x0
+ 471 015e 01        		.uleb128 0x1
+ 472 015f 01        		.byte	0x1
+ 473               	.LELT0:
+ 474 0160 1900 0000 		.section	.debug_info
+ 474      0200 1300 
+ 474      0000 0101 
+ 474      FB0E 0D00 
+ 474      0101 0101 
+ 475 0000 EC00 0000 		.long	0xec
+ 476 0004 0200      		.word	0x2
+ 477 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 478 000a 04        		.byte	0x4
+ 479 000b 01        		.uleb128 0x1
+ 480 000c 0000 0000 		.long	.Ldebug_line0
+ 481 0010 0000 0000 		.long	.Letext0
+ 482 0014 0000 0000 		.long	.Ltext0
+ 483 0018 0000 0000 		.long	.LASF11
+ 484 001c 01        		.byte	0x1
+ 485 001d 0000 0000 		.long	.LASF12
+ 486 0021 0000 0000 		.long	.LASF13
+ 487 0025 02        		.uleb128 0x2
+ 488 0026 0000 0000 		.long	.LASF0
+ 489 002a 01        		.byte	0x1
+ 490 002b 06        		.byte	0x6
+ 491 002c 02        		.uleb128 0x2
+ 492 002d 0000 0000 		.long	.LASF1
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 10
+
+
+ 493 0031 01        		.byte	0x1
+ 494 0032 08        		.byte	0x8
+ 495 0033 03        		.uleb128 0x3
+ 496 0034 696E 7400 		.string	"int"
+ 497 0038 02        		.byte	0x2
+ 498 0039 05        		.byte	0x5
+ 499 003a 02        		.uleb128 0x2
+ 500 003b 0000 0000 		.long	.LASF2
+ 501 003f 02        		.byte	0x2
+ 502 0040 07        		.byte	0x7
+ 503 0041 02        		.uleb128 0x2
+ 504 0042 0000 0000 		.long	.LASF3
+ 505 0046 04        		.byte	0x4
+ 506 0047 05        		.byte	0x5
+ 507 0048 02        		.uleb128 0x2
+ 508 0049 0000 0000 		.long	.LASF4
+ 509 004d 04        		.byte	0x4
+ 510 004e 07        		.byte	0x7
+ 511 004f 02        		.uleb128 0x2
+ 512 0050 0000 0000 		.long	.LASF5
+ 513 0054 08        		.byte	0x8
+ 514 0055 05        		.byte	0x5
+ 515 0056 02        		.uleb128 0x2
+ 516 0057 0000 0000 		.long	.LASF6
+ 517 005b 08        		.byte	0x8
+ 518 005c 07        		.byte	0x7
+ 519 005d 04        		.uleb128 0x4
+ 520 005e 01        		.byte	0x1
+ 521 005f 0000 0000 		.long	.LASF14
+ 522 0063 05        		.byte	0x5
+ 523 0064 20        		.byte	0x20
+ 524 0065 01        		.byte	0x1
+ 525 0066 3300 0000 		.long	0x33
+ 526 006a 0000 0000 		.long	.LFB9
+ 527 006e 0000 0000 		.long	.LFE9
+ 528 0072 02        		.byte	0x2
+ 529 0073 90        		.byte	0x90
+ 530 0074 20        		.uleb128 0x20
+ 531 0075 05        		.uleb128 0x5
+ 532 0076 9A00 0000 		.long	0x9a
+ 533 007a 01        		.byte	0x1
+ 534 007b 0000 0000 		.long	.LASF8
+ 535 007f 05        		.byte	0x5
+ 536 0080 15        		.byte	0x15
+ 537 0081 01        		.byte	0x1
+ 538 0082 0000 0000 		.long	.LFB8
+ 539 0086 0000 0000 		.long	.LFE8
+ 540 008a 02        		.byte	0x2
+ 541 008b 90        		.byte	0x90
+ 542 008c 20        		.uleb128 0x20
+ 543 008d 06        		.uleb128 0x6
+ 544 008e 6300      		.string	"c"
+ 545 0090 05        		.byte	0x5
+ 546 0091 18        		.byte	0x18
+ 547 0092 9A00 0000 		.long	0x9a
+ 548 0096 02        		.byte	0x2
+ 549 0097 8C        		.byte	0x8c
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 11
+
+
+ 550 0098 01        		.sleb128 1
+ 551 0099 00        		.byte	0x0
+ 552 009a 07        		.uleb128 0x7
+ 553 009b AA00 0000 		.long	0xaa
+ 554 009f B100 0000 		.long	0xb1
+ 555 00a3 08        		.uleb128 0x8
+ 556 00a4 AA00 0000 		.long	0xaa
+ 557 00a8 0E        		.byte	0xe
+ 558 00a9 00        		.byte	0x0
+ 559 00aa 02        		.uleb128 0x2
+ 560 00ab 0000 0000 		.long	.LASF2
+ 561 00af 02        		.byte	0x2
+ 562 00b0 07        		.byte	0x7
+ 563 00b1 02        		.uleb128 0x2
+ 564 00b2 0000 0000 		.long	.LASF7
+ 565 00b6 01        		.byte	0x1
+ 566 00b7 06        		.byte	0x6
+ 567 00b8 05        		.uleb128 0x5
+ 568 00b9 DD00 0000 		.long	0xdd
+ 569 00bd 01        		.byte	0x1
+ 570 00be 0000 0000 		.long	.LASF9
+ 571 00c2 05        		.byte	0x5
+ 572 00c3 0A        		.byte	0xa
+ 573 00c4 01        		.byte	0x1
+ 574 00c5 0000 0000 		.long	.LFB7
+ 575 00c9 0000 0000 		.long	.LFE7
+ 576 00cd 02        		.byte	0x2
+ 577 00ce 90        		.byte	0x90
+ 578 00cf 20        		.uleb128 0x20
+ 579 00d0 06        		.uleb128 0x6
+ 580 00d1 6300      		.string	"c"
+ 581 00d3 05        		.byte	0x5
+ 582 00d4 0D        		.byte	0xd
+ 583 00d5 9A00 0000 		.long	0x9a
+ 584 00d9 02        		.byte	0x2
+ 585 00da 8C        		.byte	0x8c
+ 586 00db 01        		.sleb128 1
+ 587 00dc 00        		.byte	0x0
+ 588 00dd 09        		.uleb128 0x9
+ 589 00de 0000 0000 		.long	.LASF10
+ 590 00e2 05        		.byte	0x5
+ 591 00e3 07        		.byte	0x7
+ 592 00e4 3300 0000 		.long	0x33
+ 593 00e8 01        		.byte	0x1
+ 594 00e9 05        		.byte	0x5
+ 595 00ea 03        		.byte	0x3
+ 596 00eb 0000 0000 		.long	currentNumber
+ 597 00ef 00        		.byte	0x0
+ 598               		.section	.debug_abbrev
+ 599 0000 01        		.uleb128 0x1
+ 600 0001 11        		.uleb128 0x11
+ 601 0002 01        		.byte	0x1
+ 602 0003 10        		.uleb128 0x10
+ 603 0004 06        		.uleb128 0x6
+ 604 0005 12        		.uleb128 0x12
+ 605 0006 01        		.uleb128 0x1
+ 606 0007 11        		.uleb128 0x11
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 12
+
+
+ 607 0008 01        		.uleb128 0x1
+ 608 0009 25        		.uleb128 0x25
+ 609 000a 0E        		.uleb128 0xe
+ 610 000b 13        		.uleb128 0x13
+ 611 000c 0B        		.uleb128 0xb
+ 612 000d 03        		.uleb128 0x3
+ 613 000e 0E        		.uleb128 0xe
+ 614 000f 1B        		.uleb128 0x1b
+ 615 0010 0E        		.uleb128 0xe
+ 616 0011 00        		.byte	0x0
+ 617 0012 00        		.byte	0x0
+ 618 0013 02        		.uleb128 0x2
+ 619 0014 24        		.uleb128 0x24
+ 620 0015 00        		.byte	0x0
+ 621 0016 03        		.uleb128 0x3
+ 622 0017 0E        		.uleb128 0xe
+ 623 0018 0B        		.uleb128 0xb
+ 624 0019 0B        		.uleb128 0xb
+ 625 001a 3E        		.uleb128 0x3e
+ 626 001b 0B        		.uleb128 0xb
+ 627 001c 00        		.byte	0x0
+ 628 001d 00        		.byte	0x0
+ 629 001e 03        		.uleb128 0x3
+ 630 001f 24        		.uleb128 0x24
+ 631 0020 00        		.byte	0x0
+ 632 0021 03        		.uleb128 0x3
+ 633 0022 08        		.uleb128 0x8
+ 634 0023 0B        		.uleb128 0xb
+ 635 0024 0B        		.uleb128 0xb
+ 636 0025 3E        		.uleb128 0x3e
+ 637 0026 0B        		.uleb128 0xb
+ 638 0027 00        		.byte	0x0
+ 639 0028 00        		.byte	0x0
+ 640 0029 04        		.uleb128 0x4
+ 641 002a 2E        		.uleb128 0x2e
+ 642 002b 00        		.byte	0x0
+ 643 002c 3F        		.uleb128 0x3f
+ 644 002d 0C        		.uleb128 0xc
+ 645 002e 03        		.uleb128 0x3
+ 646 002f 0E        		.uleb128 0xe
+ 647 0030 3A        		.uleb128 0x3a
+ 648 0031 0B        		.uleb128 0xb
+ 649 0032 3B        		.uleb128 0x3b
+ 650 0033 0B        		.uleb128 0xb
+ 651 0034 27        		.uleb128 0x27
+ 652 0035 0C        		.uleb128 0xc
+ 653 0036 49        		.uleb128 0x49
+ 654 0037 13        		.uleb128 0x13
+ 655 0038 11        		.uleb128 0x11
+ 656 0039 01        		.uleb128 0x1
+ 657 003a 12        		.uleb128 0x12
+ 658 003b 01        		.uleb128 0x1
+ 659 003c 40        		.uleb128 0x40
+ 660 003d 0A        		.uleb128 0xa
+ 661 003e 00        		.byte	0x0
+ 662 003f 00        		.byte	0x0
+ 663 0040 05        		.uleb128 0x5
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 13
+
+
+ 664 0041 2E        		.uleb128 0x2e
+ 665 0042 01        		.byte	0x1
+ 666 0043 01        		.uleb128 0x1
+ 667 0044 13        		.uleb128 0x13
+ 668 0045 3F        		.uleb128 0x3f
+ 669 0046 0C        		.uleb128 0xc
+ 670 0047 03        		.uleb128 0x3
+ 671 0048 0E        		.uleb128 0xe
+ 672 0049 3A        		.uleb128 0x3a
+ 673 004a 0B        		.uleb128 0xb
+ 674 004b 3B        		.uleb128 0x3b
+ 675 004c 0B        		.uleb128 0xb
+ 676 004d 27        		.uleb128 0x27
+ 677 004e 0C        		.uleb128 0xc
+ 678 004f 11        		.uleb128 0x11
+ 679 0050 01        		.uleb128 0x1
+ 680 0051 12        		.uleb128 0x12
+ 681 0052 01        		.uleb128 0x1
+ 682 0053 40        		.uleb128 0x40
+ 683 0054 0A        		.uleb128 0xa
+ 684 0055 00        		.byte	0x0
+ 685 0056 00        		.byte	0x0
+ 686 0057 06        		.uleb128 0x6
+ 687 0058 34        		.uleb128 0x34
+ 688 0059 00        		.byte	0x0
+ 689 005a 03        		.uleb128 0x3
+ 690 005b 08        		.uleb128 0x8
+ 691 005c 3A        		.uleb128 0x3a
+ 692 005d 0B        		.uleb128 0xb
+ 693 005e 3B        		.uleb128 0x3b
+ 694 005f 0B        		.uleb128 0xb
+ 695 0060 49        		.uleb128 0x49
+ 696 0061 13        		.uleb128 0x13
+ 697 0062 02        		.uleb128 0x2
+ 698 0063 0A        		.uleb128 0xa
+ 699 0064 00        		.byte	0x0
+ 700 0065 00        		.byte	0x0
+ 701 0066 07        		.uleb128 0x7
+ 702 0067 01        		.uleb128 0x1
+ 703 0068 01        		.byte	0x1
+ 704 0069 01        		.uleb128 0x1
+ 705 006a 13        		.uleb128 0x13
+ 706 006b 49        		.uleb128 0x49
+ 707 006c 13        		.uleb128 0x13
+ 708 006d 00        		.byte	0x0
+ 709 006e 00        		.byte	0x0
+ 710 006f 08        		.uleb128 0x8
+ 711 0070 21        		.uleb128 0x21
+ 712 0071 00        		.byte	0x0
+ 713 0072 49        		.uleb128 0x49
+ 714 0073 13        		.uleb128 0x13
+ 715 0074 2F        		.uleb128 0x2f
+ 716 0075 0B        		.uleb128 0xb
+ 717 0076 00        		.byte	0x0
+ 718 0077 00        		.byte	0x0
+ 719 0078 09        		.uleb128 0x9
+ 720 0079 34        		.uleb128 0x34
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 14
+
+
+ 721 007a 00        		.byte	0x0
+ 722 007b 03        		.uleb128 0x3
+ 723 007c 0E        		.uleb128 0xe
+ 724 007d 3A        		.uleb128 0x3a
+ 725 007e 0B        		.uleb128 0xb
+ 726 007f 3B        		.uleb128 0x3b
+ 727 0080 0B        		.uleb128 0xb
+ 728 0081 49        		.uleb128 0x49
+ 729 0082 13        		.uleb128 0x13
+ 730 0083 3F        		.uleb128 0x3f
+ 731 0084 0C        		.uleb128 0xc
+ 732 0085 02        		.uleb128 0x2
+ 733 0086 0A        		.uleb128 0xa
+ 734 0087 00        		.byte	0x0
+ 735 0088 00        		.byte	0x0
+ 736 0089 00        		.byte	0x0
+ 737               		.section	.debug_pubnames,"",@progbits
+ 738 0000 4700 0000 		.long	0x47
+ 739 0004 0200      		.word	0x2
+ 740 0006 0000 0000 		.long	.Ldebug_info0
+ 741 000a F000 0000 		.long	0xf0
+ 742 000e 5D00 0000 		.long	0x5d
+ 743 0012 6D61 696E 		.string	"main"
+ 743      00
+ 744 0017 7500 0000 		.long	0x75
+ 745 001b 5F5F 7665 		.string	"__vector_6"
+ 745      6374 6F72 
+ 745      5F36 00
+ 746 0026 B800 0000 		.long	0xb8
+ 747 002a 5F5F 7665 		.string	"__vector_5"
+ 747      6374 6F72 
+ 747      5F35 00
+ 748 0035 DD00 0000 		.long	0xdd
+ 749 0039 6375 7272 		.string	"currentNumber"
+ 749      656E 744E 
+ 749      756D 6265 
+ 749      7200 
+ 750 0047 0000 0000 		.long	0x0
+ 751               		.section	.debug_aranges,"",@progbits
+ 752 0000 1C00 0000 		.long	0x1c
+ 753 0004 0200      		.word	0x2
+ 754 0006 0000 0000 		.long	.Ldebug_info0
+ 755 000a 04        		.byte	0x4
+ 756 000b 00        		.byte	0x0
+ 757 000c 0000      		.word	0x0
+ 758 000e 0000      		.word	0x0
+ 759 0010 0000 0000 		.long	.Ltext0
+ 760 0014 9A01 0000 		.long	.Letext0-.Ltext0
+ 761 0018 0000 0000 		.long	0x0
+ 762 001c 0000 0000 		.long	0x0
+ 763               		.section	.debug_str,"MS",@progbits,1
+ 764               	.LASF13:
+ 765 0000 433A 5C55 		.string	"C:\\Users\\jeroe\\Desktop\\map\\school\\MicroControllers\\week 3\\b2"
+ 765      7365 7273 
+ 765      5C6A 6572 
+ 765      6F65 5C44 
+ 765      6573 6B74 
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 15
+
+
+ 766               	.LASF1:
+ 767 003d 756E 7369 		.string	"unsigned char"
+ 767      676E 6564 
+ 767      2063 6861 
+ 767      7200 
+ 768               	.LASF4:
+ 769 004b 6C6F 6E67 		.string	"long unsigned int"
+ 769      2075 6E73 
+ 769      6967 6E65 
+ 769      6420 696E 
+ 769      7400 
+ 770               	.LASF14:
+ 771 005d 6D61 696E 		.string	"main"
+ 771      00
+ 772               	.LASF2:
+ 773 0062 756E 7369 		.string	"unsigned int"
+ 773      676E 6564 
+ 773      2069 6E74 
+ 773      00
+ 774               	.LASF6:
+ 775 006f 6C6F 6E67 		.string	"long long unsigned int"
+ 775      206C 6F6E 
+ 775      6720 756E 
+ 775      7369 676E 
+ 775      6564 2069 
+ 776               	.LASF10:
+ 777 0086 6375 7272 		.string	"currentNumber"
+ 777      656E 744E 
+ 777      756D 6265 
+ 777      7200 
+ 778               	.LASF5:
+ 779 0094 6C6F 6E67 		.string	"long long int"
+ 779      206C 6F6E 
+ 779      6720 696E 
+ 779      7400 
+ 780               	.LASF7:
+ 781 00a2 6368 6172 		.string	"char"
+ 781      00
+ 782               	.LASF11:
+ 783 00a7 474E 5520 		.string	"GNU C 4.1.2 (WinAVR 20070525)"
+ 783      4320 342E 
+ 783      312E 3220 
+ 783      2857 696E 
+ 783      4156 5220 
+ 784               	.LASF9:
+ 785 00c5 5F5F 7665 		.string	"__vector_5"
+ 785      6374 6F72 
+ 785      5F35 00
+ 786               	.LASF8:
+ 787 00d0 5F5F 7665 		.string	"__vector_6"
+ 787      6374 6F72 
+ 787      5F36 00
+ 788               	.LASF3:
+ 789 00db 6C6F 6E67 		.string	"long int"
+ 789      2069 6E74 
+ 789      00
+ 790               	.LASF0:
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 16
+
+
+ 791 00e4 7369 676E 		.string	"signed char"
+ 791      6564 2063 
+ 791      6861 7200 
+ 792               	.LASF12:
+ 793 00f0 6D61 696E 		.string	"main.c"
+ 793      2E63 00
+ 794               	/* File "main.c": code  206 = 0x00ce ( 104), prologues  52, epilogues  50 */
+GAS LISTING C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:3      *ABS*:0000003f __SREG__
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:4      *ABS*:0000003e __SP_H__
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:5      *ABS*:0000003d __SP_L__
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:20     .text:00000000 main
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:270    .bss:00000000 currentNumber
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:61     .text:00000022 __vector_6
+C:\Users\jeroe\AppData\Local\Temp/ccd79IVO.s:164    .text:000000de __vector_5
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+init
+clearDisplay
+sprintf
+display_text
+wait

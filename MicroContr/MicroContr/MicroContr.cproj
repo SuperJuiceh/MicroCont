@@ -186,8 +186,33 @@
     <Compile Include="Week 2\B4\b4.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 3\B1\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B1\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B2\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B2\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B2\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B3\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B3\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Week 3\B3\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Week 3" />
     <Folder Include="Week 2" />
     <Folder Include="Week 1" />
     <Folder Include="Week 1\B2" />
@@ -200,6 +225,50 @@
     <Folder Include="Week 2\B2" />
     <Folder Include="Week 2\B3" />
     <Folder Include="Week 2\B4" />
+    <Folder Include="Week 3\B1" />
+    <Folder Include="Week 3\B2" />
+    <Folder Include="Week 3\B3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Week 3\B1\20160229_160820.jpg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B1\lcd.lst">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B1\lcd.map">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B1\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B2\lcd.lst">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B2\lcd.map">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B2\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\lcd.lst">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\lcd.map">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\main.lst">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\main.map">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Week 3\B3\unmake.bat">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
