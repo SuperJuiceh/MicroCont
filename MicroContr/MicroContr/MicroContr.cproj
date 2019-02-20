@@ -210,8 +210,12 @@
     <Compile Include="Week 3\B3\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 4\B1\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Week 4" />
     <Folder Include="Week 3" />
     <Folder Include="Week 2" />
     <Folder Include="Week 1" />
@@ -228,6 +232,9 @@
     <Folder Include="Week 3\B1" />
     <Folder Include="Week 3\B2" />
     <Folder Include="Week 3\B3" />
+    <Folder Include="Week 4\B1" />
+    <Folder Include="Week 4\B2" />
+    <Folder Include="Week 4\B3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Week 3\B1\20160229_160820.jpg">

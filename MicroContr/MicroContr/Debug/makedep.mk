@@ -26,3 +26,15 @@ Week 2\B3\b3.c
 
 Week 2\B4\b4.c
 
+Week 3\B1\lcd.c
+
+Week 3\B2\lcd.c
+
+Week 3\B2\main.c
+
+Week 3\B3\lcd.c
+
+Week 3\B3\main.c
+
+Week 4\main.c
+
