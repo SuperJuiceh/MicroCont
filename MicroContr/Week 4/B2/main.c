@@ -39,9 +39,6 @@
 	//while (1){ }
 	//
 	////while (1){
-		////PORTB = ADCL;
-		////PORTA = ADCH;
-		////
-		////wait(100);
+		
 	////}
 //}

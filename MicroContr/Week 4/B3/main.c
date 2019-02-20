@@ -54,8 +54,6 @@ int main( void )
 		PORTB = ADCL;			// Show MSB/LSB (bit 10:0) of ADC
 		PORTA = ADCH;
 		
-		
-		
 		wait(100);				// every 100 ms (busy waiting)
 	}
 }
