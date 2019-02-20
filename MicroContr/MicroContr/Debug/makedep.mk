@@ -36,5 +36,7 @@ Week 3\B3\lcd.c
 
 Week 3\B3\main.c
 
-Week 4\main.c
+Week 4\B1\main.c
+
+Week 4\B2\main.c
 
