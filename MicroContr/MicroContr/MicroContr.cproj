@@ -216,6 +216,9 @@
     <Compile Include="Week 4\B2\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 4\B3\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week 4" />

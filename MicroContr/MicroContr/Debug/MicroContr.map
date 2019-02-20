@@ -118,7 +118,12 @@ Discarded input sections
  .text          0x00000000        0x0 Week 4/B2/main.o
  .data          0x00000000        0x0 Week 4/B2/main.o
  .bss           0x00000000        0x0 Week 4/B2/main.o
- .text.wait     0x00000000       0x20 Week 4/B2/main.o
+ .debug_line    0x00000000        0x0 Week 4/B2/main.o
+ .debug_str     0x00000000      0x10c Week 4/B2/main.o
+ .comment       0x00000000       0x31 Week 4/B2/main.o
+ .text          0x00000000        0x0 Week 4/B3/main.o
+ .data          0x00000000        0x0 Week 4/B3/main.o
+ .bss           0x00000000        0x0 Week 4/B3/main.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
@@ -171,6 +176,7 @@ LOAD Week 3/B3/lcd.o
 LOAD Week 3/B3/main.o
 LOAD Week 4/B1/main.o
 LOAD Week 4/B2/main.o
+LOAD Week 4/B3/main.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a
 END GROUP
@@ -278,7 +284,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000       0xd8
+.text           0x00000000       0xea
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
                 0x00000000                __vector_default
@@ -358,6 +364,7 @@ END GROUP
                 0x0000009c                __vector_4
                 0x0000009c                __vector_9
                 0x0000009c                __vector_2
+                0x0000009c                __vector_21
                 0x0000009c                __vector_15
                 0x0000009c                __vector_29
                 0x0000009c                __vector_8
@@ -369,16 +376,17 @@ END GROUP
                 0x0000009c                __vector_20
                 0x0000009e                . = ALIGN (0x2)
  *(.text.*)
- .text.__vector_21
-                0x0000009e       0x20 Week 4/B2/main.o
-                0x0000009e                __vector_21
- .text.main     0x000000be       0x16 Week 4/B2/main.o
-                0x000000be                main
-                0x000000d4                . = ALIGN (0x2)
+ .text.wait     0x0000009e       0x22 Week 4/B3/main.o
+                0x0000009e                wait
+ .text.adcInit  0x000000c0        0xa Week 4/B3/main.o
+                0x000000c0                adcInit
+ .text.main     0x000000ca       0x1c Week 4/B3/main.o
+                0x000000ca                main
+                0x000000e6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000d4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x000000d4                _exit
-                0x000000d4                exit
+ .fini9         0x000000e6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x000000e6                _exit
+                0x000000e6                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -397,11 +405,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000d4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x000000e6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x000000d8                _etext = .
+                0x000000ea                _etext = .
 
-.data           0x00800100        0x0 load address 0x000000d8
+.data           0x00800100        0x0 load address 0x000000ea
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -419,8 +427,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000000d8                __data_load_start = LOADADDR (.data)
-                0x000000d8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000ea                __data_load_start = LOADADDR (.data)
+                0x000000ea                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -468,7 +476,7 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 Week 4/B2/main.o
+ .comment       0x00000000       0x30 Week 4/B3/main.o
                                  0x31 (size before relaxing)
 
 .note.gnu.avr.deviceinfo
@@ -494,39 +502,39 @@ END GROUP
 .debug_aranges  0x00000000       0x30
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x30 Week 4/B2/main.o
+                0x00000000       0x30 Week 4/B3/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x8e1
+.debug_info     0x00000000      0x902
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
- .debug_info    0x00000780      0x161 Week 4/B2/main.o
+ .debug_info    0x00000780      0x182 Week 4/B3/main.o
 
-.debug_abbrev   0x00000000      0x824
+.debug_abbrev   0x00000000      0x846
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
- .debug_abbrev  0x00000718      0x10c Week 4/B2/main.o
+ .debug_abbrev  0x00000718      0x12e Week 4/B3/main.o
 
-.debug_line     0x00000000      0x2e0
+.debug_line     0x00000000      0x2ec
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
- .debug_line    0x00000169      0x177 Week 4/B2/main.o
+ .debug_line    0x00000169      0x183 Week 4/B3/main.o
 
-.debug_frame    0x00000000       0x54
+.debug_frame    0x00000000       0x44
  *(.debug_frame)
- .debug_frame   0x00000000       0x54 Week 4/B2/main.o
+ .debug_frame   0x00000000       0x44 Week 4/B3/main.o
 
-.debug_str      0x00000000      0x425
+.debug_str      0x00000000      0x421
  *(.debug_str)
  .debug_str     0x00000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega128/avr51/crtatmega128.o
- .debug_str     0x0000027d      0x1a8 Week 4/B2/main.o
-                                0x1dc (size before relaxing)
+ .debug_str     0x0000027d      0x1a4 Week 4/B3/main.o
+                                0x1d8 (size before relaxing)
 
-.debug_loc      0x00000000       0xa6
+.debug_loc      0x00000000       0x6a
  *(.debug_loc)
- .debug_loc     0x00000000       0xa6 Week 4/B2/main.o
+ .debug_loc     0x00000000       0x6a Week 4/B3/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -548,7 +556,7 @@ END GROUP
 
 .debug_ranges   0x00000000       0x20
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x20 Week 4/B2/main.o
+ .debug_ranges  0x00000000       0x20 Week 4/B3/main.o
 
 .debug_macro
  *(.debug_macro)
