@@ -120,7 +120,7 @@ int main()
 	{
       	spi_slaveSelect(0); 		// Select display chip
       	spi_write(i);  			// 	digit adress: (digit place)
-      	spi_write(i);			// 	digit value: 0 
+      	spi_write(4-(i-1));			// 	digit value: 0 
   	  	spi_slaveDeSelect(0);	// Deselect display chip
 	}    
 	wait(1000);
