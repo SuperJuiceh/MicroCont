@@ -231,10 +231,14 @@
     <Compile Include="Week 5\A\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 5\B\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Eindopdracht" />
     <Folder Include="Week 5\A" />
+    <Folder Include="Week 5\B" />
     <Folder Include="Week 6" />
     <Folder Include="Week 5" />
     <Folder Include="Week 4" />
