@@ -150,7 +150,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="main.c">
+    <Compile Include="Eindopdracht\display.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eindopdracht\display.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eindopdracht\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eindopdracht\main2.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Week 1\B2\main.c">
@@ -219,8 +228,15 @@
     <Compile Include="Week 4\B3\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Week 5\A\main.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Eindopdracht" />
+    <Folder Include="Week 5\A" />
+    <Folder Include="Week 6" />
+    <Folder Include="Week 5" />
     <Folder Include="Week 4" />
     <Folder Include="Week 3" />
     <Folder Include="Week 2" />
@@ -243,6 +259,9 @@
     <Folder Include="Week 4\B3" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Eindopdracht\fonts.h">
+      <SubType>compile</SubType>
+    </None>
     <None Include="Week 3\B1\20160229_160820.jpg">
       <SubType>compile</SubType>
     </None>
