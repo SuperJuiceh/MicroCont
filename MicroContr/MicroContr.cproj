@@ -156,19 +156,31 @@
     <Compile Include="Eindopdracht\display.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Eindopdracht\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eindopdracht\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Eindopdracht\main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Eindopdracht\main2.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Eindopdracht\Spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eindopdracht\Spi.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Week 1\B2\main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Week 1\B2\main2.c">
+    <Compile Include="Week 1\B3\main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Week 1\B3\main.c">
+    <Compile Include="Week 1\B3\main2.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Week 1\B4\main.c">
