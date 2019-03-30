@@ -1,9 +1,4 @@
-/*
- * Spi.h
- *
- * Created: 5-4-2016 18:55:45
- *  Author: sander
- */ 
+
   #ifndef SPI_H_
   #define SPI_H_
 

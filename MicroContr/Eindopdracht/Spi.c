@@ -1,9 +1,4 @@
-/*
- * Spi.c
- *
- * Created: 5-4-2016 18:55:23
- *  Author: sander
- */ 
+
  #include <avr/io.h>
  #include <util/delay.h>
  #include <avr/interrupt.h>
