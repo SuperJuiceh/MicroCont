@@ -150,18 +150,6 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Eindopdracht\display.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Eindopdracht\display.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Eindopdracht\lcd.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Eindopdracht\lcd.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Eindopdracht\main.c">
       <SubType>compile</SubType>
     </Compile>
