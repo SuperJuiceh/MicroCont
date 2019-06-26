@@ -156,12 +156,6 @@
     <Compile Include="Eindopdracht\main2.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Eindopdracht\Spi.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Eindopdracht\Spi.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Week 1\B2\main.c">
       <SubType>compile</SubType>
     </Compile>

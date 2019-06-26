@@ -6,8 +6,6 @@ Eindopdracht\main.c
 
 Eindopdracht\main2.c
 
-Eindopdracht\Spi.c
-
 Week 1\B2\main.c
 
 Week 1\B3\main.c

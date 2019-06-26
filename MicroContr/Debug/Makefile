@@ -64,7 +64,6 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../Eindopdracht/main.c \
 ../Eindopdracht/main2.c \
-../Eindopdracht/Spi.c \
 ../Week\ 1/B2/main.c \
 ../Week\ 1/B3/main.c \
 ../Week\ 1/B3/main2.c \
@@ -97,7 +96,6 @@ ASM_SRCS +=
 OBJS +=  \
 Eindopdracht/main.o \
 Eindopdracht/main2.o \
-Eindopdracht/Spi.o \
 Week\ 1/B2/main.o \
 Week\ 1/B3/main.o \
 Week\ 1/B3/main2.o \
@@ -123,7 +121,6 @@ Week\ 5/B/main.o
 OBJS_AS_ARGS +=  \
 Eindopdracht/main.o \
 Eindopdracht/main2.o \
-Eindopdracht/Spi.o \
 "Week 1/B2/main.o" \
 "Week 1/B3/main.o" \
 "Week 1/B3/main2.o" \
@@ -149,7 +146,6 @@ Eindopdracht/Spi.o \
 C_DEPS +=  \
 Eindopdracht/main.d \
 Eindopdracht/main2.d \
-Eindopdracht/Spi.d \
 Week\ 1/B2/main.d \
 Week\ 1/B3/main.d \
 Week\ 1/B3/main2.d \
@@ -175,7 +171,6 @@ Week\ 5/B/main.d
 C_DEPS_AS_ARGS +=  \
 Eindopdracht/main.d \
 Eindopdracht/main2.d \
-Eindopdracht/Spi.d \
 "Week 1/B2/main.d" \
 "Week 1/B3/main.d" \
 "Week 1/B3/main2.d" \
@@ -220,13 +215,6 @@ Eindopdracht/main.o: ../Eindopdracht/main.c
 	
 
 Eindopdracht/main2.o: ../Eindopdracht/main2.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Eindopdracht/Spi.o: ../Eindopdracht/Spi.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

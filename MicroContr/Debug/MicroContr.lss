@@ -3,31 +3,31 @@ MicroContr.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000092  00800100  00000470  00000504  2**0
+  0 .data         00000054  00800100  00000644  000006d8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000470  00000000  00000000  00000094  2**1
+  1 .text         00000644  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000004  00800192  00800192  00000596  2**0
+  2 .bss          00000014  00800154  00800154  0000072c  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000596  2**0
+  3 .comment      00000030  00000000  00000000  0000072c  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000005c8  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000075c  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000098  00000000  00000000  00000604  2**0
+  5 .debug_aranges 00000098  00000000  00000000  00000798  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001162  00000000  00000000  0000069c  2**0
+  6 .debug_info   00001550  00000000  00000000  00000830  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000009e6  00000000  00000000  000017fe  2**0
+  7 .debug_abbrev 00000a61  00000000  00000000  00001d80  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000006b8  00000000  00000000  000021e4  2**0
+  8 .debug_line   000008dd  00000000  00000000  000027e1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000001e0  00000000  00000000  0000289c  2**2
+  9 .debug_frame  0000022c  00000000  00000000  000030c0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000004f7  00000000  00000000  00002a7c  2**0
+ 10 .debug_str    0000052e  00000000  00000000  000032ec  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000005e0  00000000  00000000  00002f73  2**0
+ 11 .debug_loc    00000ad7  00000000  00000000  0000381a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000190  00000000  00000000  00003553  2**0
+ 12 .debug_ranges 000001c0  00000000  00000000  000042f1  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -116,20 +116,20 @@ Disassembly of section .text:
   98:	11 e0       	ldi	r17, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	e0 e7       	ldi	r30, 0x70	; 112
-  a0:	f4 e0       	ldi	r31, 0x04	; 4
+  9e:	e4 e4       	ldi	r30, 0x44	; 68
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
   a2:	00 e0       	ldi	r16, 0x00	; 0
   a4:	0b bf       	out	0x3b, r16	; 59
   a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
   a8:	07 90       	elpm	r0, Z+
   aa:	0d 92       	st	X+, r0
-  ac:	a2 39       	cpi	r26, 0x92	; 146
+  ac:	a4 35       	cpi	r26, 0x54	; 84
   ae:	b1 07       	cpc	r27, r17
   b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
 
 000000b2 <__do_clear_bss>:
   b2:	21 e0       	ldi	r18, 0x01	; 1
-  b4:	a2 e9       	ldi	r26, 0x92	; 146
+  b4:	a4 e5       	ldi	r26, 0x54	; 84
   b6:	b1 e0       	ldi	r27, 0x01	; 1
   b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
 
@@ -137,762 +137,1129 @@ Disassembly of section .text:
   ba:	1d 92       	st	X+, r1
 
 000000bc <.do_clear_bss_start>:
-  bc:	a6 39       	cpi	r26, 0x96	; 150
+  bc:	a8 36       	cpi	r26, 0x68	; 104
   be:	b2 07       	cpc	r27, r18
   c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
-  c2:	cd d1       	rcall	.+922    	; 0x45e <main>
-  c4:	d3 c1       	rjmp	.+934    	; 0x46c <_exit>
+  c2:	b7 d2       	rcall	.+1390   	; 0x632 <main>
+  c4:	bd c2       	rjmp	.+1402   	; 0x640 <_exit>
 
 000000c6 <__bad_interrupt>:
   c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
 
-000000c8 <wait>:
-	writeToMatrix(smileys[8].data);
-
-
-}
-void smileyniet(void){
-	writeToMatrix(smileys[16].data);
-  c8:	18 16       	cp	r1, r24
-  ca:	19 06       	cpc	r1, r25
-  cc:	6c f4       	brge	.+26     	; 0xe8 <wait+0x20>
-  ce:	20 e0       	ldi	r18, 0x00	; 0
-  d0:	30 e0       	ldi	r19, 0x00	; 0
-  d2:	e9 ef       	ldi	r30, 0xF9	; 249
-  d4:	f0 e0       	ldi	r31, 0x00	; 0
-  d6:	31 97       	sbiw	r30, 0x01	; 1
-  d8:	f1 f7       	brne	.-4      	; 0xd6 <wait+0xe>
-  da:	00 c0       	rjmp	.+0      	; 0xdc <wait+0x14>
-  dc:	00 00       	nop
-  de:	2f 5f       	subi	r18, 0xFF	; 255
-  e0:	3f 4f       	sbci	r19, 0xFF	; 255
-  e2:	82 17       	cp	r24, r18
-  e4:	93 07       	cpc	r25, r19
-  e6:	a9 f7       	brne	.-22     	; 0xd2 <wait+0xa>
-  e8:	08 95       	ret
-
-000000ea <twi_init>:
-  ea:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <__TEXT_REGION_LENGTH__+0x7e0071>
-  ee:	80 e2       	ldi	r24, 0x20	; 32
-  f0:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <__TEXT_REGION_LENGTH__+0x7e0070>
-  f4:	08 95       	ret
-
-000000f6 <twi_start>:
-  f6:	84 ea       	ldi	r24, 0xA4	; 164
-  f8:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
-  fc:	e4 e7       	ldi	r30, 0x74	; 116
-  fe:	f0 e0       	ldi	r31, 0x00	; 0
- 100:	80 81       	ld	r24, Z
- 102:	88 23       	and	r24, r24
- 104:	ec f7       	brge	.-6      	; 0x100 <twi_start+0xa>
- 106:	08 95       	ret
-
-00000108 <twi_tx>:
- 108:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <__TEXT_REGION_LENGTH__+0x7e0073>
- 10c:	84 e8       	ldi	r24, 0x84	; 132
- 10e:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
- 112:	e4 e7       	ldi	r30, 0x74	; 116
- 114:	f0 e0       	ldi	r31, 0x00	; 0
- 116:	80 81       	ld	r24, Z
- 118:	88 23       	and	r24, r24
- 11a:	ec f7       	brge	.-6      	; 0x116 <twi_tx+0xe>
- 11c:	08 95       	ret
-
-0000011e <writeToMatrix>:
- 11e:	ff 92       	push	r15
- 120:	0f 93       	push	r16
- 122:	1f 93       	push	r17
- 124:	cf 93       	push	r28
- 126:	df 93       	push	r29
- 128:	c0 e0       	ldi	r28, 0x00	; 0
- 12a:	d0 e0       	ldi	r29, 0x00	; 0
- 12c:	04 e7       	ldi	r16, 0x74	; 116
- 12e:	10 e0       	ldi	r17, 0x00	; 0
- 130:	0f 2e       	mov	r0, r31
- 132:	f4 e9       	ldi	r31, 0x94	; 148
- 134:	ff 2e       	mov	r15, r31
- 136:	f0 2d       	mov	r31, r0
- 138:	de df       	rcall	.-68     	; 0xf6 <twi_start>
- 13a:	80 ee       	ldi	r24, 0xE0	; 224
- 13c:	90 e0       	ldi	r25, 0x00	; 0
- 13e:	e4 df       	rcall	.-56     	; 0x108 <twi_tx>
- 140:	ce 01       	movw	r24, r28
- 142:	e2 df       	rcall	.-60     	; 0x108 <twi_tx>
- 144:	ce 01       	movw	r24, r28
- 146:	dd 23       	and	r29, r29
- 148:	0c f4       	brge	.+2      	; 0x14c <writeToMatrix+0x2e>
- 14a:	01 96       	adiw	r24, 0x01	; 1
- 14c:	95 95       	asr	r25
- 14e:	87 95       	ror	r24
- 150:	fc 01       	movw	r30, r24
- 152:	e0 50       	subi	r30, 0x00	; 0
- 154:	ff 4f       	sbci	r31, 0xFF	; 255
- 156:	80 81       	ld	r24, Z
- 158:	90 e0       	ldi	r25, 0x00	; 0
- 15a:	d6 df       	rcall	.-84     	; 0x108 <twi_tx>
- 15c:	f8 01       	movw	r30, r16
- 15e:	f0 82       	st	Z, r15
- 160:	22 96       	adiw	r28, 0x02	; 2
- 162:	c0 31       	cpi	r28, 0x10	; 16
- 164:	d1 05       	cpc	r29, r1
- 166:	41 f7       	brne	.-48     	; 0x138 <writeToMatrix+0x1a>
- 168:	df 91       	pop	r29
- 16a:	cf 91       	pop	r28
- 16c:	1f 91       	pop	r17
- 16e:	0f 91       	pop	r16
- 170:	ff 90       	pop	r15
- 172:	08 95       	ret
-
-00000174 <smileyHappy>:
- 174:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
- 178:	d2 cf       	rjmp	.-92     	; 0x11e <writeToMatrix>
- 17a:	08 95       	ret
-
-0000017c <smileyneut>:
- 17c:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <__data_start+0x8>
- 180:	ce cf       	rjmp	.-100    	; 0x11e <writeToMatrix>
- 182:	08 95       	ret
-
-00000184 <LiftStart>:
-		case 8: smileyHappy(); break;
-		case 16: smileyneut(); break;
-	}
-}
-
-void LiftStart(void){
- 184:	cf 92       	push	r12
- 186:	df 92       	push	r13
- 188:	ff 92       	push	r15
- 18a:	0f 93       	push	r16
- 18c:	1f 93       	push	r17
- 18e:	cf 93       	push	r28
- 190:	df 93       	push	r29
- 192:	05 e5       	ldi	r16, 0x55	; 85
- 194:	11 e0       	ldi	r17, 0x01	; 1
-	int x = 0;
-	for (int adres = 0; adres <= 14; adres += 2)
- 196:	c0 e0       	ldi	r28, 0x00	; 0
- 198:	d0 e0       	ldi	r29, 0x00	; 0
+000000c8 <rotate>:
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 19a:	0f 2e       	mov	r0, r31
- 19c:	f4 e7       	ldi	r31, 0x74	; 116
- 19e:	cf 2e       	mov	r12, r31
- 1a0:	d1 2c       	mov	r13, r1
- 1a2:	f0 2d       	mov	r31, r0
- 1a4:	0f 2e       	mov	r0, r31
- 1a6:	f4 e9       	ldi	r31, 0x94	; 148
- 1a8:	ff 2e       	mov	r15, r31
- 1aa:	f0 2d       	mov	r31, r0
+  c8:	df 92       	push	r13
+  ca:	ef 92       	push	r14
+  cc:	ff 92       	push	r15
+  ce:	0f 93       	push	r16
+  d0:	1f 93       	push	r17
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+  d6:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <rotations>
+  da:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <rotations+0x1>
+  de:	83 70       	andi	r24, 0x03	; 3
+  e0:	90 78       	andi	r25, 0x80	; 128
+  e2:	99 23       	and	r25, r25
+  e4:	24 f4       	brge	.+8      	; 0xee <rotate+0x26>
+  e6:	01 97       	sbiw	r24, 0x01	; 1
+  e8:	8c 6f       	ori	r24, 0xFC	; 252
+  ea:	9f 6f       	ori	r25, 0xFF	; 255
+  ec:	01 96       	adiw	r24, 0x01	; 1
+  ee:	90 93 65 01 	sts	0x0165, r25	; 0x800165 <rotations+0x1>
+  f2:	80 93 64 01 	sts	0x0164, r24	; 0x800164 <rotations>
+  f6:	00 97       	sbiw	r24, 0x00	; 0
+  f8:	51 f4       	brne	.+20     	; 0x10e <rotate+0x46>
+  fa:	88 e0       	ldi	r24, 0x08	; 8
+  fc:	ec e5       	ldi	r30, 0x5C	; 92
+  fe:	f1 e0       	ldi	r31, 0x01	; 1
+ 100:	a4 e5       	ldi	r26, 0x54	; 84
+ 102:	b1 e0       	ldi	r27, 0x01	; 1
+ 104:	01 90       	ld	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	8a 95       	dec	r24
+ 10a:	e1 f7       	brne	.-8      	; 0x104 <rotate+0x3c>
+ 10c:	76 c0       	rjmp	.+236    	; 0x1fa <rotate+0x132>
+ 10e:	18 16       	cp	r1, r24
+ 110:	19 06       	cpc	r1, r25
+ 112:	0c f0       	brlt	.+2      	; 0x116 <rotate+0x4e>
+ 114:	72 c0       	rjmp	.+228    	; 0x1fa <rotate+0x132>
+ 116:	e1 2c       	mov	r14, r1
+ 118:	f1 2c       	mov	r15, r1
+ 11a:	a4 e5       	ldi	r26, 0x54	; 84
+ 11c:	b1 e0       	ldi	r27, 0x01	; 1
+ 11e:	dd 24       	eor	r13, r13
+ 120:	da 94       	dec	r13
+ 122:	0c e5       	ldi	r16, 0x5C	; 92
+ 124:	11 e0       	ldi	r17, 0x01	; 1
+ 126:	1c 92       	st	X, r1
+ 128:	11 96       	adiw	r26, 0x01	; 1
+ 12a:	1c 92       	st	X, r1
+ 12c:	11 97       	sbiw	r26, 0x01	; 1
+ 12e:	12 96       	adiw	r26, 0x02	; 2
+ 130:	1c 92       	st	X, r1
+ 132:	12 97       	sbiw	r26, 0x02	; 2
+ 134:	13 96       	adiw	r26, 0x03	; 3
+ 136:	1c 92       	st	X, r1
+ 138:	13 97       	sbiw	r26, 0x03	; 3
+ 13a:	14 96       	adiw	r26, 0x04	; 4
+ 13c:	1c 92       	st	X, r1
+ 13e:	14 97       	sbiw	r26, 0x04	; 4
+ 140:	15 96       	adiw	r26, 0x05	; 5
+ 142:	1c 92       	st	X, r1
+ 144:	15 97       	sbiw	r26, 0x05	; 5
+ 146:	16 96       	adiw	r26, 0x06	; 6
+ 148:	1c 92       	st	X, r1
+ 14a:	16 97       	sbiw	r26, 0x06	; 6
+ 14c:	17 96       	adiw	r26, 0x07	; 7
+ 14e:	1c 92       	st	X, r1
+ 150:	17 97       	sbiw	r26, 0x07	; 7
+ 152:	d4 ba       	out	0x14, r13	; 20
+ 154:	e5 ba       	out	0x15, r14	; 21
+ 156:	cc e5       	ldi	r28, 0x5C	; 92
+ 158:	d1 e0       	ldi	r29, 0x01	; 1
+ 15a:	40 e0       	ldi	r20, 0x00	; 0
+ 15c:	50 e0       	ldi	r21, 0x00	; 0
+ 15e:	1c c0       	rjmp	.+56     	; 0x198 <rotate+0xd0>
+ 160:	cb 01       	movw	r24, r22
+ 162:	02 2e       	mov	r0, r18
+ 164:	02 c0       	rjmp	.+4      	; 0x16a <rotate+0xa2>
+ 166:	95 95       	asr	r25
+ 168:	87 95       	ror	r24
+ 16a:	0a 94       	dec	r0
+ 16c:	e2 f7       	brpl	.-8      	; 0x166 <rotate+0x9e>
+ 16e:	81 70       	andi	r24, 0x01	; 1
+ 170:	99 27       	eor	r25, r25
+ 172:	04 2e       	mov	r0, r20
+ 174:	02 c0       	rjmp	.+4      	; 0x17a <rotate+0xb2>
+ 176:	88 0f       	add	r24, r24
+ 178:	99 1f       	adc	r25, r25
+ 17a:	0a 94       	dec	r0
+ 17c:	e2 f7       	brpl	.-8      	; 0x176 <rotate+0xae>
+ 17e:	92 91       	ld	r25, -Z
+ 180:	89 2b       	or	r24, r25
+ 182:	80 83       	st	Z, r24
+ 184:	2f 5f       	subi	r18, 0xFF	; 255
+ 186:	3f 4f       	sbci	r19, 0xFF	; 255
+ 188:	ae 17       	cp	r26, r30
+ 18a:	bf 07       	cpc	r27, r31
+ 18c:	49 f7       	brne	.-46     	; 0x160 <rotate+0x98>
+ 18e:	4f 5f       	subi	r20, 0xFF	; 255
+ 190:	5f 4f       	sbci	r21, 0xFF	; 255
+ 192:	48 30       	cpi	r20, 0x08	; 8
+ 194:	51 05       	cpc	r21, r1
+ 196:	39 f0       	breq	.+14     	; 0x1a6 <rotate+0xde>
+ 198:	69 91       	ld	r22, Y+
+ 19a:	70 e0       	ldi	r23, 0x00	; 0
+ 19c:	ec e5       	ldi	r30, 0x5C	; 92
+ 19e:	f1 e0       	ldi	r31, 0x01	; 1
+ 1a0:	20 e0       	ldi	r18, 0x00	; 0
+ 1a2:	30 e0       	ldi	r19, 0x00	; 0
+ 1a4:	dd cf       	rjmp	.-70     	; 0x160 <rotate+0x98>
+ 1a6:	17 96       	adiw	r26, 0x07	; 7
+ 1a8:	8c 91       	ld	r24, X
+ 1aa:	17 97       	sbiw	r26, 0x07	; 7
+ 1ac:	16 96       	adiw	r26, 0x06	; 6
+ 1ae:	9c 91       	ld	r25, X
+ 1b0:	16 97       	sbiw	r26, 0x06	; 6
+ 1b2:	15 96       	adiw	r26, 0x05	; 5
+ 1b4:	2c 91       	ld	r18, X
+ 1b6:	15 97       	sbiw	r26, 0x05	; 5
+ 1b8:	14 96       	adiw	r26, 0x04	; 4
+ 1ba:	3c 91       	ld	r19, X
+ 1bc:	14 97       	sbiw	r26, 0x04	; 4
+ 1be:	13 96       	adiw	r26, 0x03	; 3
+ 1c0:	4c 91       	ld	r20, X
+ 1c2:	13 97       	sbiw	r26, 0x03	; 3
+ 1c4:	12 96       	adiw	r26, 0x02	; 2
+ 1c6:	5c 91       	ld	r21, X
+ 1c8:	12 97       	sbiw	r26, 0x02	; 2
+ 1ca:	11 96       	adiw	r26, 0x01	; 1
+ 1cc:	6c 91       	ld	r22, X
+ 1ce:	11 97       	sbiw	r26, 0x01	; 1
+ 1d0:	7c 91       	ld	r23, X
+ 1d2:	f8 01       	movw	r30, r16
+ 1d4:	70 83       	st	Z, r23
+ 1d6:	61 83       	std	Z+1, r22	; 0x01
+ 1d8:	52 83       	std	Z+2, r21	; 0x02
+ 1da:	43 83       	std	Z+3, r20	; 0x03
+ 1dc:	34 83       	std	Z+4, r19	; 0x04
+ 1de:	25 83       	std	Z+5, r18	; 0x05
+ 1e0:	96 83       	std	Z+6, r25	; 0x06
+ 1e2:	87 83       	std	Z+7, r24	; 0x07
+ 1e4:	ff ef       	ldi	r31, 0xFF	; 255
+ 1e6:	ef 1a       	sub	r14, r31
+ 1e8:	ff 0a       	sbc	r15, r31
+ 1ea:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <rotations>
+ 1ee:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <rotations+0x1>
+ 1f2:	e8 16       	cp	r14, r24
+ 1f4:	f9 06       	cpc	r15, r25
+ 1f6:	0c f4       	brge	.+2      	; 0x1fa <rotate+0x132>
+ 1f8:	96 cf       	rjmp	.-212    	; 0x126 <rotate+0x5e>
+ 1fa:	df 91       	pop	r29
+ 1fc:	cf 91       	pop	r28
+ 1fe:	1f 91       	pop	r17
+ 200:	0f 91       	pop	r16
+ 202:	ff 90       	pop	r15
+ 204:	ef 90       	pop	r14
+ 206:	df 90       	pop	r13
+ 208:	08 95       	ret
 
-void LiftStart(void){
-	int x = 0;
+0000020a <wait>:
+ 20a:	18 16       	cp	r1, r24
+ 20c:	19 06       	cpc	r1, r25
+ 20e:	6c f4       	brge	.+26     	; 0x22a <wait+0x20>
+ 210:	20 e0       	ldi	r18, 0x00	; 0
+ 212:	30 e0       	ldi	r19, 0x00	; 0
+ 214:	e9 ef       	ldi	r30, 0xF9	; 249
+ 216:	f0 e0       	ldi	r31, 0x00	; 0
+ 218:	31 97       	sbiw	r30, 0x01	; 1
+ 21a:	f1 f7       	brne	.-4      	; 0x218 <wait+0xe>
+ 21c:	00 c0       	rjmp	.+0      	; 0x21e <wait+0x14>
+ 21e:	00 00       	nop
+ 220:	2f 5f       	subi	r18, 0xFF	; 255
+ 222:	3f 4f       	sbci	r19, 0xFF	; 255
+ 224:	82 17       	cp	r24, r18
+ 226:	93 07       	cpc	r25, r19
+ 228:	a9 f7       	brne	.-22     	; 0x214 <wait+0xa>
+ 22a:	08 95       	ret
+
+0000022c <twi_init>:
+ 22c:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <__TEXT_REGION_LENGTH__+0x7e0071>
+ 230:	80 e2       	ldi	r24, 0x20	; 32
+ 232:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <__TEXT_REGION_LENGTH__+0x7e0070>
+ 236:	08 95       	ret
+
+00000238 <twi_start>:
+ 238:	84 ea       	ldi	r24, 0xA4	; 164
+ 23a:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 23e:	e4 e7       	ldi	r30, 0x74	; 116
+ 240:	f0 e0       	ldi	r31, 0x00	; 0
+ 242:	80 81       	ld	r24, Z
+ 244:	88 23       	and	r24, r24
+ 246:	ec f7       	brge	.-6      	; 0x242 <twi_start+0xa>
+ 248:	08 95       	ret
+
+0000024a <twi_tx>:
+}
+
+void twi_tx(unsigned char data)
+{
+	TWDR = data;
+ 24a:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <__TEXT_REGION_LENGTH__+0x7e0073>
+	TWCR = (0x80 | 0x04);
+ 24e:	84 e8       	ldi	r24, 0x84	; 132
+ 250:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+	while( 0 == (TWCR & 0x80) );
+ 254:	e4 e7       	ldi	r30, 0x74	; 116
+ 256:	f0 e0       	ldi	r31, 0x00	; 0
+ 258:	80 81       	ld	r24, Z
+ 25a:	88 23       	and	r24, r24
+ 25c:	ec f7       	brge	.-6      	; 0x258 <twi_tx+0xe>
+}
+ 25e:	08 95       	ret
+
+00000260 <displayStruct>:
+
+PATTERN_STRUCT happySmiley[] = {30, 33, 210, 192, 210, 204, 33, 30};
+PATTERN_STRUCT neutralSmiley[] = {{30} , {33}  , {210}  , {192}  , {222}  , {192}  , {33} , {30}};
+PATTERN_STRUCT madSmiley[] = {{30} 	, {33}	, {210}	, {192}	, {204}	, {210}	, {33}	, {30}};
+
+void displayStruct(PATTERN_STRUCT str[]){
+ 260:	df 92       	push	r13
+ 262:	ef 92       	push	r14
+ 264:	ff 92       	push	r15
+ 266:	0f 93       	push	r16
+ 268:	1f 93       	push	r17
+ 26a:	cf 93       	push	r28
+ 26c:	df 93       	push	r29
+ 26e:	7c 01       	movw	r14, r24
+	
+	for (int adres = 0; adres <= 14; adres += 2)
+ 270:	c0 e0       	ldi	r28, 0x00	; 0
+ 272:	d0 e0       	ldi	r29, 0x00	; 0
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 274:	04 e7       	ldi	r16, 0x74	; 116
+ 276:	10 e0       	ldi	r17, 0x00	; 0
+ 278:	0f 2e       	mov	r0, r31
+ 27a:	f4 e9       	ldi	r31, 0x94	; 148
+ 27c:	df 2e       	mov	r13, r31
+ 27e:	f0 2d       	mov	r31, r0
+
+void displayStruct(PATTERN_STRUCT str[]){
+	
 	for (int adres = 0; adres <= 14; adres += 2)
 	{
 		twi_start();
- 1ac:	a4 df       	rcall	.-184    	; 0xf6 <twi_start>
+ 280:	db df       	rcall	.-74     	; 0x238 <twi_start>
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
- 1ae:	80 ee       	ldi	r24, 0xE0	; 224
- 1b0:	90 e0       	ldi	r25, 0x00	; 0
- 1b2:	aa df       	rcall	.-172    	; 0x108 <twi_tx>
+ 282:	80 ee       	ldi	r24, 0xE0	; 224
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	e1 df       	rcall	.-62     	; 0x24a <twi_tx>
 		twi_tx(adres);	// Address
- 1b4:	ce 01       	movw	r24, r28
- 1b6:	a8 df       	rcall	.-176    	; 0x108 <twi_tx>
- 1b8:	f8 01       	movw	r30, r16
-		twi_tx(liftup[x].data);	// data
- 1ba:	81 91       	ld	r24, Z+
- 1bc:	8f 01       	movw	r16, r30
- 1be:	90 e0       	ldi	r25, 0x00	; 0
- 1c0:	a3 df       	rcall	.-186    	; 0x108 <twi_tx>
- 1c2:	f6 01       	movw	r30, r12
+ 288:	ce 01       	movw	r24, r28
+ 28a:	df df       	rcall	.-66     	; 0x24a <twi_tx>
+ 28c:	ce 01       	movw	r24, r28
+		twi_tx(str[adres/2].data);	// data
+ 28e:	dd 23       	and	r29, r29
+ 290:	0c f4       	brge	.+2      	; 0x294 <displayStruct+0x34>
+ 292:	01 96       	adiw	r24, 0x01	; 1
+ 294:	95 95       	asr	r25
+ 296:	87 95       	ror	r24
+ 298:	f7 01       	movw	r30, r14
+ 29a:	e8 0f       	add	r30, r24
+ 29c:	f9 1f       	adc	r31, r25
+ 29e:	80 81       	ld	r24, Z
+ 2a0:	90 e0       	ldi	r25, 0x00	; 0
+ 2a2:	d3 df       	rcall	.-90     	; 0x24a <twi_tx>
+ 2a4:	f8 01       	movw	r30, r16
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 1c4:	f0 82       	st	Z, r15
- 1c6:	22 96       	adiw	r28, 0x02	; 2
+ 2a6:	d0 82       	st	Z, r13
+ 2a8:	22 96       	adiw	r28, 0x02	; 2
+PATTERN_STRUCT neutralSmiley[] = {{30} , {33}  , {210}  , {192}  , {222}  , {192}  , {33} , {30}};
+PATTERN_STRUCT madSmiley[] = {{30} 	, {33}	, {210}	, {192}	, {204}	, {210}	, {33}	, {30}};
+
+void displayStruct(PATTERN_STRUCT str[]){
+	
+	for (int adres = 0; adres <= 14; adres += 2)
+ 2aa:	c0 31       	cpi	r28, 0x10	; 16
+ 2ac:	d1 05       	cpc	r29, r1
+ 2ae:	41 f7       	brne	.-48     	; 0x280 <displayStruct+0x20>
+ 2b0:	df 91       	pop	r29
+		twi_tx(0xE0);	// Display I2C addres + R/W bit
+		twi_tx(adres);	// Address
+		twi_tx(str[adres/2].data);	// data
+		twi_stop();
 	}
+}
+ 2b2:	cf 91       	pop	r28
+ 2b4:	1f 91       	pop	r17
+ 2b6:	0f 91       	pop	r16
+ 2b8:	ff 90       	pop	r15
+ 2ba:	ef 90       	pop	r14
+ 2bc:	df 90       	pop	r13
+ 2be:	08 95       	ret
+
+000002c0 <LiftStart>:
+ 2c0:	ff 92       	push	r15
+	rotated[6].data = g;
+	rotated[7].data = h;
+	
 }
 
 void LiftStart(void){
-	int x = 0;
-	for (int adres = 0; adres <= 14; adres += 2)
- 1c8:	c0 31       	cpi	r28, 0x10	; 16
- 1ca:	d1 05       	cpc	r29, r1
- 1cc:	79 f7       	brne	.-34     	; 0x1ac <LiftStart+0x28>
- 1ce:	df 91       	pop	r29
-		twi_stop();
-		x++;
-	}
-	
+ 2c2:	0f 93       	push	r16
+ 2c4:	1f 93       	push	r17
+ 2c6:	cf 93       	push	r28
+ 2c8:	df 93       	push	r29
+	setCurrentPattern(liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+									liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+ 2ca:	e0 91 66 01 	lds	r30, 0x0166	; 0x800166 <place>
+ 2ce:	f0 91 67 01 	lds	r31, 0x0167	; 0x800167 <place+0x1>
+ 2d2:	e0 5f       	subi	r30, 0xF0	; 240
+ 2d4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 2d6:	87 81       	ldd	r24, Z+7	; 0x07
+ 2d8:	96 81       	ldd	r25, Z+6	; 0x06
+ 2da:	25 81       	ldd	r18, Z+5	; 0x05
+ 2dc:	34 81       	ldd	r19, Z+4	; 0x04
+	rotated[7].data = h;
 	
 }
- 1d0:	cf 91       	pop	r28
- 1d2:	1f 91       	pop	r17
- 1d4:	0f 91       	pop	r16
- 1d6:	ff 90       	pop	r15
- 1d8:	df 90       	pop	r13
- 1da:	cf 90       	pop	r12
- 1dc:	08 95       	ret
 
-000001de <clearmatrix>:
- 1de:	ef 92       	push	r14
+void LiftStart(void){
+	setCurrentPattern(liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+ 2de:	43 81       	ldd	r20, Z+3	; 0x03
+ 2e0:	52 81       	ldd	r21, Z+2	; 0x02
+ 2e2:	61 81       	ldd	r22, Z+1	; 0x01
+	}
 
-void clearmatrix(void){
- 1e0:	ff 92       	push	r15
- 1e2:	1f 93       	push	r17
- 1e4:	cf 93       	push	r28
- 1e6:	df 93       	push	r29
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+ 2e4:	ac e5       	ldi	r26, 0x5C	; 92
+ 2e6:	b1 e0       	ldi	r27, 0x01	; 1
+ 2e8:	70 81       	ld	r23, Z
+ 2ea:	7c 93       	st	X, r23
+	currentPattern[1].data = b;
+ 2ec:	11 96       	adiw	r26, 0x01	; 1
+ 2ee:	6c 93       	st	X, r22
+ 2f0:	11 97       	sbiw	r26, 0x01	; 1
+	currentPattern[2].data = c;
+ 2f2:	12 96       	adiw	r26, 0x02	; 2
+ 2f4:	5c 93       	st	X, r21
+ 2f6:	12 97       	sbiw	r26, 0x02	; 2
+	currentPattern[3].data = d;
+ 2f8:	13 96       	adiw	r26, 0x03	; 3
+ 2fa:	4c 93       	st	X, r20
+ 2fc:	13 97       	sbiw	r26, 0x03	; 3
+	currentPattern[4].data = e;
+ 2fe:	14 96       	adiw	r26, 0x04	; 4
+ 300:	3c 93       	st	X, r19
+ 302:	14 97       	sbiw	r26, 0x04	; 4
+	currentPattern[5].data = f;
+ 304:	15 96       	adiw	r26, 0x05	; 5
+ 306:	2c 93       	st	X, r18
+ 308:	15 97       	sbiw	r26, 0x05	; 5
+	currentPattern[6].data = g;
+ 30a:	16 96       	adiw	r26, 0x06	; 6
+ 30c:	9c 93       	st	X, r25
+ 30e:	16 97       	sbiw	r26, 0x06	; 6
+	currentPattern[7].data = h;
+ 310:	17 96       	adiw	r26, 0x07	; 7
+ 312:	8c 93       	st	X, r24
+
+void LiftStart(void){
+	setCurrentPattern(liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+									liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+
+	rotate();
+ 314:	d9 de       	rcall	.-590    	; 0xc8 <rotate>
+			
 	for (int adres = 0; adres <= 14; adres += 2)
- 1e8:	c0 e0       	ldi	r28, 0x00	; 0
- 1ea:	d0 e0       	ldi	r29, 0x00	; 0
+ 316:	c0 e0       	ldi	r28, 0x00	; 0
+ 318:	d0 e0       	ldi	r29, 0x00	; 0
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 1ec:	0f 2e       	mov	r0, r31
- 1ee:	f4 e7       	ldi	r31, 0x74	; 116
- 1f0:	ef 2e       	mov	r14, r31
- 1f2:	f1 2c       	mov	r15, r1
- 1f4:	f0 2d       	mov	r31, r0
- 1f6:	14 e9       	ldi	r17, 0x94	; 148
-}
+ 31a:	04 e7       	ldi	r16, 0x74	; 116
+ 31c:	10 e0       	ldi	r17, 0x00	; 0
+ 31e:	0f 2e       	mov	r0, r31
+ 320:	f4 e9       	ldi	r31, 0x94	; 148
+ 322:	ff 2e       	mov	r15, r31
 
-void clearmatrix(void){
+	rotate();
+			
 	for (int adres = 0; adres <= 14; adres += 2)
 	{
 		twi_start();
- 1f8:	7e df       	rcall	.-260    	; 0xf6 <twi_start>
+ 324:	f0 2d       	mov	r31, r0
+ 326:	88 df       	rcall	.-240    	; 0x238 <twi_start>
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
- 1fa:	80 ee       	ldi	r24, 0xE0	; 224
- 1fc:	90 e0       	ldi	r25, 0x00	; 0
- 1fe:	84 df       	rcall	.-248    	; 0x108 <twi_tx>
+ 328:	80 ee       	ldi	r24, 0xE0	; 224
+ 32a:	90 e0       	ldi	r25, 0x00	; 0
 		twi_tx(adres);	// Address
- 200:	ce 01       	movw	r24, r28
- 202:	82 df       	rcall	.-252    	; 0x108 <twi_tx>
-		twi_tx(0);	// data
- 204:	80 e0       	ldi	r24, 0x00	; 0
- 206:	90 e0       	ldi	r25, 0x00	; 0
- 208:	7f df       	rcall	.-258    	; 0x108 <twi_tx>
- 20a:	f7 01       	movw	r30, r14
-	while( 0x00 == (TWCR & 0x80) );
-}
-
-void twi_stop(void)
-{
-	TWCR = (0x80 | 0x10 | 0x04);
- 20c:	10 83       	st	Z, r17
- 20e:	22 96       	adiw	r28, 0x02	; 2
-	
-	
-}
-
-void clearmatrix(void){
-	for (int adres = 0; adres <= 14; adres += 2)
- 210:	c0 31       	cpi	r28, 0x10	; 16
- 212:	d1 05       	cpc	r29, r1
- 214:	89 f7       	brne	.-30     	; 0x1f8 <clearmatrix+0x1a>
- 216:	df 91       	pop	r29
-		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(adres);	// Address
-		twi_tx(0);	// data
-		twi_stop();
-	}
-}
- 218:	cf 91       	pop	r28
- 21a:	1f 91       	pop	r17
- 21c:	ff 90       	pop	r15
- 21e:	ef 90       	pop	r14
- 220:	08 95       	ret
-
-00000222 <Liftup>:
- 222:	bf 92       	push	r11
-void Liftup(int desti){
- 224:	cf 92       	push	r12
- 226:	df 92       	push	r13
- 228:	ef 92       	push	r14
- 22a:	ff 92       	push	r15
- 22c:	0f 93       	push	r16
- 22e:	1f 93       	push	r17
- 230:	cf 93       	push	r28
- 232:	df 93       	push	r29
-	PORTA = place; 
- 234:	20 91 94 01 	lds	r18, 0x0194	; 0x800194 <place>
- 238:	2b bb       	out	0x1b, r18	; 27
-	if (place > 50)
- 23a:	20 91 94 01 	lds	r18, 0x0194	; 0x800194 <place>
- 23e:	30 91 95 01 	lds	r19, 0x0195	; 0x800195 <place+0x1>
- 242:	23 33       	cpi	r18, 0x33	; 51
- 244:	31 05       	cpc	r19, r1
- 246:	0c f0       	brlt	.+2      	; 0x24a <Liftup+0x28>
- 248:	4c c0       	rjmp	.+152    	; 0x2e2 <Liftup+0xc0>
-		return;
-		
-	if (lastScrollAction == 2){
- 24a:	40 91 92 01 	lds	r20, 0x0192	; 0x800192 <__data_end>
- 24e:	50 91 93 01 	lds	r21, 0x0193	; 0x800193 <__data_end+0x1>
- 252:	42 30       	cpi	r20, 0x02	; 2
- 254:	51 05       	cpc	r21, r1
- 256:	31 f4       	brne	.+12     	; 0x264 <Liftup+0x42>
-		place--;
- 258:	21 50       	subi	r18, 0x01	; 1
- 25a:	31 09       	sbc	r19, r1
- 25c:	30 93 95 01 	sts	0x0195, r19	; 0x800195 <place+0x1>
- 260:	20 93 94 01 	sts	0x0194, r18	; 0x800194 <place>
-	}
-		
-	
-	for (place; place <= desti; place++)
- 264:	00 91 94 01 	lds	r16, 0x0194	; 0x800194 <place>
- 268:	10 91 95 01 	lds	r17, 0x0195	; 0x800195 <place+0x1>
- 26c:	80 17       	cp	r24, r16
- 26e:	91 07       	cpc	r25, r17
- 270:	1c f5       	brge	.+70     	; 0x2b8 <Liftup+0x96>
- 272:	31 c0       	rjmp	.+98     	; 0x2d6 <Liftup+0xb4>
-	{
-		int x = place;
-		for (int adres = 0; adres <= 14; adres += 2)
-		{
-			twi_start();
- 274:	40 df       	rcall	.-384    	; 0xf6 <twi_start>
-			twi_tx(0xE0);	// Display I2C addres + R/W bit
- 276:	80 ee       	ldi	r24, 0xE0	; 224
- 278:	90 e0       	ldi	r25, 0x00	; 0
- 27a:	46 df       	rcall	.-372    	; 0x108 <twi_tx>
-			twi_tx(adres);	// Address
- 27c:	ce 01       	movw	r24, r28
- 27e:	44 df       	rcall	.-376    	; 0x108 <twi_tx>
- 280:	f8 01       	movw	r30, r16
-			twi_tx(liftup[x].data);	// data
- 282:	81 91       	ld	r24, Z+
- 284:	8f 01       	movw	r16, r30
- 286:	90 e0       	ldi	r25, 0x00	; 0
- 288:	3f df       	rcall	.-386    	; 0x108 <twi_tx>
- 28a:	f7 01       	movw	r30, r14
-	while( 0x00 == (TWCR & 0x80) );
-}
-
-void twi_stop(void)
-{
-	TWCR = (0x80 | 0x10 | 0x04);
- 28c:	b0 82       	st	Z, r11
- 28e:	22 96       	adiw	r28, 0x02	; 2
-		
-	
-	for (place; place <= desti; place++)
-	{
-		int x = place;
-		for (int adres = 0; adres <= 14; adres += 2)
- 290:	c0 31       	cpi	r28, 0x10	; 16
- 292:	d1 05       	cpc	r29, r1
- 294:	79 f7       	brne	.-34     	; 0x274 <Liftup+0x52>
-			twi_tx(adres);	// Address
-			twi_tx(liftup[x].data);	// data
-			twi_stop();
-			x++;
-		}
-		wait(1250);
- 296:	82 ee       	ldi	r24, 0xE2	; 226
- 298:	94 e0       	ldi	r25, 0x04	; 4
- 29a:	16 df       	rcall	.-468    	; 0xc8 <wait>
- 29c:	00 91 94 01 	lds	r16, 0x0194	; 0x800194 <place>
-	if (lastScrollAction == 2){
-		place--;
-	}
-		
-	
-	for (place; place <= desti; place++)
- 2a0:	10 91 95 01 	lds	r17, 0x0195	; 0x800195 <place+0x1>
- 2a4:	0f 5f       	subi	r16, 0xFF	; 255
- 2a6:	1f 4f       	sbci	r17, 0xFF	; 255
- 2a8:	10 93 95 01 	sts	0x0195, r17	; 0x800195 <place+0x1>
- 2ac:	00 93 94 01 	sts	0x0194, r16	; 0x800194 <place>
- 2b0:	c0 16       	cp	r12, r16
- 2b2:	d1 06       	cpc	r13, r17
- 2b4:	5c f4       	brge	.+22     	; 0x2cc <Liftup+0xaa>
- 2b6:	0f c0       	rjmp	.+30     	; 0x2d6 <Liftup+0xb4>
- 2b8:	6c 01       	movw	r12, r24
- 2ba:	0f 2e       	mov	r0, r31
-	while( 0x00 == (TWCR & 0x80) );
-}
-
-void twi_stop(void)
-{
-	TWCR = (0x80 | 0x10 | 0x04);
- 2bc:	f4 e7       	ldi	r31, 0x74	; 116
- 2be:	ef 2e       	mov	r14, r31
- 2c0:	f1 2c       	mov	r15, r1
- 2c2:	f0 2d       	mov	r31, r0
- 2c4:	0f 2e       	mov	r0, r31
- 2c6:	f4 e9       	ldi	r31, 0x94	; 148
- 2c8:	bf 2e       	mov	r11, r31
- 2ca:	f0 2d       	mov	r31, r0
- 2cc:	0b 5a       	subi	r16, 0xAB	; 171
- 2ce:	1e 4f       	sbci	r17, 0xFE	; 254
- 2d0:	c0 e0       	ldi	r28, 0x00	; 0
-		twi_tx(adres);	// Address
-		twi_tx(0);	// data
-		twi_stop();
-	}
-}
-void Liftup(int desti){
- 2d2:	d0 e0       	ldi	r29, 0x00	; 0
- 2d4:	cf cf       	rjmp	.-98     	; 0x274 <Liftup+0x52>
- 2d6:	81 e0       	ldi	r24, 0x01	; 1
-		wait(1250);
-	}
-	
-
-		
-	lastScrollAction = 1;
- 2d8:	90 e0       	ldi	r25, 0x00	; 0
- 2da:	90 93 93 01 	sts	0x0193, r25	; 0x800193 <__data_end+0x1>
- 2de:	80 93 92 01 	sts	0x0192, r24	; 0x800192 <__data_end>
- 2e2:	df 91       	pop	r29
-	
-
-}
- 2e4:	cf 91       	pop	r28
- 2e6:	1f 91       	pop	r17
- 2e8:	0f 91       	pop	r16
- 2ea:	ff 90       	pop	r15
- 2ec:	ef 90       	pop	r14
- 2ee:	df 90       	pop	r13
- 2f0:	cf 90       	pop	r12
- 2f2:	bf 90       	pop	r11
- 2f4:	08 95       	ret
-
-000002f6 <Liftdown>:
- 2f6:	bf 92       	push	r11
-
-void Liftdown(int desti){
- 2f8:	cf 92       	push	r12
- 2fa:	df 92       	push	r13
- 2fc:	ef 92       	push	r14
- 2fe:	ff 92       	push	r15
- 300:	0f 93       	push	r16
- 302:	1f 93       	push	r17
- 304:	cf 93       	push	r28
- 306:	df 93       	push	r29
-	if (place < 1)
- 308:	20 91 94 01 	lds	r18, 0x0194	; 0x800194 <place>
- 30c:	30 91 95 01 	lds	r19, 0x0195	; 0x800195 <place+0x1>
- 310:	12 16       	cp	r1, r18
- 312:	13 06       	cpc	r1, r19
- 314:	0c f0       	brlt	.+2      	; 0x318 <Liftdown+0x22>
- 316:	4c c0       	rjmp	.+152    	; 0x3b0 <Liftdown+0xba>
-		return;
-		
-	if (lastScrollAction == 1){
- 318:	40 91 92 01 	lds	r20, 0x0192	; 0x800192 <__data_end>
- 31c:	50 91 93 01 	lds	r21, 0x0193	; 0x800193 <__data_end+0x1>
- 320:	41 30       	cpi	r20, 0x01	; 1
- 322:	51 05       	cpc	r21, r1
- 324:	31 f4       	brne	.+12     	; 0x332 <Liftdown+0x3c>
-		place++;
- 326:	2f 5f       	subi	r18, 0xFF	; 255
- 328:	3f 4f       	sbci	r19, 0xFF	; 255
- 32a:	30 93 95 01 	sts	0x0195, r19	; 0x800195 <place+0x1>
- 32e:	20 93 94 01 	sts	0x0194, r18	; 0x800194 <place>
-	}
-		
-		
-	for (place; place >= desti; place--)
- 332:	00 91 94 01 	lds	r16, 0x0194	; 0x800194 <place>
- 336:	10 91 95 01 	lds	r17, 0x0195	; 0x800195 <place+0x1>
- 33a:	08 17       	cp	r16, r24
- 33c:	19 07       	cpc	r17, r25
- 33e:	1c f5       	brge	.+70     	; 0x386 <Liftdown+0x90>
- 340:	31 c0       	rjmp	.+98     	; 0x3a4 <Liftdown+0xae>
-	{
-		int x=place;
-		for (int adres = 0; adres <= 14; adres += 2)
-		{
-			twi_start();
- 342:	d9 de       	rcall	.-590    	; 0xf6 <twi_start>
-			twi_tx(0xE0);	// Display I2C addres + R/W bit
- 344:	80 ee       	ldi	r24, 0xE0	; 224
+ 32c:	8e df       	rcall	.-228    	; 0x24a <twi_tx>
+ 32e:	ce 01       	movw	r24, r28
+ 330:	8c df       	rcall	.-232    	; 0x24a <twi_tx>
+		twi_tx(rotated[adres/2].data);	// data
+ 332:	ce 01       	movw	r24, r28
+ 334:	dd 23       	and	r29, r29
+ 336:	0c f4       	brge	.+2      	; 0x33a <LiftStart+0x7a>
+ 338:	01 96       	adiw	r24, 0x01	; 1
+ 33a:	95 95       	asr	r25
+ 33c:	87 95       	ror	r24
+ 33e:	fc 01       	movw	r30, r24
+ 340:	ec 5a       	subi	r30, 0xAC	; 172
+ 342:	fe 4f       	sbci	r31, 0xFE	; 254
+ 344:	80 81       	ld	r24, Z
  346:	90 e0       	ldi	r25, 0x00	; 0
- 348:	df de       	rcall	.-578    	; 0x108 <twi_tx>
-			twi_tx(adres);	// Address
- 34a:	ce 01       	movw	r24, r28
- 34c:	dd de       	rcall	.-582    	; 0x108 <twi_tx>
- 34e:	f8 01       	movw	r30, r16
-			twi_tx(liftdown[x - 1].data);	// data
- 350:	81 91       	ld	r24, Z+
- 352:	8f 01       	movw	r16, r30
- 354:	90 e0       	ldi	r25, 0x00	; 0
- 356:	d8 de       	rcall	.-592    	; 0x108 <twi_tx>
- 358:	f7 01       	movw	r30, r14
+ 348:	80 df       	rcall	.-256    	; 0x24a <twi_tx>
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 35a:	b0 82       	st	Z, r11
- 35c:	22 96       	adiw	r28, 0x02	; 2
-		
-		
-	for (place; place >= desti; place--)
-	{
-		int x=place;
-		for (int adres = 0; adres <= 14; adres += 2)
- 35e:	c0 31       	cpi	r28, 0x10	; 16
- 360:	d1 05       	cpc	r29, r1
- 362:	79 f7       	brne	.-34     	; 0x342 <Liftdown+0x4c>
-			twi_tx(adres);	// Address
-			twi_tx(liftdown[x - 1].data);	// data
-			twi_stop();
-			x++;
-		}
-		wait(1250);
- 364:	82 ee       	ldi	r24, 0xE2	; 226
- 366:	94 e0       	ldi	r25, 0x04	; 4
- 368:	af de       	rcall	.-674    	; 0xc8 <wait>
- 36a:	00 91 94 01 	lds	r16, 0x0194	; 0x800194 <place>
-	if (lastScrollAction == 1){
-		place++;
+ 34a:	f8 01       	movw	r30, r16
+ 34c:	f0 82       	st	Z, r15
+	setCurrentPattern(liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+									liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+
+	rotate();
+			
+	for (int adres = 0; adres <= 14; adres += 2)
+ 34e:	22 96       	adiw	r28, 0x02	; 2
+ 350:	c0 31       	cpi	r28, 0x10	; 16
+ 352:	d1 05       	cpc	r29, r1
+ 354:	41 f7       	brne	.-48     	; 0x326 <LiftStart+0x66>
+		twi_tx(adres);	// Address
+		twi_tx(rotated[adres/2].data);	// data
+		twi_stop();
 	}
-		
-		
-	for (place; place >= desti; place--)
- 36e:	10 91 95 01 	lds	r17, 0x0195	; 0x800195 <place+0x1>
- 372:	01 50       	subi	r16, 0x01	; 1
- 374:	11 09       	sbc	r17, r1
- 376:	10 93 95 01 	sts	0x0195, r17	; 0x800195 <place+0x1>
- 37a:	00 93 94 01 	sts	0x0194, r16	; 0x800194 <place>
- 37e:	0c 15       	cp	r16, r12
- 380:	1d 05       	cpc	r17, r13
- 382:	5c f4       	brge	.+22     	; 0x39a <Liftdown+0xa4>
- 384:	0f c0       	rjmp	.+30     	; 0x3a4 <Liftdown+0xae>
- 386:	6c 01       	movw	r12, r24
- 388:	0f 2e       	mov	r0, r31
+	
+}
+ 356:	df 91       	pop	r29
+ 358:	cf 91       	pop	r28
+ 35a:	1f 91       	pop	r17
+ 35c:	0f 91       	pop	r16
+ 35e:	ff 90       	pop	r15
+ 360:	08 95       	ret
+
+00000362 <clearmatrix>:
+
+void clearmatrix(void){
+ 362:	ef 92       	push	r14
+ 364:	ff 92       	push	r15
+ 366:	1f 93       	push	r17
+ 368:	cf 93       	push	r28
+ 36a:	df 93       	push	r29
+	for (int adres = 0; adres <= 14; adres += 2)
+ 36c:	c0 e0       	ldi	r28, 0x00	; 0
+ 36e:	d0 e0       	ldi	r29, 0x00	; 0
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 38a:	f4 e7       	ldi	r31, 0x74	; 116
- 38c:	ef 2e       	mov	r14, r31
- 38e:	f1 2c       	mov	r15, r1
- 390:	f0 2d       	mov	r31, r0
- 392:	0f 2e       	mov	r0, r31
- 394:	f4 e9       	ldi	r31, 0x94	; 148
- 396:	bf 2e       	mov	r11, r31
- 398:	f0 2d       	mov	r31, r0
- 39a:	09 5e       	subi	r16, 0xE9	; 233
- 39c:	1e 4f       	sbci	r17, 0xFE	; 254
- 39e:	c0 e0       	ldi	r28, 0x00	; 0
-	lastScrollAction = 1;
+ 370:	0f 2e       	mov	r0, r31
+ 372:	f4 e7       	ldi	r31, 0x74	; 116
+ 374:	ef 2e       	mov	r14, r31
+ 376:	f1 2c       	mov	r15, r1
+ 378:	f0 2d       	mov	r31, r0
+ 37a:	14 e9       	ldi	r17, 0x94	; 148
+}
+
+void clearmatrix(void){
+	for (int adres = 0; adres <= 14; adres += 2)
+	{
+		twi_start();
+ 37c:	5d df       	rcall	.-326    	; 0x238 <twi_start>
+		twi_tx(0xE0);	// Display I2C addres + R/W bit
+ 37e:	80 ee       	ldi	r24, 0xE0	; 224
+ 380:	90 e0       	ldi	r25, 0x00	; 0
+ 382:	63 df       	rcall	.-314    	; 0x24a <twi_tx>
+		twi_tx(adres);	// Address
+ 384:	ce 01       	movw	r24, r28
+ 386:	61 df       	rcall	.-318    	; 0x24a <twi_tx>
+		twi_tx(0);	// data
+ 388:	80 e0       	ldi	r24, 0x00	; 0
+ 38a:	90 e0       	ldi	r25, 0x00	; 0
+ 38c:	5e df       	rcall	.-324    	; 0x24a <twi_tx>
+ 38e:	f7 01       	movw	r30, r14
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 390:	10 83       	st	Z, r17
+ 392:	22 96       	adiw	r28, 0x02	; 2
+	}
+	
+}
+
+void clearmatrix(void){
+	for (int adres = 0; adres <= 14; adres += 2)
+ 394:	c0 31       	cpi	r28, 0x10	; 16
+ 396:	d1 05       	cpc	r29, r1
+ 398:	89 f7       	brne	.-30     	; 0x37c <clearmatrix+0x1a>
+ 39a:	df 91       	pop	r29
+		twi_tx(0xE0);	// Display I2C addres + R/W bit
+		twi_tx(adres);	// Address
+		twi_tx(0);	// data
+		twi_stop();
+	}
+}
+ 39c:	cf 91       	pop	r28
+ 39e:	1f 91       	pop	r17
+ 3a0:	ff 90       	pop	r15
+ 3a2:	ef 90       	pop	r14
+ 3a4:	08 95       	ret
+
+000003a6 <Liftup>:
+ 3a6:	bf 92       	push	r11
+
+void Liftup(int desti){
+ 3a8:	cf 92       	push	r12
+ 3aa:	df 92       	push	r13
+ 3ac:	ef 92       	push	r14
+ 3ae:	ff 92       	push	r15
+ 3b0:	0f 93       	push	r16
+ 3b2:	1f 93       	push	r17
+ 3b4:	cf 93       	push	r28
+ 3b6:	df 93       	push	r29
+	PORTA = place;
+ 3b8:	20 91 66 01 	lds	r18, 0x0166	; 0x800166 <place>
+ 3bc:	2b bb       	out	0x1b, r18	; 27
+	
+	if (place > 59)
+ 3be:	e0 91 66 01 	lds	r30, 0x0166	; 0x800166 <place>
+ 3c2:	f0 91 67 01 	lds	r31, 0x0167	; 0x800167 <place+0x1>
+ 3c6:	ec 33       	cpi	r30, 0x3C	; 60
+ 3c8:	f1 05       	cpc	r31, r1
+ 3ca:	0c f0       	brlt	.+2      	; 0x3ce <Liftup+0x28>
+ 3cc:	55 c0       	rjmp	.+170    	; 0x478 <__LOCK_REGION_LENGTH__+0x78>
+		return; 
+			
+	for (place; place <= desti; place++){
+ 3ce:	8e 17       	cp	r24, r30
+ 3d0:	9f 07       	cpc	r25, r31
+ 3d2:	0c f4       	brge	.+2      	; 0x3d6 <Liftup+0x30>
+ 3d4:	4c c0       	rjmp	.+152    	; 0x46e <__LOCK_REGION_LENGTH__+0x6e>
+ 3d6:	6c 01       	movw	r12, r24
+	}
+
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+ 3d8:	0f 2e       	mov	r0, r31
+ 3da:	fc e5       	ldi	r31, 0x5C	; 92
+ 3dc:	ef 2e       	mov	r14, r31
+ 3de:	f1 e0       	ldi	r31, 0x01	; 1
+ 3e0:	ff 2e       	mov	r15, r31
+ 3e2:	f0 2d       	mov	r31, r0
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 3e4:	04 e7       	ldi	r16, 0x74	; 116
+ 3e6:	10 e0       	ldi	r17, 0x00	; 0
+ 3e8:	0f 2e       	mov	r0, r31
+ 3ea:	f4 e9       	ldi	r31, 0x94	; 148
+ 3ec:	bf 2e       	mov	r11, r31
+ 3ee:	f0 2d       	mov	r31, r0
+	if (place > 59)
+		return; 
+			
+	for (place; place <= desti; place++){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+ 3f0:	e0 5f       	subi	r30, 0xF0	; 240
+ 3f2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 3f4:	87 81       	ldd	r24, Z+7	; 0x07
+ 3f6:	96 81       	ldd	r25, Z+6	; 0x06
+ 3f8:	25 81       	ldd	r18, Z+5	; 0x05
+ 3fa:	34 81       	ldd	r19, Z+4	; 0x04
+	
+	if (place > 59)
+		return; 
+			
+	for (place; place <= desti; place++){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+ 3fc:	43 81       	ldd	r20, Z+3	; 0x03
+ 3fe:	52 81       	ldd	r21, Z+2	; 0x02
+ 400:	61 81       	ldd	r22, Z+1	; 0x01
+	}
+
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+ 402:	70 81       	ld	r23, Z
+ 404:	f7 01       	movw	r30, r14
+ 406:	70 83       	st	Z, r23
+	currentPattern[1].data = b;
+ 408:	61 83       	std	Z+1, r22	; 0x01
+	currentPattern[2].data = c;
+ 40a:	52 83       	std	Z+2, r21	; 0x02
+	currentPattern[3].data = d;
+ 40c:	43 83       	std	Z+3, r20	; 0x03
+	currentPattern[4].data = e;
+ 40e:	34 83       	std	Z+4, r19	; 0x04
+	currentPattern[5].data = f;
+ 410:	25 83       	std	Z+5, r18	; 0x05
+	currentPattern[6].data = g;
+ 412:	96 83       	std	Z+6, r25	; 0x06
+	currentPattern[7].data = h;
+ 414:	87 83       	std	Z+7, r24	; 0x07
+		return; 
+			
+	for (place; place <= desti; place++){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
+ 416:	58 de       	rcall	.-848    	; 0xc8 <rotate>
+		
+		for (int adres = 0; adres <= 14; adres += 2)
+ 418:	c0 e0       	ldi	r28, 0x00	; 0
+		{
+			twi_start();
+ 41a:	d0 e0       	ldi	r29, 0x00	; 0
+ 41c:	0d df       	rcall	.-486    	; 0x238 <twi_start>
+			twi_tx(0xE0);	// Display I2C addres + R/W bit
+ 41e:	80 ee       	ldi	r24, 0xE0	; 224
+ 420:	90 e0       	ldi	r25, 0x00	; 0
+			twi_tx(adres);	// Address
+ 422:	13 df       	rcall	.-474    	; 0x24a <twi_tx>
+ 424:	ce 01       	movw	r24, r28
+ 426:	11 df       	rcall	.-478    	; 0x24a <twi_tx>
+			twi_tx(rotated[adres/2].data);	// data
+ 428:	9e 01       	movw	r18, r28
+ 42a:	dd 23       	and	r29, r29
+ 42c:	14 f4       	brge	.+4      	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 42e:	2f 5f       	subi	r18, 0xFF	; 255
+ 430:	3f 4f       	sbci	r19, 0xFF	; 255
+ 432:	35 95       	asr	r19
+ 434:	27 95       	ror	r18
+ 436:	f9 01       	movw	r30, r18
+ 438:	ec 5a       	subi	r30, 0xAC	; 172
+ 43a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 43c:	80 81       	ld	r24, Z
+ 43e:	90 e0       	ldi	r25, 0x00	; 0
+ 440:	04 df       	rcall	.-504    	; 0x24a <twi_tx>
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 442:	f8 01       	movw	r30, r16
+ 444:	b0 82       	st	Z, r11
+	for (place; place <= desti; place++){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
+		
+		for (int adres = 0; adres <= 14; adres += 2)
+ 446:	22 96       	adiw	r28, 0x02	; 2
+ 448:	c0 31       	cpi	r28, 0x10	; 16
+ 44a:	d1 05       	cpc	r29, r1
+			twi_tx(adres);	// Address
+			twi_tx(rotated[adres/2].data);	// data
+			twi_stop();
+		}
+		
+		wait(1250);
+ 44c:	39 f7       	brne	.-50     	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+ 44e:	82 ee       	ldi	r24, 0xE2	; 226
+ 450:	94 e0       	ldi	r25, 0x04	; 4
+ 452:	db de       	rcall	.-586    	; 0x20a <wait>
+	PORTA = place;
+	
+	if (place > 59)
+		return; 
+			
+	for (place; place <= desti; place++){
+ 454:	e0 91 66 01 	lds	r30, 0x0166	; 0x800166 <place>
+ 458:	f0 91 67 01 	lds	r31, 0x0167	; 0x800167 <place+0x1>
+ 45c:	31 96       	adiw	r30, 0x01	; 1
+ 45e:	f0 93 67 01 	sts	0x0167, r31	; 0x800167 <place+0x1>
+ 462:	e0 93 66 01 	sts	0x0166, r30	; 0x800166 <place>
+ 466:	ce 16       	cp	r12, r30
+ 468:	df 06       	cpc	r13, r31
+ 46a:	0c f0       	brlt	.+2      	; 0x46e <__LOCK_REGION_LENGTH__+0x6e>
+ 46c:	c1 cf       	rjmp	.-126    	; 0x3f0 <Liftup+0x4a>
+		}
+		
+		wait(1250);
+	}
+	
+	place--;
+ 46e:	31 97       	sbiw	r30, 0x01	; 1
+ 470:	f0 93 67 01 	sts	0x0167, r31	; 0x800167 <place+0x1>
+ 474:	e0 93 66 01 	sts	0x0166, r30	; 0x800166 <place>
 	
 
 }
+ 478:	df 91       	pop	r29
+ 47a:	cf 91       	pop	r28
+ 47c:	1f 91       	pop	r17
+ 47e:	0f 91       	pop	r16
+ 480:	ff 90       	pop	r15
+ 482:	ef 90       	pop	r14
+ 484:	df 90       	pop	r13
+ 486:	cf 90       	pop	r12
+ 488:	bf 90       	pop	r11
+ 48a:	08 95       	ret
+
+0000048c <Liftdown>:
 
 void Liftdown(int desti){
- 3a0:	d0 e0       	ldi	r29, 0x00	; 0
- 3a2:	cf cf       	rjmp	.-98     	; 0x342 <Liftdown+0x4c>
- 3a4:	82 e0       	ldi	r24, 0x02	; 2
+ 48c:	bf 92       	push	r11
+ 48e:	cf 92       	push	r12
+ 490:	df 92       	push	r13
+ 492:	ef 92       	push	r14
+ 494:	ff 92       	push	r15
+ 496:	0f 93       	push	r16
+ 498:	1f 93       	push	r17
+ 49a:	cf 93       	push	r28
+ 49c:	df 93       	push	r29
+	if (place < 19)
+ 49e:	e0 91 66 01 	lds	r30, 0x0166	; 0x800166 <place>
+ 4a2:	f0 91 67 01 	lds	r31, 0x0167	; 0x800167 <place+0x1>
+ 4a6:	e3 31       	cpi	r30, 0x13	; 19
+ 4a8:	f1 05       	cpc	r31, r1
+ 4aa:	0c f4       	brge	.+2      	; 0x4ae <Liftdown+0x22>
+ 4ac:	55 c0       	rjmp	.+170    	; 0x558 <Liftdown+0xcc>
+		return;
+	
+	
+	
+	for (place; place >= desti; place--){
+ 4ae:	e8 17       	cp	r30, r24
+ 4b0:	f9 07       	cpc	r31, r25
+ 4b2:	0c f4       	brge	.+2      	; 0x4b6 <Liftdown+0x2a>
+ 4b4:	4c c0       	rjmp	.+152    	; 0x54e <Liftdown+0xc2>
+ 4b6:	6c 01       	movw	r12, r24
+	}
+
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+ 4b8:	0f 2e       	mov	r0, r31
+ 4ba:	fc e5       	ldi	r31, 0x5C	; 92
+ 4bc:	ef 2e       	mov	r14, r31
+ 4be:	f1 e0       	ldi	r31, 0x01	; 1
+ 4c0:	ff 2e       	mov	r15, r31
+ 4c2:	f0 2d       	mov	r31, r0
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 4c4:	04 e7       	ldi	r16, 0x74	; 116
+ 4c6:	10 e0       	ldi	r17, 0x00	; 0
+ 4c8:	0f 2e       	mov	r0, r31
+ 4ca:	f4 e9       	ldi	r31, 0x94	; 148
+ 4cc:	bf 2e       	mov	r11, r31
+ 4ce:	f0 2d       	mov	r31, r0
+	
+	
+	
+	for (place; place >= desti; place--){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+ 4d0:	e0 5f       	subi	r30, 0xF0	; 240
+ 4d2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4d4:	87 81       	ldd	r24, Z+7	; 0x07
+ 4d6:	96 81       	ldd	r25, Z+6	; 0x06
+ 4d8:	25 81       	ldd	r18, Z+5	; 0x05
+ 4da:	34 81       	ldd	r19, Z+4	; 0x04
+		return;
+	
+	
+	
+	for (place; place >= desti; place--){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+ 4dc:	43 81       	ldd	r20, Z+3	; 0x03
+ 4de:	52 81       	ldd	r21, Z+2	; 0x02
+ 4e0:	61 81       	ldd	r22, Z+1	; 0x01
+	}
+
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+ 4e2:	70 81       	ld	r23, Z
+ 4e4:	f7 01       	movw	r30, r14
+ 4e6:	70 83       	st	Z, r23
+	currentPattern[1].data = b;
+ 4e8:	61 83       	std	Z+1, r22	; 0x01
+	currentPattern[2].data = c;
+ 4ea:	52 83       	std	Z+2, r21	; 0x02
+	currentPattern[3].data = d;
+ 4ec:	43 83       	std	Z+3, r20	; 0x03
+	currentPattern[4].data = e;
+ 4ee:	34 83       	std	Z+4, r19	; 0x04
+	currentPattern[5].data = f;
+ 4f0:	25 83       	std	Z+5, r18	; 0x05
+	currentPattern[6].data = g;
+ 4f2:	96 83       	std	Z+6, r25	; 0x06
+	currentPattern[7].data = h;
+ 4f4:	87 83       	std	Z+7, r24	; 0x07
+	
+	
+	for (place; place >= desti; place--){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
+ 4f6:	e8 dd       	rcall	.-1072   	; 0xc8 <rotate>
+		
+		for (int adres = 0; adres <= 14; adres += 2)
+ 4f8:	c0 e0       	ldi	r28, 0x00	; 0
+		{
+			twi_start();
+ 4fa:	d0 e0       	ldi	r29, 0x00	; 0
+ 4fc:	9d de       	rcall	.-710    	; 0x238 <twi_start>
+			twi_tx(0xE0);	// Display I2C addres + R/W bit
+ 4fe:	80 ee       	ldi	r24, 0xE0	; 224
+ 500:	90 e0       	ldi	r25, 0x00	; 0
+			twi_tx(adres);	// Address
+ 502:	a3 de       	rcall	.-698    	; 0x24a <twi_tx>
+ 504:	ce 01       	movw	r24, r28
+ 506:	a1 de       	rcall	.-702    	; 0x24a <twi_tx>
+			twi_tx(rotated[adres/2].data);	// data
+ 508:	9e 01       	movw	r18, r28
+ 50a:	dd 23       	and	r29, r29
+ 50c:	14 f4       	brge	.+4      	; 0x512 <Liftdown+0x86>
+ 50e:	2f 5f       	subi	r18, 0xFF	; 255
+ 510:	3f 4f       	sbci	r19, 0xFF	; 255
+ 512:	35 95       	asr	r19
+ 514:	27 95       	ror	r18
+ 516:	f9 01       	movw	r30, r18
+ 518:	ec 5a       	subi	r30, 0xAC	; 172
+ 51a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 51c:	80 81       	ld	r24, Z
+ 51e:	90 e0       	ldi	r25, 0x00	; 0
+ 520:	94 de       	rcall	.-728    	; 0x24a <twi_tx>
+	while( 0x00 == (TWCR & 0x80) );
+}
+
+void twi_stop(void)
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+ 522:	f8 01       	movw	r30, r16
+ 524:	b0 82       	st	Z, r11
+	for (place; place >= desti; place--){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
+		
+		for (int adres = 0; adres <= 14; adres += 2)
+ 526:	22 96       	adiw	r28, 0x02	; 2
+ 528:	c0 31       	cpi	r28, 0x10	; 16
+ 52a:	d1 05       	cpc	r29, r1
+			twi_tx(adres);	// Address
+			twi_tx(rotated[adres/2].data);	// data
+			twi_stop();
+		}
+		
+		wait(1250);
+ 52c:	39 f7       	brne	.-50     	; 0x4fc <Liftdown+0x70>
+ 52e:	82 ee       	ldi	r24, 0xE2	; 226
+ 530:	94 e0       	ldi	r25, 0x04	; 4
+ 532:	6b de       	rcall	.-810    	; 0x20a <wait>
+	if (place < 19)
+		return;
+	
+	
+	
+	for (place; place >= desti; place--){
+ 534:	e0 91 66 01 	lds	r30, 0x0166	; 0x800166 <place>
+ 538:	f0 91 67 01 	lds	r31, 0x0167	; 0x800167 <place+0x1>
+ 53c:	31 97       	sbiw	r30, 0x01	; 1
+ 53e:	f0 93 67 01 	sts	0x0167, r31	; 0x800167 <place+0x1>
+ 542:	e0 93 66 01 	sts	0x0166, r30	; 0x800166 <place>
+ 546:	ec 15       	cp	r30, r12
+ 548:	fd 05       	cpc	r31, r13
+ 54a:	0c f0       	brlt	.+2      	; 0x54e <Liftdown+0xc2>
+ 54c:	c1 cf       	rjmp	.-126    	; 0x4d0 <Liftdown+0x44>
+		}
+		
 		wait(1250);
 	}
 	
+	place++;
+ 54e:	31 96       	adiw	r30, 0x01	; 1
+ 550:	f0 93 67 01 	sts	0x0167, r31	; 0x800167 <place+0x1>
+ 554:	e0 93 66 01 	sts	0x0166, r30	; 0x800166 <place>
 
-	
-	lastScrollAction = 2;
- 3a6:	90 e0       	ldi	r25, 0x00	; 0
- 3a8:	90 93 93 01 	sts	0x0193, r25	; 0x800193 <__data_end+0x1>
- 3ac:	80 93 92 01 	sts	0x0192, r24	; 0x800192 <__data_end>
- 3b0:	df 91       	pop	r29
-	
 	
 }
- 3b2:	cf 91       	pop	r28
- 3b4:	1f 91       	pop	r17
- 3b6:	0f 91       	pop	r16
- 3b8:	ff 90       	pop	r15
- 3ba:	ef 90       	pop	r14
- 3bc:	df 90       	pop	r13
- 3be:	cf 90       	pop	r12
- 3c0:	bf 90       	pop	r11
- 3c2:	08 95       	ret
+ 558:	df 91       	pop	r29
+ 55a:	cf 91       	pop	r28
+ 55c:	1f 91       	pop	r17
+ 55e:	0f 91       	pop	r16
+ 560:	ff 90       	pop	r15
+ 562:	ef 90       	pop	r14
+ 564:	df 90       	pop	r13
+ 566:	cf 90       	pop	r12
+ 568:	bf 90       	pop	r11
+ 56a:	08 95       	ret
 
-000003c4 <buttoncheck>:
- 3c4:	89 b3       	in	r24, 0x19	; 25
+0000056c <run>:
+	}
+}
 
-void buttoncheck(){
+void run(){
 
 	int num = PINA;
-
+ 56c:	89 b3       	in	r24, 0x19	; 25
+	
 	switch (num){
- 3c6:	84 30       	cpi	r24, 0x04	; 4
- 3c8:	c9 f0       	breq	.+50     	; 0x3fc <buttoncheck+0x38>
- 3ca:	28 f4       	brcc	.+10     	; 0x3d6 <buttoncheck+0x12>
- 3cc:	81 30       	cpi	r24, 0x01	; 1
- 3ce:	41 f0       	breq	.+16     	; 0x3e0 <buttoncheck+0x1c>
- 3d0:	82 30       	cpi	r24, 0x02	; 2
- 3d2:	69 f0       	breq	.+26     	; 0x3ee <buttoncheck+0x2a>
- 3d4:	08 95       	ret
- 3d6:	88 30       	cpi	r24, 0x08	; 8
- 3d8:	99 f0       	breq	.+38     	; 0x400 <__LOCK_REGION_LENGTH__>
- 3da:	80 31       	cpi	r24, 0x10	; 16
- 3dc:	99 f0       	breq	.+38     	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
- 3de:	08 95       	ret
-		case 1: Liftup(place + 17); break;
- 3e0:	80 91 94 01 	lds	r24, 0x0194	; 0x800194 <place>
- 3e4:	90 91 95 01 	lds	r25, 0x0195	; 0x800195 <place+0x1>
- 3e8:	41 96       	adiw	r24, 0x11	; 17
- 3ea:	1b cf       	rjmp	.-458    	; 0x222 <Liftup>
- 3ec:	08 95       	ret
-		case 2: Liftdown(place - 17); break;
- 3ee:	80 91 94 01 	lds	r24, 0x0194	; 0x800194 <place>
- 3f2:	90 91 95 01 	lds	r25, 0x0195	; 0x800195 <place+0x1>
- 3f6:	41 97       	sbiw	r24, 0x11	; 17
- 3f8:	7e cf       	rjmp	.-260    	; 0x2f6 <Liftdown>
+ 56e:	84 30       	cpi	r24, 0x04	; 4
+ 570:	d9 f0       	breq	.+54     	; 0x5a8 <run+0x3c>
+ 572:	28 f4       	brcc	.+10     	; 0x57e <run+0x12>
+ 574:	81 30       	cpi	r24, 0x01	; 1
+ 576:	51 f0       	breq	.+20     	; 0x58c <run+0x20>
+ 578:	82 30       	cpi	r24, 0x02	; 2
+ 57a:	79 f0       	breq	.+30     	; 0x59a <run+0x2e>
+ 57c:	08 95       	ret
+ 57e:	80 31       	cpi	r24, 0x10	; 16
+ 580:	c9 f0       	breq	.+50     	; 0x5b4 <run+0x48>
+ 582:	80 32       	cpi	r24, 0x20	; 32
+ 584:	d9 f0       	breq	.+54     	; 0x5bc <run+0x50>
+ 586:	88 30       	cpi	r24, 0x08	; 8
+ 588:	41 f5       	brne	.+80     	; 0x5da <run+0x6e>
+ 58a:	10 c0       	rjmp	.+32     	; 0x5ac <run+0x40>
+		case 1: Liftup(place + 20); break;
+ 58c:	80 91 66 01 	lds	r24, 0x0166	; 0x800166 <place>
+ 590:	90 91 67 01 	lds	r25, 0x0167	; 0x800167 <place+0x1>
+ 594:	44 96       	adiw	r24, 0x14	; 20
+ 596:	07 cf       	rjmp	.-498    	; 0x3a6 <Liftup>
+ 598:	08 95       	ret
+		case 2: Liftdown(place - 20); break;
+ 59a:	80 91 66 01 	lds	r24, 0x0166	; 0x800166 <place>
+ 59e:	90 91 67 01 	lds	r25, 0x0167	; 0x800167 <place+0x1>
+ 5a2:	44 97       	sbiw	r24, 0x14	; 20
+ 5a4:	73 cf       	rjmp	.-282    	; 0x48c <Liftdown>
 		case 4: clearmatrix(); break;
- 3fa:	08 95       	ret
- 3fc:	f0 ce       	rjmp	.-544    	; 0x1de <clearmatrix>
-		case 8: smileyHappy(); break;
- 3fe:	08 95       	ret
- 400:	b9 ce       	rjmp	.-654    	; 0x174 <smileyHappy>
- 402:	08 95       	ret
-		case 16: smileyneut(); break;
- 404:	bb ce       	rjmp	.-650    	; 0x17c <smileyneut>
- 406:	08 95       	ret
+ 5a6:	08 95       	ret
+ 5a8:	dc ce       	rjmp	.-584    	; 0x362 <clearmatrix>
+		case 8: displayStruct(happySmiley); break;
+ 5aa:	08 95       	ret
+ 5ac:	88 e0       	ldi	r24, 0x08	; 8
+ 5ae:	91 e0       	ldi	r25, 0x01	; 1
+ 5b0:	57 ce       	rjmp	.-850    	; 0x260 <displayStruct>
+		case 16: displayStruct(madSmiley); break;
+ 5b2:	08 95       	ret
+ 5b4:	80 e0       	ldi	r24, 0x00	; 0
+ 5b6:	91 e0       	ldi	r25, 0x01	; 1
+ 5b8:	53 ce       	rjmp	.-858    	; 0x260 <displayStruct>
+ 5ba:	08 95       	ret
+		case 32: rotations = rotations == 1? rotations = 0:1; break;
+ 5bc:	81 e0       	ldi	r24, 0x01	; 1
+ 5be:	90 e0       	ldi	r25, 0x00	; 0
+ 5c0:	20 91 64 01 	lds	r18, 0x0164	; 0x800164 <rotations>
+ 5c4:	30 91 65 01 	lds	r19, 0x0165	; 0x800165 <rotations+0x1>
+ 5c8:	21 30       	cpi	r18, 0x01	; 1
+ 5ca:	31 05       	cpc	r19, r1
+ 5cc:	11 f4       	brne	.+4      	; 0x5d2 <run+0x66>
+ 5ce:	80 e0       	ldi	r24, 0x00	; 0
+ 5d0:	90 e0       	ldi	r25, 0x00	; 0
+ 5d2:	90 93 65 01 	sts	0x0165, r25	; 0x800165 <rotations+0x1>
+ 5d6:	80 93 64 01 	sts	0x0164, r24	; 0x800164 <rotations>
+ 5da:	08 95       	ret
 
-00000408 <initall>:
- 408:	1f 93       	push	r17
+000005dc <initall>:
 	
 }
 
 
 
 void initall(){
- 40a:	cf 93       	push	r28
- 40c:	df 93       	push	r29
+ 5dc:	1f 93       	push	r17
+ 5de:	cf 93       	push	r28
+ 5e0:	df 93       	push	r29
 	twi_init();		// Init TWI interface
- 40e:	6d de       	rcall	.-806    	; 0xea <twi_init>
+ 5e2:	24 de       	rcall	.-952    	; 0x22c <twi_init>
 
 	// Init HT16K22.
 	twi_start();
- 410:	72 de       	rcall	.-796    	; 0xf6 <twi_start>
- 412:	80 ee       	ldi	r24, 0xE0	; 224
+ 5e4:	29 de       	rcall	.-942    	; 0x238 <twi_start>
+ 5e6:	80 ee       	ldi	r24, 0xE0	; 224
 	twi_tx(0xE0);	// Display I2C addres + R/W bit
- 414:	90 e0       	ldi	r25, 0x00	; 0
- 416:	78 de       	rcall	.-784    	; 0x108 <twi_tx>
- 418:	81 e2       	ldi	r24, 0x21	; 33
+ 5e8:	90 e0       	ldi	r25, 0x00	; 0
+ 5ea:	2f de       	rcall	.-930    	; 0x24a <twi_tx>
+ 5ec:	81 e2       	ldi	r24, 0x21	; 33
 	twi_tx(0x21);	// Internal osc on
- 41a:	90 e0       	ldi	r25, 0x00	; 0
- 41c:	75 de       	rcall	.-790    	; 0x108 <twi_tx>
- 41e:	c4 e7       	ldi	r28, 0x74	; 116
- 420:	d0 e0       	ldi	r29, 0x00	; 0
+ 5ee:	90 e0       	ldi	r25, 0x00	; 0
+ 5f0:	2c de       	rcall	.-936    	; 0x24a <twi_tx>
+ 5f2:	c4 e7       	ldi	r28, 0x74	; 116
+ 5f4:	d0 e0       	ldi	r29, 0x00	; 0
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 422:	14 e9       	ldi	r17, 0x94	; 148
- 424:	18 83       	st	Y, r17
- 426:	67 de       	rcall	.-818    	; 0xf6 <twi_start>
+ 5f6:	14 e9       	ldi	r17, 0x94	; 148
+ 5f8:	18 83       	st	Y, r17
+ 5fa:	1e de       	rcall	.-964    	; 0x238 <twi_start>
 	twi_start();
 	twi_tx(0xE0);	// Display I2C addres + R/W bit
 	twi_tx(0x21);	// Internal osc on
 	twi_stop();
 
 	twi_start();
- 428:	80 ee       	ldi	r24, 0xE0	; 224
- 42a:	90 e0       	ldi	r25, 0x00	; 0
+ 5fc:	80 ee       	ldi	r24, 0xE0	; 224
+ 5fe:	90 e0       	ldi	r25, 0x00	; 0
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 42c:	6d de       	rcall	.-806    	; 0x108 <twi_tx>
- 42e:	80 ea       	ldi	r24, 0xA0	; 160
+ 600:	24 de       	rcall	.-952    	; 0x24a <twi_tx>
+ 602:	80 ea       	ldi	r24, 0xA0	; 160
 	twi_tx(0xA0);	// HT16K33 pins all output
- 430:	90 e0       	ldi	r25, 0x00	; 0
- 432:	6a de       	rcall	.-812    	; 0x108 <twi_tx>
- 434:	18 83       	st	Y, r17
+ 604:	90 e0       	ldi	r25, 0x00	; 0
+ 606:	21 de       	rcall	.-958    	; 0x24a <twi_tx>
+ 608:	18 83       	st	Y, r17
 	twi_stop();
 
 	twi_start();
- 436:	5f de       	rcall	.-834    	; 0xf6 <twi_start>
+ 60a:	16 de       	rcall	.-980    	; 0x238 <twi_start>
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 438:	80 ee       	ldi	r24, 0xE0	; 224
- 43a:	90 e0       	ldi	r25, 0x00	; 0
- 43c:	65 de       	rcall	.-822    	; 0x108 <twi_tx>
+ 60c:	80 ee       	ldi	r24, 0xE0	; 224
+ 60e:	90 e0       	ldi	r25, 0x00	; 0
+ 610:	1c de       	rcall	.-968    	; 0x24a <twi_tx>
 	twi_tx(0xE3);	// Display Dimming 4/16 duty cycle
- 43e:	83 ee       	ldi	r24, 0xE3	; 227
- 440:	90 e0       	ldi	r25, 0x00	; 0
- 442:	62 de       	rcall	.-828    	; 0x108 <twi_tx>
+ 612:	83 ee       	ldi	r24, 0xE3	; 227
+ 614:	90 e0       	ldi	r25, 0x00	; 0
+ 616:	19 de       	rcall	.-974    	; 0x24a <twi_tx>
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 444:	18 83       	st	Y, r17
+ 618:	18 83       	st	Y, r17
 	twi_start();
 	twi_tx(0xE0);	// Display I2C address + R/W bit
 	twi_tx(0xE3);	// Display Dimming 4/16 duty cycle
 	twi_stop();
 
 	twi_start();
- 446:	57 de       	rcall	.-850    	; 0xf6 <twi_start>
- 448:	80 ee       	ldi	r24, 0xE0	; 224
+ 61a:	0e de       	rcall	.-996    	; 0x238 <twi_start>
+ 61c:	80 ee       	ldi	r24, 0xE0	; 224
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 44a:	90 e0       	ldi	r25, 0x00	; 0
- 44c:	5d de       	rcall	.-838    	; 0x108 <twi_tx>
- 44e:	81 e8       	ldi	r24, 0x81	; 129
- 450:	90 e0       	ldi	r25, 0x00	; 0
+ 61e:	90 e0       	ldi	r25, 0x00	; 0
+ 620:	14 de       	rcall	.-984    	; 0x24a <twi_tx>
+ 622:	81 e8       	ldi	r24, 0x81	; 129
+ 624:	90 e0       	ldi	r25, 0x00	; 0
 	twi_tx(0x81);	// Display OFF - Blink On
- 452:	5a de       	rcall	.-844    	; 0x108 <twi_tx>
- 454:	18 83       	st	Y, r17
- 456:	df 91       	pop	r29
- 458:	cf 91       	pop	r28
+ 626:	11 de       	rcall	.-990    	; 0x24a <twi_tx>
+ 628:	18 83       	st	Y, r17
+ 62a:	df 91       	pop	r29
+ 62c:	cf 91       	pop	r28
 	while( 0x00 == (TWCR & 0x80) );
 }
 
 void twi_stop(void)
 {
 	TWCR = (0x80 | 0x10 | 0x04);
- 45a:	1f 91       	pop	r17
+ 62e:	1f 91       	pop	r17
 
 	twi_start();
 	twi_tx(0xE0);	// Display I2C address + R/W bit
 	twi_tx(0x81);	// Display OFF - Blink On
 	twi_stop();
 }
- 45c:	08 95       	ret
+ 630:	08 95       	ret
 
-0000045e <main>:
- 45e:	8f ef       	ldi	r24, 0xFF	; 255
- 460:	81 bb       	out	0x11, r24	; 17
- 462:	84 bb       	out	0x14, r24	; 20
+00000632 <main>:
+ 632:	8f ef       	ldi	r24, 0xFF	; 255
+ 634:	81 bb       	out	0x11, r24	; 17
+ 636:	84 bb       	out	0x14, r24	; 20
 int main( void )
 {
 	DDRD = 0b11111111;
 	DDRC = 0xFF;
 	
 	initall();
- 464:	d1 df       	rcall	.-94     	; 0x408 <initall>
-			
+ 638:	d1 df       	rcall	.-94     	; 0x5dc <initall>
+	
 	LiftStart();
- 466:	8e de       	rcall	.-740    	; 0x184 <LiftStart>
-			
+ 63a:	42 de       	rcall	.-892    	; 0x2c0 <LiftStart>
+	
 	while (1)
 	{
-		buttoncheck();
- 468:	ad df       	rcall	.-166    	; 0x3c4 <buttoncheck>
- 46a:	fe cf       	rjmp	.-4      	; 0x468 <main+0xa>
+		run();
+ 63c:	97 df       	rcall	.-210    	; 0x56c <run>
+ 63e:	fe cf       	rjmp	.-4      	; 0x63c <main+0xa>
 
-0000046c <_exit>:
- 46c:	f8 94       	cli
+00000640 <_exit>:
+ 640:	f8 94       	cli
 
-0000046e <__stop_program>:
- 46e:	ff cf       	rjmp	.-2      	; 0x46e <__stop_program>
+00000642 <__stop_program>:
+ 642:	ff cf       	rjmp	.-2      	; 0x642 <__stop_program>

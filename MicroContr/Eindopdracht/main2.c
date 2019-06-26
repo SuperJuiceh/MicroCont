@@ -1,50 +1,50 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
-#include "lcd.h"
 
 int place = 0;
-// 0 = nothing, 1 = up, 2 = down
-int lastScrollAction = 0;
+int rotations = 0;
 
 typedef struct {
 	unsigned char data;
 } PATTERN_STRUCT;
 PATTERN_STRUCT liftup[] = {
-	//0
-	{0b10011100}
-	, {0b10110110}
-	, {0b10100010}
-	, {0b10100010}
-	, {0b10100010}
-	, {0b10110110}
+	  {0b00000000}
 	, {0b10011100}
-	//tussenstukje
+	, {0b10110110}
+	, {0b10100010}
+	, {0b10100010}
+	, {0b10100010}
+	, {0b10110110}
+	, {0b10011100} // END 0
+		
 	, {0b10000000}
 	, {0b10000000}
-	//pijl
+
 	, {0b10001000}
 	, {0b10011100}
 	, {0b10111110}
 	, {0b11111111}
 	, {0b10011100}
 	, {0b10011100}
-	, {0b10011100}
-	//tussenstukje
+	, {0b10011100} // END PIJL 1
+	, {0b10000000}	
+		
 	, {0b10000000}
+	, {0b10000000} // Extra trans
+
 	, {0b10000000}
-	//1
 	, {0b10001000}
 	, {0b10001100}
 	, {0b10001010}
 	, {0b10001000}
 	, {0b10001000}
 	, {0b10001000}
-	, {0b10111110}
-	//tussenstukje
+	, {0b10111110} // END 1.
+		
 	, {0b10000000}
 	, {0b10000000}
-	//pijl
+		
 	, {0b10001000}
 	, {0b10011100}
 	, {0b10111110}
@@ -52,10 +52,11 @@ PATTERN_STRUCT liftup[] = {
 	, {0b10011100}
 	, {0b10011100}
 	, {0b10011100}
-	//tussenstukje
+	, {0b00000000}
+		
 	, {0b10000000}
 	, {0b10000000}
-	//2
+		
 	, {0b10011100}
 	, {0b10100010}
 	, {0b10100000}
@@ -63,10 +64,11 @@ PATTERN_STRUCT liftup[] = {
 	, {0b10001000}
 	, {0b10000100}
 	, {0b10111110}
-	//tussenstukje
 	, {0b10000000}
+		
+	, {0b10000000}	
 	, {0b10000000}
-	//pijl
+		
 	, {0b10001000}
 	, {0b10011100}
 	, {0b10111110}
@@ -74,10 +76,11 @@ PATTERN_STRUCT liftup[] = {
 	, {0b10011100}
 	, {0b10011100}
 	, {0b10011100}
-	//tussenstukje
 	, {0b10000000}
+		
 	, {0b10000000}
-	//3
+	, {0b10000000}	
+		
 	, {0b10011100}
 	, {0b10100010}
 	, {0b10100000}
@@ -85,152 +88,109 @@ PATTERN_STRUCT liftup[] = {
 	, {0b10100000}
 	, {0b10100010}
 	, {0b10011100}
-
-
-};
-PATTERN_STRUCT liftdown[] = {
-	//0
-	{0b10011100}
-	, {0b10110110}
-	, {0b10100010}
-	, {0b10100010}
-	, {0b10100010}
-	, {0b10110110}
-	, {0b10011100}
-	//tussenstukje
 	, {0b10000000}
-	, {0b10000000}
-	//pijl
-	, {0b10011100}
-	, {0b10011100}
-	, {0b10011100}
-	, {0b11111111}
-	, {0b10111110}
-	, {0b10011100}
-	, {0b10001000}
-	//tussenstukje
-	, {0b10000000}
-	, {0b10000000}
-	//1
-	, {0b10001000}
-	, {0b10001100}
-	, {0b10001010}
-	, {0b10001000}
-	, {0b10001000}
-	, {0b10001000}
-	, {0b10111110}
-	//tussenstukje
-	, {0b10000000}
-	, {0b10000000}
-	//pijl
-	, {0b10011100}
-	, {0b10011100}
-	, {0b10011100}
-	, {0b11111111}
-	, {0b10111110}
-	, {0b10011100}
-	, {0b10001000}
-	//tussenstukje
-	, {0b10000000}
-	, {0b10000000}
-	//2
-	, {0b10011100}
-	, {0b10100010}
-	, {0b10100000}
-	, {0b10010000}
-	, {0b10001000}
-	, {0b10000100}
-	, {0b10111110}
-	//tussenstukje
-	, {0b10000000}
-	, {0b10000000}
-	//pijl
-	, {0b10011100}
-	, {0b10011100}
-	, {0b10011100}
-	, {0b11111111}
-	, {0b10111110}
-	, {0b10011100}
-	, {0b10001000}
-	//tussenstukje
-	, {0b10000000}
-	, {0b10000000}
-	//3
-	, {0b10011100}
-	, {0b10100010}
-	, {0b10100000}
-	, {0b10011000}
-	, {0b10100000}
-	, {0b10100010}
-	, {0b10011100}
-
-
-};
-PATTERN_STRUCT smileys[] = {
-	//smileyblij
-	{30}, {33}, {210}, {192}, {210}, {204}, {33}, {30}
-	//smiley neutraal
-	, {30} , {33}  , {210}  , {192}  , {222}  , {192}  , {33} , {30}
-
-	//smiley niet blij
-	, {30} 	, {33}	, {210}	, {192}	, {204}	, {210}	, {33}	, {30}
-
-
 };
 
+PATTERN_STRUCT happySmiley[] = {30, 33, 210, 192, 210, 204, 33, 30};
+PATTERN_STRUCT neutralSmiley[] = {{30} , {33}  , {210}  , {192}  , {222}  , {192}  , {33} , {30}};
+PATTERN_STRUCT madSmiley[] = {{30} 	, {33}	, {210}	, {192}	, {204}	, {210}	, {33}	, {30}};
 
-void writeToMatrix(char data){
-
+void displayStruct(PATTERN_STRUCT str[]){
+	
 	for (int adres = 0; adres <= 14; adres += 2)
 	{
 		twi_start();
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
 		twi_tx(adres);	// Address
-		twi_tx(smileys[adres/2].data);	// data
+		twi_tx(str[adres/2].data);	// data
 		twi_stop();
 	}
 }
 
-void smileyHappy(void){
-	writeToMatrix(smileys[0].data);
-
-}
-void smileyneut(void){
-	writeToMatrix(smileys[8].data);
-
-
-}
-void smileyniet(void){
-	writeToMatrix(smileys[16].data);
-
-}
-
-
-void buttoncheck(){
+void run(){
 
 	int num = PINA;
-
+	
 	switch (num){
-		case 1: Liftup(place + 17); break;
-		case 2: Liftdown(place - 17); break;
+		case 1: Liftup(place + 20); break;
+		case 2: Liftdown(place - 20); break;
 		case 4: clearmatrix(); break;
-		case 8: smileyHappy(); break;
-		case 16: smileyneut(); break;
+		case 8: displayStruct(happySmiley); break;
+		case 16: displayStruct(madSmiley); break;
+		case 32: rotations = rotations == 1? rotations = 0:1; break;
 	}
+}
+
+PATTERN_STRUCT currentPattern[] = {0,0,0,0,0,0,0,0};
+
+PATTERN_STRUCT rotated[] = { 0,0,0,0,0,0,0,0};
+
+void rotate ()
+{
+	rotations = rotations % 4;
+	
+	if (rotations == 0)
+		memcpy(rotated , currentPattern, sizeof(currentPattern));
+	
+	for (int currentRotation = 0; currentRotation < rotations; currentRotation++){ 
+		setRotatedPattern(0,0,0,0,0,0,0,0);
+		DDRC = 0xFF;
+		PORTC = currentRotation;
+		int i, j, val;
+ 
+		// Lekker draaien
+		for (i = 0; i < 8; i++) {
+			for (j = 0; j < 8; j++) {
+				// i,j = 0
+				val = (currentPattern[i].data >> j) & 1;
+				rotated[7-j].data |= (val << i);
+			}
+		}
+		
+		setCurrentPattern(rotated[0].data, rotated[1].data, rotated[2].data, rotated[3].data, rotated[4].data, rotated[5].data, rotated[6].data, rotated[7].data);
+		
+	}
+
+}
+
+void setCurrentPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	currentPattern[0].data = a;
+	currentPattern[1].data = b;
+	currentPattern[2].data = c;
+	currentPattern[3].data = d;
+	currentPattern[4].data = e;
+	currentPattern[5].data = f;
+	currentPattern[6].data = g;
+	currentPattern[7].data = h;
+	
+}
+
+void setRotatedPattern(int a, int b, int c, int d, int e, int f, int g, int h){
+	rotated[0].data = a;
+	rotated[1].data = b;
+	rotated[2].data = c;
+	rotated[3].data = d;
+	rotated[4].data = e;
+	rotated[5].data = f; 
+	rotated[6].data = g;
+	rotated[7].data = h;
+	
 }
 
 void LiftStart(void){
-	int x = 0;
+	setCurrentPattern(liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+									liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+
+	rotate();
+			
 	for (int adres = 0; adres <= 14; adres += 2)
 	{
 		twi_start();
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
 		twi_tx(adres);	// Address
-		twi_tx(liftup[x].data);	// data
+		twi_tx(rotated[adres/2].data);	// data
 		twi_stop();
-		x++;
 	}
-	
 	
 }
 
@@ -244,66 +204,60 @@ void clearmatrix(void){
 		twi_stop();
 	}
 }
+
 void Liftup(int desti){
-	PORTA = place; 
-	if (place > 50)
-		return;
-		
-	if (lastScrollAction == 2){
-		place--;
-	}
-		
+	PORTA = place;
 	
-	for (place; place <= desti; place++)
-	{
-		int x = place;
+	if (place > 59)
+		return; 
+			
+	for (place; place <= desti; place++){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
+		
 		for (int adres = 0; adres <= 14; adres += 2)
 		{
 			twi_start();
 			twi_tx(0xE0);	// Display I2C addres + R/W bit
 			twi_tx(adres);	// Address
-			twi_tx(liftup[x].data);	// data
+			twi_tx(rotated[adres/2].data);	// data
 			twi_stop();
-			x++;
 		}
+		
 		wait(1250);
 	}
 	
-
-		
-	lastScrollAction = 1;
+	place--;
 	
 
 }
 
 void Liftdown(int desti){
-	if (place < 1)
+	if (place < 19)
 		return;
+	
+	
+	
+	for (place; place >= desti; place--){
+		setCurrentPattern(	liftup[place].data, liftup[place + 1].data, liftup[place + 2].data, liftup[place + 3].data,
+							liftup[place + 4].data, liftup[place + 5].data, liftup[place + 6].data, liftup[place + 7].data );
+		rotate();
 		
-	if (lastScrollAction == 1){
-		place++;
-	}
-		
-		
-	for (place; place >= desti; place--)
-	{
-		int x=place;
 		for (int adres = 0; adres <= 14; adres += 2)
 		{
 			twi_start();
 			twi_tx(0xE0);	// Display I2C addres + R/W bit
 			twi_tx(adres);	// Address
-			twi_tx(liftdown[x - 1].data);	// data
+			twi_tx(rotated[adres/2].data);	// data
 			twi_stop();
-			x++;
 		}
+		
 		wait(1250);
 	}
 	
+	place++;
 
-	
-	lastScrollAction = 2;
-	
 	
 }
 
@@ -340,12 +294,12 @@ int main( void )
 	DDRC = 0xFF;
 	
 	initall();
-			
+	
 	LiftStart();
-			
+	
 	while (1)
 	{
-		buttoncheck();
+		run();
 	}
 
 	return 1;
